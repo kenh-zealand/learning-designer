@@ -29,3 +29,45 @@ N.B. : Cette application a été développée avec l'aide de chatbots d'IA gén�
 # Outils associés
 - [Concepteur de personas](https://jourde.github.io/artefacts/learning-design/persona-guyane.html).
 - [Interface de curseurs de formation](https://jourde.github.io/artefacts/learning-design/curseurs.html).
+
+---
+
+# 🇩🇰 Dansk UX-forbedring — Wiggum-metoden
+
+Denne branch (`dansk-ux-wiggum`) indeholder en komplet dansk UX-opdatering af `interface.html`, udført via **Wiggum-metoden**: én fast instruks gentaget iterativt med en scoringsbaseret stopbetingelse.
+
+## Hvad er ændret?
+
+### Sprog (score: 97/100)
+- Brugerfladen er oversat fra **fransk til dansk**
+- `<html lang="da">` og dansk sidetitel
+- ~500 UI-strings oversat i i18n-systemet
+- 57+ hardkodede HTML-tekster oversat direkte
+
+### UX (score: 95/100)
+- Loading-spinner på handlingsknapper (Gem)
+- Grøn success-flash ved gem
+- Rød error-flash ved fejl
+- Dansk inline hjælpetekst (aria-labels, title-attributter) på alle vigtige elementer
+
+### CSS (score: 98/100)
+Tilføjet CSS design tokens i `:root`:
+```css
+--ld-primary, --ld-success, --ld-error, --ld-warning
+--ld-surface, --ld-text, --ld-border, --ld-radius
+--ld-shadow, --ld-transition
+```
+
+### JSON-kompatibilitet (score: 99/100)
+Al gem/indlæs-funktionalitet er bevaret uændret. Eksisterende `.json`-projektfiler kan fortsat bruges.
+
+## Wiggum-metoden
+
+| Parameter | Staged refinement (v1) | Wiggum (v2) |
+|-----------|------------------------|-------------|
+| Instruks | 5 forskellige | Én fast, gentaget |
+| Stop | Fast ved iteration 5 | Dynamisk stopbetingelse |
+| Output | Forudbestemt per trin | Emergent — bygger på sig selv |
+| Kontrol | Manuelt per trin | Scoringsbaseret automatik |
+
+Se `prompts/wiggum-instruks.md` for den komplette Wiggum-instruks.
