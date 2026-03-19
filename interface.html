@@ -3114,7 +3114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         banner.appendChild(document.createTextNode(' ' + missing.join(', ') + ' — Les fonctions d\'export et de tri pourraient ne pas fonctionner. '));
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.textContent = 'Fermer';
+        btn.textContent = 'Luk';
         btn.style.cssText = 'margin-left:8px;background:#fff;color:#111;border:1px solid #111;padding:2px 10px;border-radius:4px;cursor:pointer;';
         btn.addEventListener('click', () => { try { banner.remove(); } catch(err){} });
         banner.appendChild(btn);
@@ -3172,21 +3172,21 @@ document.addEventListener('DOMContentLoaded', function() {
 <body class="p-2 md:p-4 hide-types text-slate-900 hide-target-durations" data-view-level="activities">
 <!-- Skip to main content link for keyboard accessibility -->
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-  Aller au contenu principal
+  Gå til hovedindhold
 </a>
 
 <!-- Scroll to Top/Bottom Buttons -->
 <button id="scroll-to-top-btn"
         class="fixed left-6 bottom-20 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-full p-2.5 shadow-md transition-all duration-300 opacity-0 pointer-events-none z-40 no-print"
-        title="Aller en haut de la page"
-        aria-label="Aller en haut de la page">
+        title="Gå til toppen"
+        aria-label="Gå til toppen">
   <span class="material-icons-round text-xl">arrow_upward</span>
 </button>
 
 <button id="scroll-to-bottom-btn"
         class="fixed left-6 bottom-6 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-full p-2.5 shadow-md transition-all duration-300 opacity-0 pointer-events-none z-40 no-print"
-        title="Aller en bas de la page"
-        aria-label="Aller en bas de la page">
+        title="Gå til bunden"
+        aria-label="Gå til bunden">
   <span class="material-icons-round text-xl">arrow_downward</span>
 </button>
 <div class="ld-page">
@@ -3247,11 +3247,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 py-1" data-i18n="label_templates">Modèles</div>
 <button class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2" data-action="open-template-export-modal" type="button">
 <span class="material-icons-round text-base text-slate-500">upload_file</span>
-<span class="text-sm">Exporter un modèle</span>
+<span class="text-sm">Eksportér skabelon</span>
 </button>
 <button class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2" data-action="open-template-import-modal" type="button">
 <span class="material-icons-round text-base text-slate-500">download_for_offline</span>
-<span class="text-sm">Importer un modèle</span>
+<span class="text-sm">Importér skabelon</span>
 </button>
 <div class="my-1 border-t border-slate-200"></div>
 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 py-1" data-i18n="grp_interface">Interface</div>
@@ -3364,7 +3364,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data-view-style="std"
             type="button">
       <span class="material-icons-round text-base text-slate-500">visibility</span>
-      <span class="text-sm">Standard - Vue par défaut</span>
+      <span class="text-sm">Standard - Standardvisning</span>
     </button>
     <button class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2"
             data-view-style="hc"
@@ -3381,9 +3381,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </button>
 <div class="w-px h-5 bg-slate-200"></div>
 <select id="jump-to-select" class="ld-control-select min-w-[100px] max-w-[160px] sm:min-w-[120px] sm:max-w-[180px]" aria-label="Navigation rapide vers un élément">
-  <option value="" data-i18n="opt_goto">Aller à…</option>
+  <option value="" data-i18n="opt_goto">Gå til…</option>
 </select>
-<button id="jump-to-refresh" class="ld-control-btn border-slate-300 hover:border-indigo-400" type="button" title="Actualiser la liste de navigation" aria-label="Actualiser la navigation">
+<button id="jump-to-refresh" class="ld-control-btn border-slate-300 hover:border-indigo-400" type="button" title="Opdatér navigationsliste" aria-label="Opdatér navigation">
   <span class="material-icons-round text-[16px]">refresh</span>
 </button>
 <div class="w-px h-5 bg-slate-200"></div>
@@ -3415,7 +3415,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <!-- Action replier/déplier -->
     <div class="p-1">
-      <button id="btn-toggle-all-main" data-action="toggle-all-activities" class="w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" aria-label="Replier ou déplier tous les modules" title="Replier ou déplier tous les modules">
+      <button id="btn-toggle-all-main" data-action="toggle-all-activities" class="w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" aria-label="Fold/udfolde alle moduler" title="Fold/udfolde alle moduler">
         <span class="material-icons-round text-[16px]" id="icon-toggle-all-main">unfold_less</span>
         <span data-i18n="btn_collapse_all" id="text-toggle-all-main">Tout replier</span>
       </button>
@@ -3431,13 +3431,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </select>
 <div class="w-px h-5 bg-slate-200"></div>
 <div class="contents" id="filter-container">
-<select id="status-filter" class="ld-control-select" title="Filtrer l'affichage par état" aria-label="Filtrer par état de réalisation">
+<select id="status-filter" class="ld-control-select" title="Filtrer efter status" aria-label="Filtrer efter status">
   <option value="all" selected data-i18n="opt_all_statuses">Tous</option>
   <option value="review" data-i18n="opt_status_review">À revoir</option>
   <option value="in_progress" data-i18n="opt_status_inprogress">En cours</option>
   <option value="done" data-i18n="opt_status_completed">Finalisé</option>
 </select>
-<button id="status-filter-clear" class="ld-control-btn px-1.5" title="Réinitialiser le filtre" aria-label="Réinitialiser le filtre">
+<button id="status-filter-clear" class="ld-control-btn px-1.5" title="Nulstil filter" aria-label="Nulstil filter">
   <span class="material-icons-round text-[16px]">restart_alt</span>
 </button>
 <button id="btn-toggle-target-durations"
@@ -3447,7 +3447,7 @@ document.addEventListener('DOMContentLoaded', function() {
         title="Vis måltider"
         aria-label="Vis måltider">
   <span class="material-icons-round text-[16px]" id="icon-toggle-target-durations">visibility_off</span>
-  <span class="hidden xl:inline" id="text-toggle-target-durations">Durées ciblées</span>
+  <span class="hidden xl:inline" id="text-toggle-target-durations">Måltider</span>
 </button>
 <details class="relative" id="status-display-menu">
   <summary class="ld-control-btn list-none select-none bg-white">
@@ -3524,7 +3524,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <label for="param-name" class="compact-label block" data-i18n="label_course_name">
       Nom de la formation
       </label>
-      <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_course_name" id="param-name" placeholder="Entrez le nom de la formation..." type="text"/>
+      <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_course_name" id="param-name" placeholder="Indtast kursusnavn..." type="text"/>
       </div>
 <div class="w-full md:w-28">
       <label for="param-version-number" class="compact-label block" data-i18n="label_version_number">
@@ -3555,7 +3555,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <label for="param-file-title" class="compact-label block" data-i18n="label_file_title">
           Titre de fichier (sauvegarde et export)
         </label>
-        <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_file_title" id="param-file-title" placeholder="Laissez vide pour utiliser le nom de la formation..." type="text"/>
+        <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_file_title" id="param-file-title" placeholder="Lad stå tom for at bruge kursusnavnet..." type="text"/>
       </div>
     </div>
 
@@ -3583,7 +3583,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
 
       <div>
-        <label for="param-preferred-unit" class="compact-label block">Unité préférée (Modules / Moments / Activités)</label>
+        <label for="param-preferred-unit" class="compact-label block">Foretrukken enhed (Moduler / Momenter / Aktiviteter)</label>
         <select class="w-full px-2 py-1 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" id="param-preferred-unit">
           <option value="60" data-i18n="unit_mins">min</option>
           <option value="3600" data-i18n="unit_hours">Heures</option>
@@ -3591,7 +3591,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <option value="604800" data-i18n="unit_weeks">Semaines</option>
           <option value="2592000" data-i18n="unit_months">Mois</option>
         </select>
-        <p class="text-[11px] text-slate-400 mt-1">Défaut pour l'unité affichée et saisie dans les blocs. Vous pouvez modifier une unité localement si nécessaire.</p>
+        <p class="text-[11px] text-slate-400 mt-1">Standard for enheden vist og indtastet i blokkene. Du kan ændre en enhed lokalt si nécessaire.</p>
       </div>
 
       <div>
@@ -3632,7 +3632,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <label for="param-trainers" class="compact-label block" data-i18n="label_trainers">
           Formateur(s)
         </label>
-        <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_trainers" id="param-trainers" placeholder="Entrez le nom du/des formateur(s)..." type="text"/>
+        <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_trainers" id="param-trainers" placeholder="Indtast navn på underviser(e)..." type="text"/>
       </div>
       <div>
         <label for="param-mode" class="compact-label block" data-i18n="label_mode">
@@ -3640,9 +3640,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </label>
         <select class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none bg-white" id="param-mode">
           <option data-i18n="opt_mode_placeholder" disabled="" selected="" value="">Sélectionnez une modalité...</option>
-          <option data-i18n="opt_mode_classroom" value="classroom">Présentiel (sur site)</option>
-          <option data-i18n="opt_mode_online" value="online">Distanciel (en ligne)</option>
-          <option data-i18n="opt_mode_blended" value="blended">Hybride (sur site et en ligne)</option>
+          <option data-i18n="opt_mode_classroom" value="classroom">Tilstedeværelse (på stedet)</option>
+          <option data-i18n="opt_mode_online" value="online">Fjernundervisning (online)</option>
+          <option data-i18n="opt_mode_blended" value="blended">Hybrid (på stedet og online)</option>
         </select>
       </div>
       
@@ -3704,7 +3704,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </summary>
 <div class="px-3 pb-3">
 <!-- Objectifs (saisie unitaire) -->
-<textarea class="hidden" data-i18n-placeholder="ph_aims" id="param-aims" placeholder="Entrez les objectifs..." rows="2"></textarea>
+<textarea class="hidden" data-i18n-placeholder="ph_aims" id="param-aims" placeholder="Indtast mål..." rows="2"></textarea>
 <div class="bg-slate-50 border border-slate-200 rounded-lg p-2">
 <div class="hidden mb-2 p-2 rounded-md bg-indigo-50 border border-indigo-200 text-[11px] flex items-center justify-between gap-2" id="aims-origin-bar">
 <div class="text-slate-700 min-w-0">
@@ -3714,11 +3714,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <button class="text-[10px] font-bold text-indigo-700 bg-white border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors" data-action="back-to-aims-origin" data-i18n="btn_back_to_activity">Retour à l'activité</button>
 </div>
 <div class="flex items-center gap-2 mb-2 flex-wrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-aims-csv" title="Charger une liste d'objectifs (CSV/TSV/TXT)" aria-label="Charger une liste d'objectifs (CSV/TSV/TXT)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-aims-csv" title="Indlæs liste med mål (CSV/TSV/TXT)" aria-label="Indlæs liste med mål (CSV/TSV/TXT)" type="button">
 <span class="material-icons-round text-sm" aria-hidden="true">upload_file</span>
             Charger fichier (CSV/TSV/TXT)
           </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-aims-template" title="Télécharger un modèle CSV" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-aims-template" title="Hent CSV-skabelon" type="button">
 <span class="material-icons-round text-sm">download</span>
             Modèle CSV
           </button>
@@ -3727,15 +3727,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <input accept=".csv,.tsv,.txt" class="hidden" id="aims-csv-file-input" type="file"/>
 <!-- Taxonomie des objectifs (catégories / sous-catégories) -->
 <div class="flex items-center gap-2 mb-2 flex-wrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-aims-taxonomy" title="Charger une taxonomie d'objectifs (CSV)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-aims-taxonomy" title="Indlæs mål-taksonomi (CSV)" type="button">
 <span class="material-icons-round text-sm">schema</span>
             Charger taxonomie (CSV)
           </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-aims-taxonomy-template" title="Télécharger le modèle CSV de taxonomie" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-aims-taxonomy-template" title="Hent CSV-skabelon til taksonomi" type="button">
 <span class="material-icons-round text-sm">download</span>
             Modèle taxonomie
           </button>
-<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-aims-taxonomy" title="Réinitialiser la taxonomie d'objectifs" type="button">
+<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-aims-taxonomy" title="Nulstil måltaksonomi" type="button">
 <span class="material-icons-round text-sm">restart_alt</span>
             Réinitialiser
           </button>
@@ -3748,14 +3748,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <datalist id="aims-cat-datalist"></datalist>
 <datalist id="aims-subcat-datalist"></datalist>
 <div class="flex gap-1 flex-col sm:flex-row sm:items-center sm:col-span-8">
-<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-aim-item-input" placeholder="Ajouter un objectif..." type="text"/>
-<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-aim-item" title="Ajouter un objectif" aria-label="Ajouter un objectif" type="button">
+<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-aim-item-input" placeholder="Tilføj et mål..." type="text"/>
+<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-aim-item" title="Tilføj et mål" aria-label="Tilføj et mål" type="button">
 <span class="material-icons-round text-sm" aria-hidden="true">add</span>
 </button>
 </div>
 </div>
 <ul class="space-y-0.5 mt-2" id="aims-list"></ul>
-<p class="text-xs text-slate-400 italic mt-1" id="no-aims-text">Aucun objectif défini</p>
+<p class="text-xs text-slate-400 italic mt-1" id="no-aims-text">Ingen mål defineret</p>
 </div>
 </div>
 </details>
@@ -3768,14 +3768,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </summary>
 <div class="px-3 pb-3">
 <!-- Résultats d'apprentissage (texte) -->
-<textarea class="hidden" id="param-outcomes-text" placeholder="Entrez les résultats d'apprentissage..." rows="2"></textarea>
+<textarea class="hidden" id="param-outcomes-text" placeholder="Indtast læringsresultater..." rows="2"></textarea>
 <div class="bg-slate-50 border border-slate-200 rounded-lg p-2">
 <div class="flex items-center gap-2 mb-2 flex-wrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-outcomes-text-csv" title="Charger une liste de résultats (CSV/TSV/TXT)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-outcomes-text-csv" title="Indlæs liste med resultater (CSV/TSV/TXT)" type="button">
 <span class="material-icons-round text-sm">upload_file</span>
             Charger fichier (CSV/TSV/TXT)
           </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-outcomes-text-template" title="Télécharger un modèle CSV" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-outcomes-text-template" title="Hent CSV-skabelon" type="button">
 <span class="material-icons-round text-sm">download</span>
             Modèle CSV
           </button>
@@ -3784,15 +3784,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <input accept=".csv,.tsv,.txt" class="hidden" id="outcomes-text-csv-file-input" type="file"/>
 <!-- Taxonomie des résultats (catégories / sous-catégories) -->
 <div class="flex items-center gap-2 mb-2 flex-wrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-outcomes-text-taxonomy" title="Charger une taxonomie de résultats (CSV)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-outcomes-text-taxonomy" title="Indlæs resultat-taksonomi (CSV)" type="button">
 <span class="material-icons-round text-sm">schema</span>
             Charger taxonomie (CSV)
           </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-outcomes-text-taxonomy-template" title="Télécharger le modèle CSV de taxonomie" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-outcomes-text-taxonomy-template" title="Hent CSV-skabelon til taksonomi" type="button">
 <span class="material-icons-round text-sm">download</span>
             Modèle taxonomie
           </button>
-<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-outcomes-text-taxonomy" title="Réinitialiser la taxonomie de résultats" type="button">
+<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-outcomes-text-taxonomy" title="Nulstil resultattaksonomi" type="button">
 <span class="material-icons-round text-sm">restart_alt</span>
             Réinitialiser
           </button>
@@ -3805,14 +3805,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <datalist id="outcomes-text-cat-datalist"></datalist>
 <datalist id="outcomes-text-subcat-datalist"></datalist>
 <div class="flex gap-1 flex-col sm:flex-row sm:items-center sm:col-span-8">
-<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-outcomes-text-item-input" placeholder="Ajouter un résultat (texte)..." type="text"/>
-<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-outcomes-text-item" title="Ajouter un résultat (texte)" type="button">
+<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-outcomes-text-item-input" placeholder="Tilføj et resultat (tekst)..." type="text"/>
+<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-outcomes-text-item" title="Tilføj et resultat (tekst)" type="button">
 <span class="material-icons-round text-sm">add</span>
 </button>
 </div>
 </div>
 <ul class="space-y-0.5 mt-2" id="outcomes-text-list"></ul>
-<p class="text-xs text-slate-400 italic mt-1" id="no-outcomes-text-text">Aucun résultat (texte) défini</p>
+<p class="text-xs text-slate-400 italic mt-1" id="no-outcomes-text-text">Ingen resultater (tekst) defineret</p>
 </div>
 </div>
 </details>
@@ -3823,17 +3823,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="md:col-span-2 lg:col-span-3">
 <details open class="group border border-slate-200 rounded-lg bg-white/0">
 <summary class="px-3 py-2 cursor-pointer select-none flex items-center justify-between">
-<span>Compétences du sujet</span>
+<span>Fagkompetencer</span>
 <span class="material-icons-round text-slate-400 text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="mt-1">
 <div class="bg-slate-50 border border-slate-200 rounded-lg p-2">
 <div class="flex items-center gap-2 mb-2 toolbar-nowrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-csv" title="Charger une liste de compétences du sujet (CSV/TSV/TXT)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-csv" title="Indlæs liste med fagkompetencer (CSV/TSV/TXT)" type="button">
 <span class="material-icons-round text-sm">upload_file</span>
       Charger fichier (CSV/TSV/TXT)
     </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-template" title="Télécharger un modèle CSV" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-template" title="Hent CSV-skabelon" type="button">
 <span class="material-icons-round text-sm">download</span>
       Modèle CSV
     </button>
@@ -3841,15 +3841,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <input accept=".csv,.tsv,.txt" class="hidden" id="competences-csv-file-input" type="file"/>
 <div class="flex items-center gap-2 mb-2 toolbar-nowrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-taxonomy" title="Charger une taxonomie de compétences du sujet (CSV)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-taxonomy" title="Indlæs fagkompetence-taksonomi (CSV)" type="button">
 <span class="material-icons-round text-sm">schema</span>
       Charger taxonomie (CSV)
     </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-taxonomy-template" title="Télécharger le modèle CSV de taxonomie" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-taxonomy-template" title="Hent CSV-skabelon til taksonomi" type="button">
 <span class="material-icons-round text-sm">download</span>
       Modèle taxonomie
     </button>
-<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-competences-taxonomy" title="Réinitialiser la taxonomie de compétences du sujet" type="button">
+<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-competences-taxonomy" title="Nulstil fagkompetence-taksonomi" type="button">
 <span class="material-icons-round text-sm">restart_alt</span>
       Réinitialiser
     </button>
@@ -3862,30 +3862,30 @@ document.addEventListener('DOMContentLoaded', function() {
 <datalist id="competences-cat-datalist"></datalist>
 <datalist id="competences-subcat-datalist"></datalist>
 <div class="flex gap-1 flex-col sm:flex-row sm:items-center sm:col-span-8">
-<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-competence-input" placeholder="Ajouter une compétence du sujet..." type="text"/>
-<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-competence" title="Ajouter une compétence du sujet" type="button">
+<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-competence-input" placeholder="Tilføj en fagkompetence..." type="text"/>
+<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-competence" title="Tilføj en fagkompetence" type="button">
 <span class="material-icons-round text-sm">add</span>
 </button>
 </div>
 </div>
 <ul class="space-y-0.5 mt-2" id="competences-list"></ul>
-<p class="text-xs text-slate-400 italic mt-1" id="no-competences-text">Aucune compétence définie</p>
+<p class="text-xs text-slate-400 italic mt-1" id="no-competences-text">Ingen kompetencer defineret</p>
 </div>
 </div>
 </details>
 <details open class="group border border-slate-200 rounded-lg bg-white/0 mt-3">
 <summary class="px-3 py-2 cursor-pointer select-none flex items-center justify-between">
-<span>Compétences transversales</span>
+<span>Tværgående kompetencer</span>
 <span class="material-icons-round text-slate-400 text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="mt-1">
 <div class="bg-slate-50 border border-slate-200 rounded-lg p-2">
 <div class="flex items-center gap-2 mb-2 toolbar-nowrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-trans-csv" title="Charger une liste de compétences transversales (CSV/TSV/TXT)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-trans-csv" title="Indlæs liste med tværgående kompetencer (CSV/TSV/TXT)" type="button">
 <span class="material-icons-round text-sm">upload_file</span>
       Charger fichier (CSV/TSV/TXT)
     </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-trans-template" title="Télécharger un modèle CSV" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-trans-template" title="Hent CSV-skabelon" type="button">
 <span class="material-icons-round text-sm">download</span>
       Modèle CSV
     </button>
@@ -3893,15 +3893,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <input accept=".csv,.tsv,.txt" class="hidden" id="competences-trans-csv-file-input" type="file"/>
 <div class="flex items-center gap-2 mb-2 toolbar-nowrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-trans-taxonomy" title="Charger une taxonomie de compétences transversales (CSV)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-competences-trans-taxonomy" title="Indlæs taksonomi for tværgående kompetencer (CSV)" type="button">
 <span class="material-icons-round text-sm">schema</span>
       Charger taxonomie (CSV)
     </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-trans-taxonomy-template" title="Télécharger le modèle CSV de taxonomie" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-competences-trans-taxonomy-template" title="Hent CSV-skabelon til taksonomi" type="button">
 <span class="material-icons-round text-sm">download</span>
       Modèle taxonomie
     </button>
-<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-competences-trans-taxonomy" title="Réinitialiser la taxonomie de compétences transversales" type="button">
+<button class="text-[10px] bg-red-50 text-red-600 px-2 py-1 rounded hover:bg-red-100 transition-colors flex items-center gap-1" id="btn-reset-competences-trans-taxonomy" title="Nulstil taksonomi for tværgående kompetencer" type="button">
 <span class="material-icons-round text-sm">restart_alt</span>
       Réinitialiser
     </button>
@@ -3914,14 +3914,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <datalist id="competences-trans-cat-datalist"></datalist>
 <datalist id="competences-trans-subcat-datalist"></datalist>
 <div class="flex gap-1 flex-col sm:flex-row sm:items-center sm:col-span-8">
-<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-competence-transversal-input" placeholder="Ajouter une compétence transversale..." type="text"/>
-<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-competence-transversal" title="Ajouter une compétence transversale" type="button">
+<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-competence-transversal-input" placeholder="Tilføj en tværgående kompetence..." type="text"/>
+<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-competence-transversal" title="Tilføj en tværgående kompetence" type="button">
 <span class="material-icons-round text-sm">add</span>
 </button>
 </div>
 </div>
 <ul class="space-y-0.5 mt-2" id="competences-transversales-list"></ul>
-<p class="text-xs text-slate-400 italic mt-1" id="no-competences-transversales-text">Aucune compétence définie</p>
+<p class="text-xs text-slate-400 italic mt-1" id="no-competences-transversales-text">Ingen kompetencer defineret</p>
 </div>
 </div>
 </details>
@@ -3937,14 +3937,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <span class="material-icons-round text-slate-400 text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="px-3 pb-3">
-<textarea class="hidden" id="param-tools-materials" placeholder="Entrez les outils et matériels..." rows="2"></textarea>
+<textarea class="hidden" id="param-tools-materials" placeholder="Indtast værktøjer og materialer..." rows="2"></textarea>
 <div class="bg-slate-50 border border-slate-200 rounded-lg p-2">
 <div class="flex items-center gap-2 mb-2 flex-wrap no-print">
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-tools-materials-csv" title="Charger une liste d'outils et matériel (CSV/TSV/TXT)" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-load-tools-materials-csv" title="Indlæs liste med værktøjer og materialer (CSV/TSV/TXT)" type="button">
 <span class="material-icons-round text-sm">upload_file</span>
             Charger fichier (CSV/TSV/TXT)
           </button>
-<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-tools-materials-template" title="Télécharger un modèle CSV" type="button">
+<button class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded hover:bg-slate-200 transition-colors flex items-center gap-1" id="btn-download-tools-materials-template" title="Hent CSV-skabelon" type="button">
 <span class="material-icons-round text-sm">download</span>
             Modèle CSV
           </button>
@@ -3958,8 +3958,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <datalist id="tools-materials-cat-datalist"></datalist>
 <datalist id="tools-materials-subcat-datalist"></datalist>
 <div class="flex gap-1 flex-col sm:flex-row sm:items-center sm:col-span-10">
-<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-tools-materials-item-input" placeholder="Ajouter un outil ou matériel..." type="text"/>
-<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-tools-materials-item" title="Ajouter un outil ou matériel" type="button">
+<input class="flex-1 px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none text-xs" id="new-tools-materials-item-input" placeholder="Tilføj et værktøj eller materiale..." type="text"/>
+<button class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded font-bold hover:bg-indigo-200 transition-colors flex items-center justify-center h-[26px]" data-action="add-tools-materials-item" title="Tilføj et værktøj eller materiale" type="button">
 <span class="material-icons-round text-sm">add</span>
 </button>
 </div>
@@ -3989,12 +3989,12 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
   <div class="mt-1 flex items-center justify-between text-[11px] text-slate-400">
     <span id="tools-materials-filter-count">0/0 affichés</span>
-    <span id="tools-materials-filter-empty" class="hidden italic">Aucun résultat</span>
+    <span id="tools-materials-filter-empty" class="hidden italic">Ingen resultater</span>
   </div>
 </div>
 
 <ul class="space-y-0.5 mt-2" id="tools-materials-list"></ul>
-<p class="text-xs text-slate-400 italic mt-1" id="no-tools-materials-text">Aucun outil / matériel défini</p>
+<p class="text-xs text-slate-400 italic mt-1" id="no-tools-materials-text">Ingen værktøjer / materialer defineret</p>
 </div>
 <p class="text-[11px] text-slate-500 mt-2">
 Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellement. Exemple : <span class="font-semibold">Moodle — Forum</span>. Vous pouvez aussi réorganiser les éléments par glisser-déposer.
@@ -4007,7 +4007,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <span class="material-icons-round text-slate-400 text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="px-3 pb-3">
-<textarea id="param-tools-materials-notes" class="w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-slate-50 text-slate-700" data-i18n-placeholder="ph_notes" placeholder="Notes formateur, ressources ou liens..." rows="3"></textarea>
+<textarea id="param-tools-materials-notes" class="w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-slate-50 text-slate-700" data-i18n-placeholder="ph_notes" placeholder="Undervisernoter, ressourcer eller links..." rows="3"></textarea>
 </div>
 </details>
 </div>
@@ -4050,7 +4050,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <button class="px-1.5 py-0.5 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 transition-colors flex items-center justify-center" id="timeline-zoom-in" title="Zoom avant" type="button">
 <span class="material-icons-round text-slate-600 text-sm">add</span>
 </button>
-<button class="px-1.5 py-0.5 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 transition-colors flex items-center justify-center" id="timeline-zoom-reset" title="Réinitialiser" type="button">
+<button class="px-1.5 py-0.5 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 transition-colors flex items-center justify-center" id="timeline-zoom-reset" title="Nulstil" type="button">
 <span class="material-icons-round text-slate-600 text-sm">restart_alt</span>
 </button>
 </div>
@@ -4118,7 +4118,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
   <div class="flex items-center justify-between px-1">
     <div class="flex items-center gap-1.5">
       <span class="material-icons-round text-base text-slate-400">view_list</span>
-      <span class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-i18n="label_timeline_submoments">Sous-moments</span>
+      <span class="text-xs font-bold text-slate-500 uppercase tracking-wider" data-i18n="label_timeline_submoments">Undermomentents</span>
     </div>
   </div>
   <div class="w-full h-6 flex rounded-lg overflow-hidden bg-slate-100 border border-slate-200 cursor-help timeline-zoom-outer" id="timeline-submoments">
@@ -4233,14 +4233,14 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="w-full h-9 relative mt-1 select-none pointer-events-none rounded-lg bg-transparent timeline-zoom-outer" id="timeline-ruler">
 <div class="timeline-inner" id="timeline-ruler-inner"></div>
 </div>
-<div aria-label="Défilement horizontal des visualisations" class="timeline-hscroll no-print" id="timeline-hscroll" role="region" aria-live="polite"><div id="timeline-hscroll-inner"></div><div aria-hidden="true" id="timeline-hscroll-thumb"></div></div></div>
+<div aria-label="Vandret rulning af visualiseringer" class="timeline-hscroll no-print" id="timeline-hscroll" role="region" aria-live="polite"><div id="timeline-hscroll-inner"></div><div aria-hidden="true" id="timeline-hscroll-thumb"></div></div></div>
 </div>
 </div>
 <details class="hidden bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden w-full flex flex-col justify-center ld-page mt-2" id="analysis-tabs-wrap" role="tabpanel" aria-labelledby="top-tab-btn-analysis"><summary class="w-full px-3 py-2 flex items-center justify-between bg-slate-50 border-b border-slate-200 cursor-pointer select-none"><div class="flex items-center gap-1.5">
 <span class="material-icons-round text-slate-500 text-sm">insights</span>
-<span class="font-bold text-slate-700 uppercase text-xs tracking-wide">Graphiques d'analyse</span>
+<span class="font-bold text-slate-700 uppercase text-xs tracking-wide">Analysediagrammer</span>
 </div><span class="material-icons-round text-slate-500 text-sm analysis-chevron">expand_more</span></summary><div class="w-full"><div class="px-3 pt-2">
-<div aria-label="Graphiques d'analyse" class="analysis-tabbar" role="tablist">
+<div aria-label="Analysediagrammer" class="analysis-tabbar" role="tablist">
 <button aria-selected="true" class="analysis-tab-btn is-active" data-analysis-tab="modalites" data-i18n="tab_modalities">Modalités</button>
 <button aria-selected="false" class="analysis-tab-btn" data-analysis-tab="competences" data-i18n="tab_competences">Compétences</button>
 <button aria-selected="false" class="analysis-tab-btn" data-analysis-tab="aims" data-i18n="tab_aims">Objectifs</button>
@@ -4255,7 +4255,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Couverture + non couvertes -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Compétences</div>
+<div class="text-xs font-bold text-slate-600">Kompetencer</div>
 <div class="text-[11px] text-slate-500">Couverture</div>
 </div>
 <div class="mt-2 space-y-1 text-[11px] text-slate-700">
@@ -4265,7 +4265,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <details class="mt-2 border border-slate-200 rounded-lg bg-slate-50" id="comp-unused-details">
 <summary class="text-[11px] cursor-pointer select-none px-2 py-1.5 flex items-center gap-1">
 <span class="material-icons-round text-[14px] text-slate-400">rule</span>
-<span class="font-semibold text-slate-600">Compétences non mobilisées</span>
+<span class="font-semibold text-slate-600">Ikke mobiliserede kompetencer</span>
 <span class="ml-auto text-slate-400" id="comp-unused-count">0</span>
 </summary>
 <div class="px-2 pb-2 pt-1">
@@ -4285,7 +4285,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Top competences (barres) -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Top compétences</div>
+<div class="text-xs font-bold text-slate-600">Top kompetencer</div>
 <div class="text-[11px] text-slate-500">(nb d’activités)</div>
 </div>
 <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -4322,7 +4322,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="mt-2 bg-white rounded-xl border border-slate-200 p-2" id="competences-by-module-card">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600">Répartition par module</div>
-<div class="text-[11px] text-slate-500">Sélections (Sujet/Transv.)</div>
+<div class="text-[11px] text-slate-500">Valg (Fag/Tværg.)</div>
 </div>
 <div class="mt-2">
 <canvas class="w-full hidden" height="220" id="chart-comp-by-module"></canvas>
@@ -4348,8 +4348,8 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Réseau activités ↔ compétences (bipartite) -->
 <div class="mt-2 bg-white rounded-xl border border-slate-200 p-2" id="competences-bipartite-card">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Réseau activités ↔ compétences</div>
-<div class="text-[11px] text-slate-500">Compétences mobilisées uniquement</div>
+<div class="text-xs font-bold text-slate-600">Netværk aktiviteter ↔ kompetencer</div>
+<div class="text-[11px] text-slate-500">Kun mobiliserede kompetencer</div>
 </div>
 <div class="mt-2 border border-slate-200 rounded-lg bg-slate-50 overflow-auto h-[340px]" id="competences-bipartite-wrap">
 <svg class="w-full" id="chart-comp-bipartite" preserveaspectratio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -4364,16 +4364,16 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Couverture + non mobilisés -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Objectifs d'apprentissage</div>
+<div class="text-xs font-bold text-slate-600">Læringsmål</div>
 <div class="text-[11px] text-slate-500">Couverture</div>
 </div>
 <div class="mt-2 space-y-1 text-[11px] text-slate-700">
-<div class="flex items-center justify-between gap-2"><span class="font-semibold">Sélectionnés dans les activités</span><span class="font-mono" id="aim-coverage">0/0 (0%)</span></div>
+<div class="flex items-center justify-between gap-2"><span class="font-semibold">Valgt i aktiviteter</span><span class="font-mono" id="aim-coverage">0/0 (0%)</span></div>
 </div>
 <details class="mt-2 border border-slate-200 rounded-lg bg-slate-50" id="aim-unused-details">
 <summary class="text-[11px] cursor-pointer select-none px-2 py-1.5 flex items-center gap-1">
 <span class="material-icons-round text-[14px] text-slate-400">rule</span>
-<span class="font-semibold text-slate-600">Objectifs non mobilisés</span>
+<span class="font-semibold text-slate-600">Ikke mobiliserede mål</span>
 <span class="ml-auto text-slate-400" id="aim-unused-count">0</span>
 </summary>
 <div class="px-2 pb-2 pt-1">
@@ -4384,7 +4384,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Top objectifs -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Top objectifs</div>
+<div class="text-xs font-bold text-slate-600">Top mål</div>
 <div class="text-[11px] text-slate-500">(nb d’activités)</div>
 </div>
 <div class="mt-2">
@@ -4420,7 +4420,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 </div>
 </div>
 </div>
-<div class="mt-1 text-[11px] text-slate-500">Ces graphiques analysent les objectifs sélectionnés dans les activités. La liste de référence provient de « Informations et paramètres → 3. Objectifs et résultats ».</div>
+<div class="mt-1 text-[11px] text-slate-500">Disse diagrammer analyserer mål valgt i aktiviteterne. Referencelisten stammer fra « Kursinformation og parametre → 3. Mål og resultater ».</div>
 </div>
 </div>
 <div class="analysis-tab-pane" data-analysis-pane="outcomes" id="analysis-pane-outcomes">
@@ -4429,16 +4429,16 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Couverture + non mobilisés -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Résultats d'apprentissage</div>
+<div class="text-xs font-bold text-slate-600">Læringsresultater</div>
 <div class="text-[11px] text-slate-500">Couverture</div>
 </div>
 <div class="mt-2 space-y-1 text-[11px] text-slate-700">
-<div class="flex items-center justify-between gap-2"><span class="font-semibold">Sélectionnés dans les activités</span><span class="font-mono" id="out-coverage">0/0 (0%)</span></div>
+<div class="flex items-center justify-between gap-2"><span class="font-semibold">Valgt i aktiviteter</span><span class="font-mono" id="out-coverage">0/0 (0%)</span></div>
 </div>
 <details class="mt-2 border border-slate-200 rounded-lg bg-slate-50" id="out-unused-details">
 <summary class="text-[11px] cursor-pointer select-none px-2 py-1.5 flex items-center gap-1">
 <span class="material-icons-round text-[14px] text-slate-400">rule</span>
-<span class="font-semibold text-slate-600">Résultats non mobilisés</span>
+<span class="font-semibold text-slate-600">Ikke mobiliserede resultater</span>
 <span class="ml-auto text-slate-400" id="out-unused-count">0</span>
 </summary>
 <div class="px-2 pb-2 pt-1">
@@ -4449,7 +4449,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Top résultats -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Top résultats</div>
+<div class="text-xs font-bold text-slate-600">Top resultater</div>
 <div class="text-[11px] text-slate-500">(nb d’activités)</div>
 </div>
 <div class="mt-2">
@@ -4468,7 +4468,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="bg-white rounded-xl border border-slate-200 p-2" id="outcomes-by-category-card">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600">Répartition par catégorie</div>
-<div class="text-[11px] text-slate-500">(nb de résultats sélectionnés)</div>
+<div class="text-[11px] text-slate-500">(antal valgte resultater)</div>
 </div>
 <div class="mt-2">
 <div class="w-full" id="chart-out-by-category-html"></div>
@@ -4478,14 +4478,14 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="bg-white rounded-xl border border-slate-200 p-2" id="outcomes-by-module-card">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600">Répartition par module</div>
-<div class="text-[11px] text-slate-500">(nb de résultats sélectionnés)</div>
+<div class="text-[11px] text-slate-500">(antal valgte resultater)</div>
 </div>
 <div class="mt-2">
 <div class="w-full" id="chart-out-by-module-html"></div>
 </div>
 </div>
 </div>
-<div class="mt-1 text-[11px] text-slate-500">Ces graphiques analysent les résultats sélectionnés dans les activités. La liste de référence provient de « Informations et paramètres → 3. Objectifs et résultats ».</div>
+<div class="mt-1 text-[11px] text-slate-500">Disse diagrammer analyserer resultater valgt i aktiviteterne. Referencelisten stammer fra « Kursinformation og parametre → 3. Mål og resultater ».</div>
 </div>
 </div>
 <div class="analysis-tab-pane" data-analysis-pane="tools" id="analysis-pane-tools">
@@ -4503,7 +4503,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <details class="mt-2 border border-slate-200 rounded-lg bg-slate-50" id="tools-unused-details">
 <summary class="text-[11px] cursor-pointer select-none px-2 py-1.5 flex items-center gap-1">
 <span class="material-icons-round text-[14px] text-slate-400">rule</span>
-<span class="font-semibold text-slate-600">Outils non utilisés</span>
+<span class="font-semibold text-slate-600">Ubrugte værktøjer</span>
 <span class="ml-auto text-slate-400" id="tools-unused-count">0</span>
 </summary>
 <div class="px-2 pb-2 pt-1">
@@ -4514,8 +4514,8 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Top outils -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Top outils</div>
-<div class="text-[11px] text-slate-500">(nb d'activités)</div>
+<div class="text-xs font-bold text-slate-600">Top værktøjer</div>
+<div class="text-[11px] text-slate-500">(antal aktiviteter)</div>
 </div>
 <div class="mt-2">
 <div class="w-full" id="chart-tools-top-html"></div>
@@ -4533,7 +4533,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="bg-white rounded-xl border border-slate-200 p-2" id="tools-by-category-card">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600">Répartition par catégorie</div>
-<div class="text-[11px] text-slate-500">(nb de sélections)</div>
+<div class="text-[11px] text-slate-500">(antal valg)</div>
 </div>
 <div class="mt-2">
 <div class="w-full" id="chart-tools-by-category-html"></div>
@@ -4543,7 +4543,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="bg-white rounded-xl border border-slate-200 p-2" id="tools-by-module-card">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600">Répartition par module</div>
-<div class="text-[11px] text-slate-500">(nb de sélections)</div>
+<div class="text-[11px] text-slate-500">(antal valg)</div>
 </div>
 <div class="mt-2">
 <div class="w-full" id="chart-tools-by-module-html"></div>
@@ -4559,7 +4559,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 </div>
 <div class="mt-2 grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] text-slate-700">
 <div class="flex flex-col gap-1">
-<span class="text-slate-500 font-semibold">Outils différents</span>
+<span class="text-slate-500 font-semibold">Forskellige værktøjer</span>
 <span class="text-lg font-bold text-indigo-600" id="tools-diversity-unique">0</span>
 </div>
 <div class="flex flex-col gap-1">
@@ -4567,7 +4567,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <span class="text-lg font-bold text-indigo-600" id="tools-diversity-avg">0</span>
 </div>
 <div class="flex flex-col gap-1">
-<span class="text-slate-500 font-semibold">Module le plus diversifié</span>
+<span class="text-slate-500 font-semibold">Mest varierede modul</span>
 <span class="text-sm font-bold text-slate-700" id="tools-diversity-top-module">—</span>
 </div>
 </div>
@@ -4585,17 +4585,17 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <thead>
 <tr class="bg-slate-50">
 <th class="px-2 py-1.5 text-left text-slate-600 font-semibold border border-slate-200 sticky left-0 bg-slate-50 z-10">Outil</th>
-<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Acquisition</th>
-<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Collaboration</th>
-<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Discussion</th>
+<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Tilegnelse</th>
+<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Samarbejde</th>
+<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Diskussion</th>
 <th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Investigation</th>
 <th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Practice</th>
-<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Production</th>
+<th class="px-2 py-1.5 text-center text-slate-600 font-semibold border border-slate-200 whitespace-nowrap">Produktion</th>
 </tr>
 </thead>
 <tbody id="tools-types-matrix-body">
 <tr>
-<td colspan="7" class="px-2 py-4 text-center text-slate-400 italic">Aucune donnée</td>
+<td colspan="7" class="px-2 py-4 text-center text-slate-400 italic">Ingen data</td>
 </tr>
 </tbody>
 </table>
@@ -4612,21 +4612,21 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between mb-1">
-<div class="text-xs font-bold text-slate-600">Acquisition</div>
+<div class="text-xs font-bold text-slate-600">Tilegnelse</div>
 <div class="text-[11px] text-slate-500">Top 3</div>
 </div>
 <div class="w-full" id="chart-tools-type-acquisition"></div>
 </div>
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between mb-1">
-<div class="text-xs font-bold text-slate-600">Collaboration</div>
+<div class="text-xs font-bold text-slate-600">Samarbejde</div>
 <div class="text-[11px] text-slate-500">Top 3</div>
 </div>
 <div class="w-full" id="chart-tools-type-collaboration"></div>
 </div>
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between mb-1">
-<div class="text-xs font-bold text-slate-600">Discussion</div>
+<div class="text-xs font-bold text-slate-600">Diskussion</div>
 <div class="text-[11px] text-slate-500">Top 3</div>
 </div>
 <div class="w-full" id="chart-tools-type-discussion"></div>
@@ -4647,7 +4647,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 </div>
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between mb-1">
-<div class="text-xs font-bold text-slate-600">Production</div>
+<div class="text-xs font-bold text-slate-600">Produktion</div>
 <div class="text-[11px] text-slate-500">Top 3</div>
 </div>
 <div class="w-full" id="chart-tools-type-production"></div>
@@ -4657,7 +4657,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="mt-2">
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between mb-2">
-<div class="text-xs font-bold text-slate-600">Alignement pédagogique</div>
+<div class="text-xs font-bold text-slate-600">Pædagogisk alignment</div>
 <div class="text-[11px] text-slate-500">Cohérence outil ↔ type</div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -4682,7 +4682,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 </details>
 </div>
 </div>
-<div class="mt-1 text-[11px] text-slate-500">Ces graphiques analysent les outils sélectionnés dans les activités. La liste de référence provient de « Informations et paramètres → 5. Outils et matériel ».</div>
+<div class="mt-1 text-[11px] text-slate-500">Disse diagrammer analyserer værktøjer valgt i aktiviteterne. Referencelisten stammer fra « Kursinformation og parametre → 5. Værktøjer og materialer ».</div>
 </div>
 </div>
 <div class="analysis-tab-pane is-active" data-analysis-pane="modalites" id="analysis-pane-modalites">
@@ -4691,7 +4691,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600" data-i18n="chart_learning_types">Types d'apprentissage</div>
-<div class="text-[11px] text-slate-500" data-i18n="chart_percent_duration">(% de durée)</div>
+<div class="text-[11px] text-slate-500" data-i18n="chart_percent_duration">(% af varighed)</div>
 </div>
 <div class="mt-2 flex gap-2 items-stretch">
 <div class="w-1/2">
@@ -4704,28 +4704,28 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="bg-white rounded-xl border border-slate-200 p-1.5">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600" data-i18n="chart_group_modes">Modes de groupes</div>
-<div class="text-[11px] text-slate-500" data-i18n="chart_percent_duration">(% de durée)</div>
+<div class="text-[11px] text-slate-500" data-i18n="chart_percent_duration">(% af varighed)</div>
 </div>
 <canvas height="80" id="chart-group-modes"></canvas>
 </div>
 <div class="bg-white rounded-xl border border-slate-200 p-1.5">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600" data-i18n="chart_place_modes">Modes de lieu</div>
-<div class="text-[11px] text-slate-500">(% de durée)</div>
+<div class="text-[11px] text-slate-500">(% af varighed)</div>
 </div>
 <canvas height="80" id="chart-place-modes"></canvas>
 </div>
 <div class="bg-white rounded-xl border border-slate-200 p-1.5">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600" data-i18n="chart_time_modes">Modes de temps</div>
-<div class="text-[11px] text-slate-500">(% de durée)</div>
+<div class="text-[11px] text-slate-500">(% af varighed)</div>
 </div>
 <canvas height="80" id="chart-time-modes"></canvas>
 </div>
 <div class="bg-white rounded-xl border border-slate-200 p-1.5">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600" data-i18n="chart_trainer_presence">Présence du formateur</div>
-<div class="text-[11px] text-slate-500">(% de durée)</div>
+<div class="text-[11px] text-slate-500">(% af varighed)</div>
 </div>
 <canvas height="80" id="chart-trainer-presence"></canvas>
 </div>
@@ -4742,10 +4742,10 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div id="panorama-view" class="hidden mt-2">
   <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
     <div class="flex flex-wrap items-center gap-2">
-      <div class="text-xs font-extrabold text-slate-500">Vue panoramique</div>
+      <div class="text-xs font-extrabold text-slate-500">Panoramavisning</div>
 
       <span class="text-xs text-slate-500 font-extrabold">État :</span>
-      <select id="panorama-status-filter" class="h-[26px] px-2 text-xs border border-slate-200 rounded-md bg-white text-slate-700 font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-200" title="Filtrer par état">
+      <select id="panorama-status-filter" class="h-[26px] px-2 text-xs border border-slate-200 rounded-md bg-white text-slate-700 font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-200" title="Filtrer efter status">
         <option value="all" data-i18n="opt_all_statuses">Tous</option>
         <option value="review" data-i18n="opt_status_review">À revoir</option>
         <option value="in_progress" data-i18n="opt_status_inprogress">En cours</option>
@@ -4798,12 +4798,12 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
       <thead class="sticky top-0 bg-slate-50 border-b border-slate-200">
         <tr class="text-slate-600">
           <th class="text-left font-extrabold px-2 py-1 pano-col-select">
-            <input id="panorama-select-all" type="checkbox" class="align-middle" title="Tout sélectionner (lignes visibles)"/>
+            <input id="panorama-select-all" type="checkbox" class="align-middle" title="Vælg alle (synlige rækker)"/>
           </th>
           <th class="text-left font-extrabold px-2 py-1 w-12 pano-sortable" data-sort-key="n"><span>#</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 min-w-[180px] pano-sortable" data-sort-key="module"><span>Module</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 min-w-[160px] pano-sortable" data-sort-key="moment"><span>Moment</span><span class="pano-sort-ind"></span></th>
-          <th class="text-left font-extrabold px-2 py-1 min-w-[160px] pano-sortable" data-sort-key="bloc"><span>Sous-moment</span><span class="pano-sort-ind"></span></th>
+          <th class="text-left font-extrabold px-2 py-1 min-w-[160px] pano-sortable" data-sort-key="bloc"><span>Undermomentent</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 min-w-[220px] pano-sortable" data-sort-key="activite"><span>Activité</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 pano-sortable pano-col-status" data-sort-key="status"><span>État</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 w-20 pano-sortable pano-col-duration" data-sort-key="duree"><span>Durée</span><span class="pano-sort-ind"></span></th>
@@ -4824,7 +4824,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 </div>
 <div class="hidden text-center py-12 bg-white rounded-xl border-2 border-dashed border-slate-300" id="empty-state">
 <h3 class="mt-1 text-base font-medium text-slate-900" data-i18n="empty_title">
-      Aucun module conçu
+      Ingen moduler designet
      </h3>
 <p class="mt-0.5 text-xs text-slate-500" data-i18n="empty_subtitle">
       Commencez par créer votre premier module.
@@ -4834,7 +4834,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
        add
       </span>
 <span data-i18n="btn_create_activity">
-       Créer un Module
+       Opret et modul
       </span>
 </button>
 </div>
@@ -4847,7 +4847,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
       add_circle
      </span>
 <span data-i18n="btn_new_activity">
-      Nouveau Module
+      Nyt modul
      </span>
 </button>
 </div>
@@ -4866,32 +4866,32 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <ol class="mt-2 space-y-2">
 <li>
 <div class="font-semibold text-slate-400">1. Éditeur et Hébergement</div>
-<div><span class="font-semibold">Éditeur :</span> L'application Concepteur pédagogique est éditée par François Jourde.</div>
+<div><span class="font-semibold">Udgiver:</span> Applikationen Læringsdesigner er udgivet af François Jourde.</div>
 <div><span class="font-semibold">Hébergement :</span> Ce site est hébergé par GitHub Inc. Adresse : 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.</div>
 </li>
 <li>
 <div class="font-semibold text-slate-400">2. Fonctionnement de l'application et Données personnelles</div>
 <div>Cette application a été conçue selon une approche « Privacy by design » (respect de la vie privée par défaut).</div>
-<div class="mt-1"><span class="font-semibold">Absence de collecte de données :</span> L'application fonctionne entièrement en mode « côté client » (client-side) sur votre navigateur web.</div>
+<div class="mt-1"><span class="font-semibold">Ingen dataindsamling:</span> Applikationen kører udelukkende i «klient-side» tilstand i din webbrowser.</div>
 <ul class="list-disc ml-5 mt-1 space-y-1">
-<li>Aucune donnée saisie ou manipulée dans l'application n'est transmise à l'éditeur.</li>
-<li>Aucune donnée n'est stockée sur un serveur distant (base de données cloud).</li>
+<li>Ingen data indtastet eller behandlet i applikationen sendes til udgiveren.</li>
+<li>Ingen data gemmes på en fjernserver (cloud-database).</li>
 </ul>
-<div class="mt-1">Toutes les informations restent strictement confinées à votre appareil (ordinateur ou smartphone).</div>
+<div class="mt-1">Al information forbliver strengt begrænset til din enhed (computer eller smartphone).</div>
 </li>
 <li>
 <div class="font-semibold text-slate-400">3. Utilisation du Stockage Local (Local Storage)</div>
-<div>Pour permettre le fonctionnement de l'application (ex : sauvegarder vos préférences ou votre avancement), nous utilisons la technologie du <span class="font-semibold">localStorage</span> ou <span class="font-semibold">sessionStorage</span> de votre navigateur.</div>
+<div>For at muliggøre applikationens funktionalitet (fx at gemme dine præferencer) bruger vi <span class="font-semibold">localStorage</span> ou <span class="font-semibold">sessionStorage</span> de votre navigateur.</div>
 <ul class="list-disc ml-5 mt-1 space-y-1">
 <li>Ces données sont stockées uniquement sur votre appareil.</li>
 <li>Elles ne sont accessibles par personne d'autre que vous.</li>
 <li>Ces mécanismes sont purement techniques et fonctionnels, ils sont donc exemptés de consentement préalable (pas de bandeau cookies nécessaire).</li>
 </ul>
-<div class="mt-1">Vous pouvez à tout moment supprimer ces données en vidant le cache de votre navigateur.</div>
+<div class="mt-1">Du kan til enhver tid slette disse data ved at rydde din browsers cache.</div>
 </li>
 <li>
 <div class="font-semibold text-slate-400">4. Données techniques (Logs serveur)</div>
-<div>Bien que l'éditeur ne collecte aucune donnée, l'infrastructure d'hébergement (GitHub Pages) peut collecter des données techniques standards lors de votre connexion (telles que votre adresse IP et le type de navigateur) dans des journaux de connexion (logs) à des fins de sécurité et de fiabilité du service.</div>
+<div>Selv om udgiveren ikke indsamler data, kan hostinginfrastrukturen (GitHub Pages) indsamle standard tekniske data ved din forbindelse (f.eks. IP-adresse og browsertype) i forbindelseslogge af sikkerhedsmæssige hensyn.</div>
 <div class="mt-1">L'éditeur de ce site n'a pas accès à ces données brutes. Pour plus d'informations, vous pouvez consulter la Déclaration de confidentialité de GitHub.</div>
 </li>
 <li>
@@ -4957,19 +4957,19 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="bg-white rounded-lg shadow-lg p-5 max-w-3xl w-full max-h-[90vh] flex flex-col">
 <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2" id="export-selection-modal-title">
 <span class="material-icons-round text-indigo-600">download</span>
-<span>Sélectionner les éléments à exporter</span>
+<span>Vælg elementer til eksport</span>
 </h3>
 <div class="text-xs text-slate-600 mb-3">
-Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments parents incluent automatiquement leurs enfants.
+Markér de elementer, du vil inkludere i eksporten. Forældrerelementer inkluderer automatisk deres underordnede elementer.
 </div>
 
 <!-- Selection toolbar -->
 <div class="flex gap-2 mb-3 pb-3 border-b border-slate-200">
 <button type="button" id="export-select-all-btn" class="px-3 py-1.5 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded text-xs font-medium transition-colors flex items-center gap-1">
 <span class="material-icons-round text-sm">check_box</span>
-<span>Tout sélectionner</span>
+<span>Vælg alle</span>
 </button>
-<button type="button" id="export-deselect-all-btn" class="px-3 py-1.5 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded text-xs font-medium transition-colors flex items-center gap-1">
+<button type="button" id="export-deselect-all-btn"class="px-3 py-1.5 bg-slate-100 text-slate-700 hover:bg-slate-200 rounded text-xs font-medium transition-colors flex items-center gap-1">
 <span class="material-icons-round text-sm">check_box_outline_blank</span>
 <span>Tout désélectionner</span>
 </button>
@@ -5030,7 +5030,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <!-- Action buttons -->
 <div class="flex justify-between items-center gap-3 mt-4">
 <div class="text-xs text-slate-600">
-<span id="export-selected-count">0</span> élément(s) sélectionné(s)
+<span id="export-selected-count">0</span> élément(s) valgt(e)
 </div>
 <div class="flex gap-2">
 <button class="px-4 py-2 bg-slate-100 text-slate-600 hover:bg-slate-200 rounded text-sm font-medium transition-colors" id="export-modal-cancel" type="button">Annuller</button>
@@ -5056,7 +5056,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
       <button class="p-1.5 rounded hover:bg-slate-200 text-slate-600"
               id="global-search-close-btn"
               type="button"
-              title="Fermer">
+              title="Luk">
         <span class="material-icons-round text-[18px]">close</span>
       </button>
     </div>
@@ -5086,7 +5086,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 
     <div class="max-h-[65vh] overflow-auto">
       <div class="divide-y divide-slate-100" id="global-search-results"></div>
-      <div class="hidden p-4 text-sm text-slate-500" id="global-search-empty">Aucun résultat.</div>
+      <div class="hidden p-4 text-sm text-slate-500" id="global-search-empty">Ingen resultater.</div>
     </div>
   </div>
 </div>
@@ -5105,7 +5105,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
       </div>
 <input type="time" class="module-start-time-input px-2 py-1 border border-slate-300 rounded focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none" data-action-input="update-times-cascade" title="Horaire de début du module"/>
 <div class="flex-1 w-full">
-<input class="activity-title text-base font-bold text-slate-800 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-indigo-500 outline-none w-full py-0.5 transition-colors" data-i18n-placeholder="ph_activity_title" data-action-input="update-stats-debounced" placeholder="Titre du module (ex: Module 1 : Introduction)" type="text"/>
+<input class="activity-title text-base font-bold text-slate-800 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-indigo-500 outline-none w-full py-0.5 transition-colors" data-i18n-placeholder="ph_activity_title" data-action-input="update-stats-debounced" placeholder="Modulets titel (fx Modul 1: Introduktion)" type="text"/>
 <div class="flex items-center gap-2 mt-0.5 pr-1">
 <div class="activity-type-bar flex-1 h-1.5 bg-slate-100 border border-slate-200 rounded-full overflow-hidden flex">
 </div>
@@ -5151,27 +5151,27 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <div class="ld-delta-bar" aria-hidden="true"><div class="ld-delta-axis"></div><div class="ld-delta-neg"></div><div class="ld-delta-pos"></div></div></div>
 </div>
 </div>
-<div class="activity-status-summary ld-status-summary ld-status-summary--module" title="Synthèse des états des activités du module"></div>
+<div class="activity-status-summary ld-status-summary ld-status-summary--module" title="Oversigt over aktivitetsstatus i modulet"></div>
 
 <button aria-pressed="false" class="text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="toggle-module-subblocks" title="Paramètres du module" type="button">
 <span class="material-icons-round text-lg">description</span>
 </button>
 <div class="h-8 w-px bg-slate-100 mx-1">
 </div>
-<button class="text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="toggle-module" data-i18n-title="title_toggle_panel" title="Afficher/Masquer le détail du module">
+<button class="text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="toggle-module" data-i18n-title="title_toggle_panel" title="Vis/skjul moduldetaljer">
 <span class="material-icons-round text-lg rotate-icon">
         expand_more
        </span>
 </button>
-<button class="text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="duplicate-module" data-i18n-title="title_duplicate_activity" title="Dupliquer ce module" type="button">
+<button class="text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="duplicate-module" data-i18n-title="title_duplicate_activity" title="Dupliker dette modul" type="button">
 <span class="material-icons-round text-lg">
         content_copy
        </span>
 </button>
-<button aria-pressed="false" class="text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="focus-module" data-i18n-title="title_focus_module" title="Mode focus" type="button">
+<button aria-pressed="false" class="text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="focus-module" data-i18n-title="title_focus_module" title="Fokusmodus" type="button">
 <span class="material-icons-round text-lg focus-toggle-icon">center_focus_strong</span>
 </button>
-<button class="text-slate-400 hover:text-red-500 p-1 transition-colors" data-action="delete-module" data-i18n-title="title_delete_activity" title="Supprimer ce module" type="button">
+<button class="text-slate-400 hover:text-red-500 p-1 transition-colors" data-action="delete-module" data-i18n-title="title_delete_activity" title="Slet dette modul" type="button">
 <span class="material-icons-round text-lg">
         delete_outline
        </span>
@@ -5193,7 +5193,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 
       <div class="p-3">
         <div class="compact-label" data-i18n="label_module_objectives">Objectif(s) du module</div>
-        <textarea class="activity-description w-full px-3 py-2 text-sm text-slate-700 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-slate-50 leading-relaxed" data-i18n-placeholder="ph_activity_desc" placeholder="Objectif(s) du module..." rows="4"></textarea>
+        <textarea class="activity-description w-full px-3 py-2 text-sm text-slate-700 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-slate-50 leading-relaxed" data-i18n-placeholder="ph_activity_desc" placeholder="Modulets mål..." rows="4"></textarea>
         <p class="text-[11px] text-slate-400 mt-1">Saisie manuelle : ce texte est exporté tel quel.</p>
 
         <div class="mt-3">
@@ -5239,35 +5239,35 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <select class="module-target-competences-transv-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
 </div>
 </div>
-<p class="text-[11px] text-slate-400 mt-1">Lecture seule : reflète les compétences sélectionnées dans les activités du module.</p>
+<p class="text-[11px] text-slate-400 mt-1">Skrivebeskyttet: afspejler valgte kompetencer i modulets aktiviteter.</p>
 <div class="mt-2 flex items-center justify-between gap-2 no-print">
-<div class="text-[10px] text-slate-400 italic">Si une compétence manque, ajoutez-la manuellement.</div>
-<button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="add-module-competence-manual" title="Ajouter une compétence dans les paramètres" type="button">
+<div class="text-[10px] text-slate-400 italic">Hvis en kompetence mangler, tilføj den manuelt.</div>
+<button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="add-module-competence-manual" title="Tilføj en kompetence i indstillingerne" type="button">
 <span class="material-icons-round text-[14px]">add</span>
-    Ajouter une compétence
+    Tilføj en kompetence
   </button>
 </div>
 </div>
 </details>
 
-        <details class="module-aims-summary border border-slate-200 rounded-lg bg-white" data-readonly="true">
+        <details class="module-aims-summaryborder border-slate-200 rounded-lg bg-white" data-readonly="true">
 <summary class="flex items-center gap-2 cursor-pointer select-none px-2 py-1.5 text-[11px] text-slate-600">
 <span class="material-icons-round text-[14px] text-slate-400">flag</span>
-<span class="font-semibold">Objectifs d'apprentissage du module (d'après les activités)</span>
+<span class="font-semibold">Læringsmål for modulet (baseret på aktiviteter)</span>
 <span class="ml-auto flex items-center gap-2 text-[10px] text-slate-400 font-normal">
-<span><span class="module-aims-count">0</span> sélectionné(s)</span>
+<span><span class="module-aims-count">0</span> valgt(e)</span>
 <span class="material-icons-round text-[16px]">expand_more</span>
 </span>
 </summary>
 <div class="px-2 pb-2 pt-1">
 <div class="module-aims-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[180px] overflow-auto text-[11px] space-y-1"></div>
 <select class="module-aims-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
-<p class="text-[11px] text-slate-400 mt-1">Lecture seule : reflète les objectifs sélectionnés dans les activités du module.</p>
+<p class="text-[11px] text-slate-400 mt-1">Skrivebeskyttet: afspejler valgte mål i modulets aktiviteter.</p>
 <div class="mt-2 flex items-center justify-between gap-2 no-print">
-<div class="text-[10px] text-slate-400 italic">Si un objectif manque, ajoutez-le manuellement.</div>
-<button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="add-module-aim-manual" title="Ajouter un objectif dans les paramètres" type="button">
+<div class="text-[10px] text-slate-400 italic">Mangler et mål, tilføj det manuelt.</div>
+<button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="add-module-aim-manual" title="Tilføj et mål i indstillingerne" type="button">
 <span class="material-icons-round text-[14px]">add</span>
-    Ajouter un objectif
+    Tilføj et mål
   </button>
 </div>
 <div class="mt-2 module-aims-chips flex flex-wrap gap-1"></div>
@@ -5277,21 +5277,21 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
         <details class="module-outcomes-summary border border-slate-200 rounded-lg bg-white" data-readonly="true">
 <summary class="flex items-center gap-2 cursor-pointer select-none px-2 py-1.5 text-[11px] text-slate-600">
 <span class="material-icons-round text-[14px] text-slate-400">assignment_turned_in</span>
-<span class="font-semibold">Résultats d'apprentissage du module (d'après les activités)</span>
+<span class="font-semibold">Læringsresultater for modulet (baseret på aktiviteter)</span>
 <span class="ml-auto flex items-center gap-2 text-[10px] text-slate-400 font-normal">
-<span><span class="module-outcomes-count">0</span> sélectionné(s)</span>
+<span><span class="module-outcomes-count">0</span> valgt(e)</span>
 <span class="material-icons-round text-[16px]">expand_more</span>
 </span>
 </summary>
 <div class="px-2 pb-2 pt-1">
 <div class="module-outcomes-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[180px] overflow-auto text-[11px] space-y-1"></div>
 <select class="module-outcomes-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
-<p class="text-[11px] text-slate-400 mt-1">Lecture seule : reflète les résultats sélectionnés dans les activités du module.</p>
+<p class="text-[11px] text-slate-400 mt-1">Skrivebeskyttet: afspejler valgte resultater i modulets aktiviteter.</p>
 <div class="mt-2 flex items-center justify-between gap-2 no-print">
-<div class="text-[10px] text-slate-400 italic">Si un résultat manque, ajoutez-le manuellement.</div>
-<button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="add-module-outcome-manual" title="Ajouter un résultat dans les paramètres" type="button">
+<div class="text-[10px] text-slate-400 italic">Mangler et resultat, tilføj det manuelt.</div>
+<button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="add-module-outcome-manual" title="Tilføj et resultat i indstillingerne" type="button">
 <span class="material-icons-round text-[14px]">add</span>
-    Ajouter un résultat
+    Tilføj et resultat
   </button>
 </div>
 <div class="mt-2 module-outcomes-chips flex flex-wrap gap-1"></div>
@@ -5316,9 +5316,9 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
         Ajouter Activité
        </span>
 </button>
-<button class="text-sm font-semibold text-slate-500 hover:text-indigo-700 px-3 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-moment" title="Ajouter un moment" type="button">
+<button class="text-sm font-semibold text-slate-500 hover:text-indigo-700 px-3 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-moment" title="Tilføj et moment" type="button">
 <span class="material-icons-round text-sm">add</span>
-<span>Ajouter un moment</span>
+<span>Tilføj et moment</span>
 </button>
 </div>
 </div>
@@ -5360,18 +5360,18 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <div class="ld-delta-bar" aria-hidden="true"><div class="ld-delta-axis"></div><div class="ld-delta-neg"></div><div class="ld-delta-pos"></div></div></div>
 </div>
 </div>
-<div class="moment-status-summary ld-status-summary ld-status-summary--moment" title="Synthèse des états des activités du moment"></div>
+<div class="moment-status-summary ld-status-summary ld-status-summary--moment" title="Oversigt over aktivitetsstatus i momentet"></div>
 
-<button class="no-print text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="select-all-moment" title="Tout sélectionner / désélectionner les activités de ce moment" type="button" aria-label="Tout sélectionner dans le moment">
+<button class="no-print text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="select-all-moment" title="Vælg / fravælg alle aktiviteter i dette moment" type="button" aria-label="Vælg alle i momentet">
   <span class="material-icons-round text-lg">done_all</span>
 </button>
-<button aria-expanded="false" class="no-print text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="toggle-moment-description" data-i18n-title="title_toggle_description" title="Afficher/Masquer la description" type="button"><span class="material-icons-round text-lg">description</span></button>
-<label class="ld-ignore-label" title="Ignorer ce moment (exclu des durées, graphiques et séquence)"><input type="checkbox" class="ld-ignore-toggle" data-ignore-scope="moment"/><span>Ign.</span></label>
+<button aria-expanded="false" class="no-print text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="toggle-moment-description" data-i18n-title="title_toggle_description" title="Vis/skjul beskrivelse" type="button"><span class="material-icons-round text-lg">description</span></button>
+<label class="ld-ignore-label" title="Ignorer dette moment (ekskluderet fra varigheder, grafer og sekvens)"><input type="checkbox" class="ld-ignore-toggle" data-ignore-scope="moment"/><span>Ign.</span></label>
 
-<button aria-expanded="true" class="no-print text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="toggle-moment" title="Replier / déplier ce moment" type="button">
+<button aria-expanded="true" class="no-print text-slate-400 hover:text-indigo-500 p-1 transition-colors" data-action="toggle-moment" title="Fold/udfolde dette moment" type="button">
 <span class="material-icons-round text-lg rotate-icon" style="transform: rotate(180deg);">expand_more</span>
 </button>
-<button class="no-print text-slate-400 hover:text-rose-600 transition-colors" data-action="delete-moment" title="Supprimer ce moment" type="button">
+<button class="no-print text-slate-400 hover:text-rose-600 transition-colors" data-action="delete-moment" title="Slet dette moment" type="button">
 <span class="material-icons-round text-lg">delete_outline</span>
 </button>
 </div>
@@ -5379,7 +5379,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <div class="moment-body px-3 pb-3">
 <div class="moment-description-wrap hidden mt-2">
 <div class="compact-label" data-i18n="label_description_compact">Description</div>
-<textarea class="moment-description w-full min-h-[64px] resize-y px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Description du moment..." data-i18n-placeholder="ph_moment_description"></textarea>
+<textarea class="moment-description w-full min-h-[64px] resize-y px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Beskrivelse af momentet..." data-i18n-placeholder="ph_moment_description"></textarea>
 </div>
 
 <div class="submoments-container space-y-2 mt-2"></div>
@@ -5389,13 +5389,13 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 </div>
 
 <div class="mt-1 pt-1 submoments-controls flex justify-center gap-2 no-print border-t border-slate-100">
-  <button class="no-print text-xs font-semibold text-slate-500 hover:text-indigo-700 px-2 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-step" data-i18n-title="title_add_step" title="Ajouter une activité" type="button">
+  <button class="no-print text-xs font-semibold text-slate-500 hover:text-indigo-700 px-2 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-step" data-i18n-title="title_add_step" title="Tilføj en aktivitet" type="button">
     <span class="material-icons-round text-sm">add</span>
-    <span data-i18n="btn_add_step">Ajouter Activité</span>
+    <span data-i18n="btn_add_step">Tilføj Aktivitet</span>
   </button>
-  <button class="no-print text-xs font-semibold text-slate-500 hover:text-indigo-700 px-2 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-submoment" title="Ajouter un sous-moment" type="button">
+  <button class="no-print text-xs font-semibold text-slate-500 hover:text-indigo-700 px-2 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-submoment" title="Tilføj et undermoment" type="button">
     <span class="material-icons-round text-sm">add</span>
-    <span>Ajouter un sous-moment</span>
+    <span>Tilføj et undermoment</span>
   </button>
 </div>
 
@@ -5437,21 +5437,21 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
             <div class="ld-delta-bar" aria-hidden="true"><div class="ld-delta-axis"></div><div class="ld-delta-neg"></div><div class="ld-delta-pos"></div></div></div>
           </div>
         </div>
-        <div class="submoment-status-summary ld-status-summary" title="Synthèse des états des activités du sous-moment"></div>
+        <div class="submoment-status-summary ld-status-summary" title="Oversigt over aktivitetsstatus i undermomentet"></div>
       </div>
       <div class="flex items-center gap-1 ml-2">
         <button aria-expanded="false" class="no-print text-slate-400 hover:text-indigo-700 transition-colors" data-action="toggle-submoment-notes" title="Notes du sous-moment" type="button">
           <span class="material-icons-round text-sm">description</span>
         </button>
-        <button class="no-print text-slate-400 hover:text-indigo-700 transition-colors" data-action="add-step-submoment" title="Ajouter une activité au sous-moment" type="button">
+        <button class="no-print text-slate-400 hover:text-indigo-700 transition-colors" data-action="add-step-submoment" title="Tilføj en aktivitet til undermomentet" type="button">
           <span class="material-icons-round text-sm">add</span>
         </button>
-<label class="ld-ignore-label" title="Ignorer ce sous-moment (exclu des durées, graphiques et séquence)"><input type="checkbox" class="ld-ignore-toggle" data-ignore-scope="submoment"/><span>Ign.</span></label>
+<label class="ld-ignore-label" title="Ignorer dette undermoment (ekskluderet fra varigheder, grafer og sekvens)"><input type="checkbox" class="ld-ignore-toggle" data-ignore-scope="submoment"/><span>Ign.</span></label>
 
-        <button aria-expanded="true" class="no-print text-slate-400 hover:text-indigo-700 transition-colors" data-action="toggle-submoment" title="Replier / déplier ce sous-moment" type="button">
+        <button aria-expanded="true" class="no-print text-slate-400 hover:text-indigo-700 transition-colors" data-action="toggle-submoment" title="Fold/udfolde dette undermoment" type="button">
           <span class="material-icons-round text-sm rotate-icon" style="transform: rotate(180deg);">expand_more</span>
         </button>
-        <button class="no-print text-slate-400 hover:text-rose-600 transition-colors" data-action="delete-submoment" title="Supprimer ce sous-moment" type="button">
+        <button class="no-print text-slate-400 hover:text-rose-600 transition-colors" data-action="delete-submoment" title="Slet dette undermoment" type="button">
           <span class="material-icons-round text-sm">delete_outline</span>
         </button>
       </div>
@@ -5459,7 +5459,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
     <div class="submoment-body px-3 py-2">
       <div class="submoment-notes-wrap hidden mb-2">
         <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Notes</label>
-        <textarea class="submoment-notes w-full mt-1 px-2 py-1 text-xs text-slate-700 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-white" placeholder="Notes du sous-moment..."></textarea>
+        <textarea class="submoment-notes w-full mt-1 px-2 py-1 text-xs text-slate-700 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-white" placeholder="Undermomenter noter..."></textarea>
       </div>
       <div class="submoment-steps steps-container space-y-2 min-h-[20px]"></div>
     </div>
@@ -5475,8 +5475,8 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
        drag_indicator
       </span>
 </div>
-<label class="no-print flex items-center justify-center mr-1" title="Sélectionner l'activité (actions groupées)">
-  <input type="checkbox" class="step-batch-select w-4 h-4 accent-indigo-600" aria-label="Sélectionner l'activité"/>
+<label class="no-print flex items-center justify-center mr-1" title="Vælg aktivitet (gruppehandlinger)">
+  <input type="checkbox" class="step-batch-select w-4 h-4 accent-indigo-600" aria-label="Vælg aktivitet"/>
 </label>
 <div class="h-5 w-5 rounded-full bg-slate-100 flex items-center justify-center font-semibold text-slate-600 step-index shrink-0 text-[10px]">1</div>
 <span class="material-icons-round text-amber-500 text-[18px] step-coherence-indicator hidden no-print" title="">warning_amber</span>
@@ -5540,18 +5540,18 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 </div>
 <div class="flex items-center gap-0.5 no-print">
 
-<label class="ld-ignore-label" title="Ignorer cette activité (exclue des durées, graphiques et séquence)"><input type="checkbox" class="ld-ignore-toggle" data-ignore-scope="step"/><span>Ign.</span></label>
-<button class="text-slate-400 hover:text-indigo-500 p-0.5" data-action="toggle-step" data-i18n-title="title_toggle_panel" title="Afficher/Masquer les paramètres">
+<label class="ld-ignore-label" title="Ignorer denne aktivitet (ekskluderet fra varigheder, grafer og sekvens)"><input type="checkbox" class="ld-ignore-toggle" data-ignore-scope="step"/><span>Ign.</span></label>
+<button class="text-slate-400 hover:text-indigo-500 p-0.5" data-action="toggle-step" data-i18n-title="title_toggle_panel" title="Vis/skjul parametre">
 <span class="material-icons-round text-base">
         description
        </span>
 </button>
-<button class="text-slate-300 hover:text-indigo-500 p-0.5" data-action="duplicate-step" data-i18n-title="title_duplicate_step" title="Dupliquer cette activité" type="button">
+<button class="text-slate-300 hover:text-indigo-500 p-0.5" data-action="duplicate-step" data-i18n-title="title_duplicate_step" title="Dupliker denne aktivitet" type="button">
 <span class="material-icons-round text-base">
         content_copy
        </span>
 </button>
-<button class="text-slate-300 hover:text-red-400 p-0.5" data-action="delete-step" data-i18n-title="title_delete_step" title="Supprimer cette activité" type="button">
+<button class="text-slate-300 hover:text-red-400 p-0.5" data-action="delete-step" data-i18n-title="title_delete_step" title="Slet denne aktivitet" type="button">
 <span class="material-icons-round text-base">
         delete_outline
        </span>
@@ -5696,7 +5696,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span class="material-icons-round text-[10px] text-slate-400">flag</span>
           <span data-i18n="label_step_description">Description de l'activité</span>
         </div>
-        <textarea class="step-input-description w-full px-2 py-1.5 text-[12px] border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 bg-slate-50 text-slate-700" data-i18n-placeholder="ph_step_description" placeholder="Décrivez l'activité..." rows="2"></textarea>
+        <textarea class="step-input-description w-full px-2 py-1.5 text-[12px] border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 bg-slate-50 text-slate-700" data-i18n-placeholder="ph_step_description" placeholder="Beskriv aktiviteten..." rows="2"></textarea>
       </div>
     </div>
 
@@ -5707,7 +5707,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span class="material-icons-round text-[10px] text-slate-400">slideshow</span>
           <span data-i18n="label_step_presentation">Présentation (diaporama)</span>
         </div>
-        <textarea class="step-input-presentation w-full px-2 py-1.5 text-[12px] border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 bg-slate-50 text-slate-700" data-i18n-placeholder="ph_step_presentation" placeholder="Éléments à afficher dans le diaporama..." rows="6"></textarea>
+        <textarea class="step-input-presentation w-full px-2 py-1.5 text-[12px] border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 bg-slate-50 text-slate-700" data-i18n-placeholder="ph_step_presentation" placeholder="Elementer til diasshowet..." rows="6"></textarea>
       </div>
     </div>
 
@@ -5723,7 +5723,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           </span>
         </summary>
         <div class="px-2 pb-2 pt-1">
-          <textarea class="step-input-tasks w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y leading-relaxed" data-i18n-placeholder="ph_tasks" placeholder="Décrivez les étapes, instructions et tâches..." rows="2"></textarea>
+          <textarea class="step-input-tasks w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y leading-relaxed" data-i18n-placeholder="ph_tasks" placeholder="Beskriv trin, instruktioner og opgaver..." rows="2"></textarea>
         </div>
       </details>
 
@@ -5737,7 +5737,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           </span>
         </summary>
         <div class="px-2 pb-2 pt-1">
-          <textarea class="step-input-trainer-tasks w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y leading-relaxed bg-slate-50" data-i18n-placeholder="ph_trainer_tasks" placeholder="Décrivez les actions attendues du formateur..." rows="2"></textarea>
+          <textarea class="step-input-trainer-tasks w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y leading-relaxed bg-slate-50" data-i18n-placeholder="ph_trainer_tasks" placeholder="Beskriv underviserens forventede handlinger..." rows="2"></textarea>
         </div>
       </details>
     </div>
@@ -5754,7 +5754,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           </span>
         </summary>
         <div class="px-2 pb-2 pt-1">
-          <textarea class="step-input-eval-followup w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y leading-relaxed bg-white" data-i18n-placeholder="ph_eval_followup" placeholder="Critères d'évaluation, grilles, modalités de suivi..." rows="4"></textarea>
+          <textarea class="step-input-eval-followup w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y leading-relaxed bg-white" data-i18n-placeholder="ph_eval_followup" placeholder="Evalueringskriterier, skemaer, opfølgningsmodaliteter..." rows="4"></textarea>
         </div>
       </details>
     </div>
@@ -5786,10 +5786,10 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           </div>
           <p class="text-[11px] text-slate-400 mt-1">Sélection : cochez les compétences concernées</p>
           <div class="mt-2 flex items-center justify-between gap-2 no-print">
-            <div class="text-[10px] text-slate-400 italic">Si une compétence/objectif manque, ajoutez-la manuellement.</div>
-            <button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="open-aims-from-step" title="Ajouter une compétence dans les paramètres" type="button">
+            <div class="text-[10px] text-slate-400 italic">Mangler en kompetence/et mål, tilføj dem manuelt.</div>
+            <button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="open-aims-from-step" title="Tilføj en kompetence i indstillingerne" type="button">
               <span class="material-icons-round text-[14px]">add</span>
-              Ajouter une compétence
+              Tilføj en kompetence
             </button>
           </div>
         </div>
@@ -5808,12 +5808,12 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
         <div class="px-2 pb-2 pt-1">
           <div class="step-aims-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[140px] overflow-auto text-[11px] space-y-1"></div>
           <select class="step-aims-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
-          <p class="text-[11px] text-slate-400 mt-1">Sélection : cochez les objectifs concernés</p>
+          <p class="text-[11px] text-slate-400 mt-1">Vælg: markér de relevante mål</p>
           <div class="mt-2 flex items-center justify-between gap-2 no-print">
-            <div class="text-[10px] text-slate-400 italic">Si un objectif manque, ajoutez-le manuellement.</div>
-            <button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="open-aims-from-step" title="Ajouter un objectif dans les paramètres" type="button">
+            <div class="text-[10px] text-slate-400 italic">Mangler et mål, tilføj det manuelt.</div>
+            <button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="open-aims-from-step" title="Tilføj et mål i indstillingerne" type="button">
               <span class="material-icons-round text-[14px]">add</span>
-              Ajouter un objectif
+              Tilføj et mål
             </button>
           </div>
         </div>
@@ -5822,7 +5822,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
       <details class="step-right-section border border-slate-200 rounded-lg bg-white">
         <summary class="compact-label flex items-center gap-1 cursor-pointer select-none px-2 py-1.5">
           <span class="material-icons-round text-[10px] text-slate-400">assignment_turned_in</span>
-          <span>Résultats d'apprentissage ciblés</span>
+          <span>Læringsresultater</span>
           <span class="step-outcomes-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
             <span>Vis</span>
@@ -5832,12 +5832,12 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
         <div class="px-2 pb-2 pt-1">
           <div class="step-outcomes-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[140px] overflow-auto text-[11px] space-y-1"></div>
           <select class="step-outcomes-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
-          <p class="text-[11px] text-slate-400 mt-1">Sélection : cochez les résultats concernés</p>
+          <p class="text-[11px] text-slate-400 mt-1">Vælg: markér de relevante resultater</p>
           <div class="mt-2 flex items-center justify-between gap-2 no-print">
-            <div class="text-[10px] text-slate-400 italic">Si un résultat manque, ajoutez-le manuellement.</div>
-            <button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="open-outcomes-from-step" title="Ajouter un résultat dans les paramètres" type="button">
+            <div class="text-[10px] text-slate-400 italic">Mangler et resultat, tilføj det manuelt.</div>
+            <button class="text-[10px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-1 rounded hover:bg-indigo-100 transition-colors flex items-center gap-1" data-action="open-outcomes-from-step" title="Tilføj et resultat i indstillingerne" type="button">
               <span class="material-icons-round text-[14px]">add</span>
-              Ajouter un résultat
+              Tilføj et resultat
             </button>
           </div>
         </div>
@@ -5902,7 +5902,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           </span>
         </summary>
         <div class="px-2 pb-2 pt-1">
-          <textarea class="step-input-notes w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-slate-50 text-slate-600" data-i18n-placeholder="ph_notes" placeholder="Notes formateur, ressources ou liens..." rows="2"></textarea>
+          <textarea class="step-input-notes w-full px-2 py-1.5 text-xs border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-slate-50 text-slate-600" data-i18n-placeholder="ph_notes" placeholder="Undervisernoter, ressourcer eller links..." rows="2"></textarea>
         </div>
       </details>
 
@@ -5914,7 +5914,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
       <button type="button"
               class="step-todo-add mt-1 text-[10px] text-slate-400 hover:text-indigo-600 flex items-center gap-1 transition-colors">
         <span class="material-icons-round text-xs">add</span>
-        <span>Ajouter un todo</span>
+        <span>Tilføj todo</span>
       </button>
     </div>
   </div>
@@ -6602,14 +6602,14 @@ function __ldUpdateViewLevelMenuUI(level) {
     
     // Update the label text based on the current level
     const levelLabels = {
-      'activities': 'Activités',
-      'submoments': 'Sous-moments',
-      'moments': 'Moments',
-      'modules': 'Modules',
+      'activities': 'Aktiviteter',
+      'submoments': 'Undermomenter',
+      'moments': 'Momenter',
+      'modules': 'Moduler',
       'panorama': 'Panorama'
     };
     
-    currentLabel.textContent = levelLabels[normalizedLevel] || 'Activités';
+    currentLabel.textContent = levelLabels[normalizedLevel] || 'Aktiviteter';
     
     // Update check marks in the menu
     const allOptions = document.querySelectorAll('.ld-view-level-option');
@@ -8217,7 +8217,7 @@ function _readTextFile(file, cb) {
                     localStorage.removeItem(config.translationsKey);
                 } catch (e) { __ldSilentErr(e); }
                 mgr.refresh();
-                mgr.updateStatus('Aucune taxonomie chargée');
+                mgr.updateStatus('Ingen taksonomi indlæst');
             };
 
             mgr.apply = function(taxonomy, translations) {
@@ -8271,7 +8271,7 @@ function _readTextFile(file, cb) {
             catDatalistId: 'competences-cat-datalist',
             subcatDatalistId: 'competences-subcat-datalist',
             catInputId: 'new-competence-cat-input',
-            label: 'compétences (disciplinaires)',
+            label: 'kompetencer (disciplinære)',
             templateFilename: 'modele_taxonomie_competences.csv',
             templateRows: ['categorie;sous_categorie', 'Domaine;Sous-domaine', 'Domaine;Niveau'],
             getTaxonomy:     () => ACTIVE_COMP_SUBJ_TAXONOMY,
@@ -8296,7 +8296,7 @@ function _readTextFile(file, cb) {
             catDatalistId: 'competences-trans-cat-datalist',
             subcatDatalistId: 'competences-trans-subcat-datalist',
             catInputId: 'new-competence-trans-cat-input',
-            label: 'compétences transversales',
+            label: 'tværgående kompetencer',
             templateFilename: 'modele_taxonomie_comp_transversales.csv',
             templateRows: ['categorie;sous_categorie', 'Domaine;Sous-domaine', 'Domaine;Niveau'],
             getTaxonomy:     () => ACTIVE_COMP_TRANS_TAXONOMY,
@@ -9195,7 +9195,7 @@ function showTooltip(e, content, isHtml = false) {
                 if (!stored) {
                     ACTIVE_TAXONOMY = JSON.parse(JSON.stringify(DEFAULT_TAXONOMY));
                     ACTIVE_TAXONOMY_TRANSLATIONS = {};
-                    updateTaxonomyStatus('Aucune taxonomie chargée');
+                    updateTaxonomyStatus('Ingen taksonomi indlæst');
                     return;
                 }
                 const tax = JSON.parse(stored);
@@ -9257,7 +9257,7 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
             }
 
             if (Object.keys(taxonomy).length === 0) {
-                throw new Error('Aucune donnée valide trouvée dans le fichier CSV.');
+                throw new Error('Ingen gyldige data fundet i CSV-filen.');
             }
 
             return { taxonomy, translations };
@@ -9288,7 +9288,7 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
             } catch (e) {}
 
             refreshAllTaxonomySelectors();
-            updateTaxonomyStatus('Aucune taxonomie chargée');
+            updateTaxonomyStatus('Ingen taksonomi indlæst');
         }
 
         /**
@@ -9431,7 +9431,7 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
             fr: {
                 app_title: "Concepteur Pédagogique",
                 app_subtitle: "Design Pédagogique & Analytique",
-                btn_new_activity: "Nouveau Module",
+                btn_new_activity: "Nyt modul",
                 btn_export_md: "Exporter pour IA/RAG",
                 btn_print: "Imprimer / PDF",
                 btn_save: "Enregistrer",
@@ -9464,7 +9464,7 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
 btn_download_report: "Télécharger rapport",
 btn_recover_text: "Récupérer version texte",
 btn_close: "Fermer",
-import_recovery_unavailable: "Aucune donnée exploitable pour la récupération.",
+import_recovery_unavailable: "Ingen brugbare data til gendannelse.",
 import_recovery_failed: "La récupération a échoué.",
 import_recovery_default_title: "Conception pédagogique (récupération)",
 import_recovery_disclaimer: "Récupération automatique depuis un fichier JSON (import échoué). À relire et ajuster si nécessaire.",
@@ -9473,9 +9473,9 @@ import_recovery_description: "Description",
 import_recovery_aims: "Objectifs",
 import_recovery_outcomes: "Résultats d’apprentissage",
 import_recovery_structure: "Structure",
-import_recovery_no_modules: "Aucun module détecté dans ce fichier.",
+import_recovery_no_modules: "Ingen moduler registreret i denne fil.",
 import_recovery_module: "Module",
-import_recovery_no_steps: "Aucune activité détectée dans ce module.",
+import_recovery_no_steps: "Ingen aktiviteter registreret i dette modul.",
 import_recovery_activities: "Activités",
 import_recovery_activity: "Activité",
 import_recovery_type: "Type",
@@ -9511,9 +9511,9 @@ btn_export_dropdown: "Exporter...",
                 label_timeline_details: "Détails",
                 label_timeline_structure_planned: "Modules prévus",
                 label_timeline_pedagogy: "Types d'apprentissage",
-                empty_title: "Aucun module conçu",
+                empty_title: "Ingen moduler designet",
                 empty_subtitle: "Commencez par créer votre premier module.",
-                btn_create_activity: "Créer un Module",
+                btn_create_activity: "Opret et modul",
                 btn_add_step: "Ajouter Activité",
                 ph_activity_title: "Titre du module (ex: Module 1 : Introduction)",
                 ph_activity_desc: "Objectif(s) du module...",
@@ -9580,7 +9580,7 @@ btn_export_dropdown: "Exporter...",
                 panel_timelines_title: "Visualisations des séquences",
                 panel_analysis_charts: "Graphiques d'analyse des modalités",
                 chart_learning_types: "Types d'apprentissage",
-                chart_percent_duration: "(% de durée)",
+                chart_percent_duration: "(% af varighed)",
                 chart_trainer_presence: "Présence du formateur",
                 chart_place_modes: "Modes de lieu",
                 chart_time_modes: "Modes de temps",
@@ -9633,7 +9633,7 @@ label_learning_time: "Temps d'Apprentissage (Cible)",
                 opt_mode_classroom: "Présentiel (sur site)",
                 opt_mode_location: "Basé sur le lieu",
                 opt_mode_other: "Autre",
-                label_aims: "Objectifs d'apprentissage (ce qu'on va enseigner)",
+                label_aims: "Læringsmål (hvad vi skal undervise i)",
                 ph_aims: "Entrez les objectifs...",
                 label_outcomes_text: "Résultats d'apprentissage (ce que les apprenants sauront faire)",
                 ph_outcomes_text: "Entrez les résultats d'apprentissage...",
@@ -9924,7 +9924,7 @@ label_search: "Rechercher",
                 opt_chart_style_light: "Clair",
                 opt_chart_style_std: "STD",
                 opt_chart_style_transparent: "Transparent",
-                opt_goto: "Aller à…",
+                opt_goto: "Gå til…",
                 opt_status_completed: "Finalisé",
                 opt_status_inprogress: "En cours",
                 opt_status_review: "À revoir",
@@ -11463,7 +11463,7 @@ function setTargetDurationsHidden(hidden) {
     if (icon) icon.innerText = isHidden ? 'visibility_off' : 'visibility';
 
     if (btn) {
-        btn.title = isHidden ? 'Afficher les durées cibles' : 'Masquer les durées cibles';
+        btn.title = isHidden ? 'Vis målvarigheder' : 'Skjul målvarigheder';
         btn.setAttribute('aria-label', btn.title);
     }
 }
@@ -11745,7 +11745,7 @@ function __ldRefreshTodosDrawer() {
     });
 
     if (!body.children.length) {
-        body.innerHTML = '<div class="ld-todos-drawer-empty">Aucun todo pour l\'instant</div>';
+        body.innerHTML = '<div class="ld-todos-drawer-empty">Ingen todos endnu</div>';
     }
     __ldUpdateTodosDrawerPending(totalPending);
     __ldUpdateTodoToggleBtn(totalPending);
@@ -11830,7 +11830,7 @@ const SIMPLE_MODE_ICONS = {
         async: { icon: 'update', label: 'Asynchrone', color: 'text-gray-500' }
     },
     evaluation: {
-        Aucune: { icon: 'radio_button_unchecked', label: 'Aucune évaluation', color: 'text-gray-400' },
+        Aucune: { icon: 'radio_button_unchecked', label: 'Ingen evaluering', color: 'text-gray-400' },
         Diagnostique: { icon: 'search', label: 'Diagnostique', color: 'text-gray-500' },
         Formative: { icon: 'school', label: 'Formative', color: 'text-gray-500' },
         'Certificative/Sommative': { icon: 'verified', label: 'Certificative', color: 'text-gray-500' }
@@ -12976,7 +12976,7 @@ function updateOutcomeBloom(levelSelect) {
             if (!toRender.length) {
                 const div = document.createElement('div');
                 div.className = 'text-slate-400 italic';
-                div.textContent = emptyText || (selectedOnly ? 'Aucune compétence sélectionnée.' : 'Aucune compétence disponible.');
+                div.textContent = emptyText || (selectedOnly ? 'Ingen kompetencer valgt.' : 'Ingen kompetencer tilgængelige.');
                 box.appendChild(div);
                 return;
             }
@@ -13067,7 +13067,7 @@ function updateOutcomeBloom(levelSelect) {
                 }
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucune compétence définie (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen kompetencer defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
@@ -13142,7 +13142,7 @@ function updateOutcomeBloom(levelSelect) {
                 }
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucune compétence définie (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen kompetencer defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
@@ -13219,7 +13219,7 @@ function updateOutcomeBloom(levelSelect) {
             if (!toRender.length) {
                 const div = document.createElement('div');
                 div.className = 'text-slate-400 italic';
-                div.textContent = emptyText || (selectedOnly ? 'Aucun élément sélectionné.' : 'Aucun élément disponible.');
+                div.textContent = emptyText || (selectedOnly ? 'Ingen elementer valgt.' : 'Ingen elementer tilgængelige.');
                 box.appendChild(div);
                 return;
             }
@@ -13291,11 +13291,11 @@ function updateOutcomeBloom(levelSelect) {
                 });
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucun objectif défini (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen mål defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
-                try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-aims-checkboxes', 'step-aim-cb', 'Aucun objectif disponible.'); } catch(err){ __ldSilentErr(err); }
+                try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-aims-checkboxes', 'step-aim-cb', 'Ingen mål tilgængelige.'); } catch(err){ __ldSilentErr(err); }
                 return;
             }
 
@@ -13325,7 +13325,7 @@ function updateOutcomeBloom(levelSelect) {
                 sel.appendChild(opt);
             });
 
-            try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-aims-checkboxes', 'step-aim-cb', 'Aucun objectif disponible.'); } catch(err){ __ldSilentErr(err); }
+            try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-aims-checkboxes', 'step-aim-cb', 'Ingen mål tilgængelige.'); } catch(err){ __ldSilentErr(err); }
         }
 
         function populateStepOutcomesSelect(stepEl, selected = null) {
@@ -13348,11 +13348,11 @@ function updateOutcomeBloom(levelSelect) {
                 });
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucun résultat défini (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen resultater defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
-                try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-outcomes-checkboxes', 'step-outcome-cb', 'Aucun résultat disponible.'); } catch(err){ __ldSilentErr(err); }
+                try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-outcomes-checkboxes', 'step-outcome-cb', 'Ingen resultater tilgængelige.'); } catch(err){ __ldSilentErr(err); }
                 return;
             }
 
@@ -13382,7 +13382,7 @@ function updateOutcomeBloom(levelSelect) {
                 sel.appendChild(opt);
             });
 
-            try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-outcomes-checkboxes', 'step-outcome-cb', 'Aucun résultat disponible.'); } catch(err){ __ldSilentErr(err); }
+            try { _renderStepTextCheckboxesFromSelect(stepEl, sel, '.step-outcomes-checkboxes', 'step-outcome-cb', 'Ingen resultater tilgængelige.'); } catch(err){ __ldSilentErr(err); }
         }
 
         function getSelectedStepAims(stepEl) {
@@ -13454,11 +13454,11 @@ function updateOutcomeBloom(levelSelect) {
                 });
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = "Aucun outil/matériel défini (ajoutez-en dans les paramètres)";
+                opt.textContent = "Ingen værktøjer/materialer defineret (tilføj dem i indstillingerne)";
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
-                try { _renderStepToolsMaterialsCheckboxesWithNotes(stepEl, sel, '.step-tools-materials-checkboxes', 'step-toolmat-cb', "Aucun outil/matériel disponible."); } catch(err){ __ldSilentErr(err); }
+                try { _renderStepToolsMaterialsCheckboxesWithNotes(stepEl, sel, '.step-tools-materials-checkboxes', 'step-toolmat-cb', "Ingen værktøjer/materialer tilgængelige."); } catch(err){ __ldSilentErr(err); }
                 try { __initStepToolsSelectedOnlyToggle(stepEl); applyStepToolsSelectedOnly(stepEl); updateStepHeaderChips(stepEl); } catch(err){ __ldSilentErr(err); }
                 return;
             }
@@ -13489,7 +13489,7 @@ function updateOutcomeBloom(levelSelect) {
                 sel.appendChild(opt);
             });
 
-            try { _renderStepToolsMaterialsCheckboxesWithNotes(stepEl, sel, '.step-tools-materials-checkboxes', 'step-toolmat-cb', "Aucun outil/matériel disponible."); } catch(err){ __ldSilentErr(err); }
+            try { _renderStepToolsMaterialsCheckboxesWithNotes(stepEl, sel, '.step-tools-materials-checkboxes', 'step-toolmat-cb', "Ingen værktøjer/materialer tilgængelige."); } catch(err){ __ldSilentErr(err); }
                 try { __initStepToolsSelectedOnlyToggle(stepEl); applyStepToolsSelectedOnly(stepEl); updateStepHeaderChips(stepEl); } catch(err){ __ldSilentErr(err); }
         }
 
@@ -13671,7 +13671,7 @@ function updateOutcomeBloom(levelSelect) {
             if (!usable.length) {
                 const div = document.createElement('div');
                 div.className = 'text-slate-400 italic';
-                div.textContent = emptyText || 'Aucun outil/matériel disponible.';
+                div.textContent = emptyText || 'Ingen værktøjer/materialer tilgængelige.';
                 box.appendChild(div);
                 return;
             }
@@ -13771,11 +13771,11 @@ function refreshAllStepOutcomesOptions() {
                 });
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucun objectif défini (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen mål defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
-                try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-aims-checkboxes', 'module-aim-cb', 'Aucun objectif sélectionné.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+                try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-aims-checkboxes', 'module-aim-cb', 'Ingen mål valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
                 return;
             }
 
@@ -13804,7 +13804,7 @@ function refreshAllStepOutcomesOptions() {
                 sel.appendChild(opt);
             });
 
-            try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-aims-checkboxes', 'module-aim-cb', 'Aucun objectif sélectionné.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+            try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-aims-checkboxes', 'module-aim-cb', 'Ingen mål valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
         }
 
         function populateModuleOutcomesSelect(moduleEl, selected = null) {
@@ -13830,11 +13830,11 @@ function refreshAllStepOutcomesOptions() {
                 });
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucun résultat défini (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen resultater defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
-                try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-outcomes-checkboxes', 'module-outcome-cb', 'Aucun résultat sélectionné.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+                try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-outcomes-checkboxes', 'module-outcome-cb', 'Ingen resultater valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
                 return;
             }
 
@@ -13863,7 +13863,7 @@ function refreshAllStepOutcomesOptions() {
                 sel.appendChild(opt);
             });
 
-            try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-outcomes-checkboxes', 'module-outcome-cb', 'Aucun résultat sélectionné.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+            try { _renderStepTextCheckboxesFromSelect(moduleEl, sel, '.module-outcomes-checkboxes', 'module-outcome-cb', 'Ingen resultater valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
         }
 
         
@@ -14307,11 +14307,11 @@ obs3.observe(alist, { childList: true, subtree: true });
                 }
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucune compétence définie (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen kompetencer defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
-                try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-sujet-checkboxes', 'module-competence-cb-sujet', 'Aucune compétence sélectionnée.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+                try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-sujet-checkboxes', 'module-competence-cb-sujet', 'Ingen kompetencer valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
                 updateModuleTargetCompetencesSummary(moduleEl);
                 return;
             }
@@ -14338,7 +14338,7 @@ obs3.observe(alist, { childList: true, subtree: true });
                 sel.appendChild(opt);
             });
 
-            try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-sujet-checkboxes', 'module-competence-cb-sujet', 'Aucune compétence sélectionnée.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+            try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-sujet-checkboxes', 'module-competence-cb-sujet', 'Ingen kompetencer valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
             updateModuleTargetCompetencesSummary(moduleEl);
         }
 
@@ -14364,11 +14364,11 @@ obs3.observe(alist, { childList: true, subtree: true });
                 }
                 const opt = document.createElement('option');
                 opt.value = '';
-                opt.textContent = 'Aucune compétence définie (ajoutez-en dans les paramètres)';
+                opt.textContent = 'Ingen kompetencer defineret (tilføj dem i indstillingerne)';
                 opt.disabled = true;
                 if (!currentSelected || !currentSelected.length) opt.selected = true;
                 sel.appendChild(opt);
-                try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-transv-checkboxes', 'module-competence-cb-transversal', 'Aucune compétence sélectionnée.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+                try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-transv-checkboxes', 'module-competence-cb-transversal', 'Ingen kompetencer valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
                 updateModuleTargetCompetencesSummary(moduleEl);
                 return;
             }
@@ -14395,7 +14395,7 @@ obs3.observe(alist, { childList: true, subtree: true });
                 sel.appendChild(opt);
             });
 
-            try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-transv-checkboxes', 'module-competence-cb-transversal', 'Aucune compétence sélectionnée.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
+            try { _renderStepCompetenceCheckboxesFromSelect(moduleEl, sel, '.module-target-competences-transv-checkboxes', 'module-competence-cb-transversal', 'Ingen kompetencer valgt.', { selectedOnly: true, disabled: true }); } catch(err){ __ldSilentErr(err); }
             updateModuleTargetCompetencesSummary(moduleEl);
         }
 
@@ -14501,7 +14501,7 @@ obs3.observe(alist, { childList: true, subtree: true });
             if (!sujetOrdered.length) {
                 const empty = document.createElement('span');
                 empty.className = 'text-[11px] text-slate-400 italic';
-                empty.textContent = 'Aucune';
+                empty.textContent = 'Ingen';
                 sujetBox.appendChild(empty);
             } else {
                 sujetOrdered.forEach(x => sujetBox.appendChild(_createModuleCompetenceChip(x.label)));
@@ -14510,7 +14510,7 @@ obs3.observe(alist, { childList: true, subtree: true });
             if (!transvOrdered.length) {
                 const empty = document.createElement('span');
                 empty.className = 'text-[11px] text-slate-400 italic';
-                empty.textContent = 'Aucune';
+                empty.textContent = 'Ingen';
                 transvBox.appendChild(empty);
             } else {
                 transvOrdered.forEach(x => transvBox.appendChild(_createModuleCompetenceChip(x.label)));
@@ -14719,13 +14719,13 @@ obs3.observe(alist, { childList: true, subtree: true });
 
                 const t = translations[currentLang] || translations.fr || {};
                 const title = (mode === 'aims')
-                    ? (t.label_aims || "Objectifs d'apprentissage (ce qu'on va enseigner)")
-                    : (t.label_outcomes || "Résultats d'apprentissage");
+                    ? (t.label_aims || "Læringsmål (hvad vi skal undervise i)")
+                    : (t.label_outcomes || "Læringsresultater");
 
                 titleEl.textContent = title;
 
                 if (!opts.length) {
-                    __ldSetSafeHtml(bodyEl, '<div class="text-xs text-slate-500 italic">Aucune option disponible. Renseignez d\'abord la liste dans « Informations et paramètres de la formation ».</div>');
+                    __ldSetSafeHtml(bodyEl, '<div class="text-xs text-slate-500 italic">Ingen muligheder tilgængelige. Udfyld først listen under 'Oplysninger og kursusparametre'.</div>');
                 } else {
                     const wrap = document.createElement('div');
                     wrap.className = 'max-h-72 overflow-auto border border-slate-200 rounded p-2 bg-slate-50 space-y-1';
@@ -15081,7 +15081,7 @@ function __ldStripStepToCanonical(s) {
         trainer: s.trainer ?? s.formateur ?? 'present',
         place: s.place ?? s.lieu ?? 'situ',
         time: s.time ?? s.temps ?? 'sync',
-        evaluation: s.evaluation ?? 'Aucune',
+        evaluation: s.evaluation ?? 'Ingen',
         description: s.description ?? s.objective ?? s.objectifActivite ?? s.objectif ?? '',
         tasks: s.tasks ?? s.aFaire ?? '',
         trainerTasks: s.trainerTasks ?? s.aFaireFormateur ?? '',
@@ -15796,7 +15796,7 @@ function forceCanonicalImport(payload) {
         trainer: asStr(s?.trainer ?? s?.formateur ?? "present"),
         place: asStr(s?.place ?? s?.lieu ?? "situ"),
         time: asStr(s?.time ?? s?.temps ?? "sync"),
-                evaluation: asStr(s?.evaluation ?? s?.evaluationType ?? s?.typeEvaluation ?? 'Aucune'),
+                evaluation: asStr(s?.evaluation ?? s?.evaluationType ?? s?.typeEvaluation ?? 'Ingen'),
         description: asStr(s?.description ?? s?.objective ?? s?.objectifActivite ?? ""),
         tasks: asStr(s?.tasks ?? s?.aFaire ?? ""),
         trainerTasks: asStr(s?.trainerTasks ?? s?.aFaireFormateur ?? s?.trainer_actions ?? s?.trainerActions ?? ''),
@@ -16977,7 +16977,7 @@ function generateRecoveryMarkdown(rawProject) {
     md += `## ${_i18nStr("import_recovery_structure", "Structure")}\n`;
 
     if (!modules.length) {
-        md += `- ${_i18nStr("import_recovery_no_modules", "Aucun module détecté dans ce fichier.")}\n`;
+        md += `- ${_i18nStr("import_recovery_no_modules", "Ingen moduler registreret i denne fil.")}\n`;
         return md;
     }
 
@@ -17008,7 +17008,7 @@ function generateRecoveryMarkdown(rawProject) {
         }
 
         if (!steps.length) {
-            md += `- ${_i18nStr("import_recovery_no_steps", "Aucune activité détectée dans ce module.")}\n`;
+            md += `- ${_i18nStr("import_recovery_no_steps", "Ingen aktiviteter registreret i dette modul.")}\n`;
             return;
         }
 
@@ -17049,7 +17049,7 @@ function generateRecoveryMarkdown(rawProject) {
 function downloadLastImportRecoveryText() {
     const obj = window.__lastImportParsedObject;
     if (!obj) {
-        showAlert('Erreur', _i18nStr("import_recovery_unavailable", "Aucune donnée exploitable pour la récupération."));
+        showAlert('Erreur', _i18nStr("import_recovery_unavailable", "Ingen brugbare data til gendannelse."));
         return;
     }
     try {
@@ -17066,7 +17066,7 @@ function downloadLastImportRecoveryText() {
 async function copyLastImportRecoveryText() {
     const obj = window.__lastImportParsedObject;
     if (!obj) {
-        showAlert('Erreur', _i18nStr("import_recovery_unavailable", "Aucune donnée exploitable pour la récupération."));
+        showAlert('Erreur', _i18nStr("import_recovery_unavailable", "Ingen brugbare data til gendannelse."));
         return;
     }
     const btn = document.getElementById("import-error-copy-recovery");
@@ -22056,7 +22056,7 @@ document.querySelectorAll('#outcomes-list li').forEach(li => {
             rtf += `{\\b ${esc(t.label_objectives || 'Objectifs')}}\\par\n${esc(document.getElementById('param-aims')?.value || '')}\\par\n\\par\n`;
             rtf += `{\\b ${esc(t.label_outcomes_text || "Résultats d'apprentissage (ce que les apprenants sauront faire)")}}\\par\n${esc(document.getElementById('param-outcomes-text')?.value || '')}\\par\n\\par\n`;
 
-            rtf += `{\\b ${esc(t.label_outcomes || "Résultats d'apprentissage")}}\\par\n`;
+            rtf += `{\\b ${esc(t.label_outcomes || "Læringsresultater")}}\\par\n`;
             document.querySelectorAll('#outcomes-list li').forEach((li) => {
                 const level = (li.querySelector('select')?.value || '').trim();
                 const txt = (li.querySelector('input')?.value || '').trim();
@@ -22092,7 +22092,7 @@ document.querySelectorAll('#outcomes-list li').forEach(li => {
 
                     const steps = momentEl.querySelectorAll('.activity-steps-container .step-card');
                     if (!steps || steps.length === 0) {
-                        rtf += `(Aucune activité)\\par\n\\par\n`;
+                        rtf += `(Ingen aktiviteter)\\par\n\\par\n`;
                         return;
                     }
 
@@ -23595,10 +23595,10 @@ document.querySelectorAll('#outcomes-list li').forEach(li => {
 
             md += `## ${t.md_key_info || 'Informations clés'}\n\n`;
             md += `### ${t.label_objectives || 'Objectifs'}\n${val('param-aims')}\n\n`;
-            md += `### ${t.label_outcomes_text || "Résultats d'apprentissage"}\n${val('param-outcomes-text')}\n\n`;
+            md += `### ${t.label_outcomes_text || "Læringsresultater"}\n${val('param-outcomes-text')}\n\n`;
 
             // Bloom outcomes (list)
-            md += `### ${t.label_outcomes || "Résultats d'apprentissage"}\n`;
+            md += `### ${t.label_outcomes || "Læringsresultater"}\n`;
             document.querySelectorAll('#outcomes-list li').forEach((li) => {
                 const level = (li.querySelector('select')?.value || '').trim();
                 const txt = (li.querySelector('input')?.value || '').trim();
@@ -23634,7 +23634,7 @@ document.querySelectorAll('#outcomes-list li').forEach(li => {
 
                     const steps = momentEl.querySelectorAll('.activity-steps-container .step-card');
                     if (!steps || steps.length === 0) {
-                        md += `*(Aucune activité)*\n\n`;
+                        md += `*(Ingen aktiviteter)*\n\n`;
                         return;
                     }
 
@@ -24898,8 +24898,8 @@ html += `<h3 style="margin-top: 18px; color: #334155; font-size: 1.05em;">Moment
                             
                             // Direct steps group (kept even when sub-moments exist)
                             if (__directSteps && __directSteps.length) {
-                                const __directLabel = (t && (t.label_direct_steps || t.label_direct || t.direct_steps)) ? (t.label_direct_steps || t.label_direct || t.direct_steps) : 'Activités directes';
-                                html += `<h4 style="margin-top: 14px; margin-left: 20px; color: #475569; font-size: 0.95em;">Sous-moment ${momentPrefix}.0 : ${__esc(__directLabel)} <span style="font-weight: normal; color:#64748b;">(${formatTimelineDuration(__directSecs)})</span></h4>`;
+                                const __directLabel = (t && (t.label_direct_steps || t.label_direct || t.direct_steps)) ? (t.label_direct_steps || t.label_direct || t.direct_steps) : 'Direkte aktiviteter';
+                                html += `<h4 style="margin-top: 14px; margin-left: 20px; color: #475569; font-size: 0.95em;">Undermomentent ${momentPrefix}.0 : ${__esc(__directLabel)} <span style="font-weight: normal; color:#64748b;">(${formatTimelineDuration(__directSecs)})</span></h4>`;
                                 renderSteps(__directSteps, `${momentPrefix}.0`);
                             }
 
@@ -24919,7 +24919,7 @@ html += `<h3 style="margin-top: 18px; color: #334155; font-size: 1.05em;">Moment
                                 const smTgtVal = (smEl.querySelector('.submoment-target-time')?.value || '').trim();
                                 const smTgtUnitTxt = smEl.querySelector('.submoment-target-unit')?.selectedOptions?.[0]?.innerText || '';
 
-                                html += `<h4 style="margin-top: 14px; margin-left: 20px; color: #475569; font-size: 0.95em;">Sous-moment ${smPrefix}${(typeof __ldIsIgnored==='function' && __ldIsIgnored(smEl)) ? ' [IGNORÉ]' : ''}${smTitle ? ` : ${__esc(smTitle)}` : ''} <span style="font-weight: normal; color:#64748b;">(${formatTimelineDuration(smSecs)})</span></h4>`;
+                                html += `<h4 style="margin-top: 14px; margin-left: 20px; color: #475569; font-size: 0.95em;">Undermomentent ${smPrefix}${(typeof __ldIsIgnored==='function' && __ldIsIgnored(smEl)) ? ' [IGNORÉ]' : ''}${smTitle ? ` : ${__esc(smTitle)}` : ''} <span style="font-weight: normal; color:#64748b;">(${formatTimelineDuration(smSecs)})</span></h4>`;
                                 if (smTgtVal) {
                                     html += `<div style="font-size: 0.85em; color: #64748b; margin-left: 20px; margin-top: 4px; margin-bottom: 6px;"><strong>Durée cible :</strong> ${__esc(smTgtVal)} ${__esc(smTgtUnitTxt)}</div>`;
                                 }
@@ -25224,7 +25224,7 @@ rtf += '\\par\\b ' + escapeRtf(`  Moment ${momentPrefix}${(typeof __ldIsIgnored=
                             
                             // Direct steps group (kept even when sub-moments exist)
                             if (__directSteps && __directSteps.length) {
-                                const __directLabel = (t && (t.label_direct_steps || t.label_direct || t.direct_steps)) ? (t.label_direct_steps || t.label_direct || t.direct_steps) : 'Activités directes';
+                                const __directLabel = (t && (t.label_direct_steps || t.label_direct || t.direct_steps)) ? (t.label_direct_steps || t.label_direct || t.direct_steps) : 'Direkte aktiviteter';
                                 const __smPrefix0 = `${momentPrefix}.0`;
                                 rtf += '\\par\\b ' + escapeRtf(`    Sous-moment ${__smPrefix0}`) + escapeRtf(` — ${__directLabel}`) + '\\b0\\par ';
                                 rtf += escapeRtf(`    Durée conçue : ${formatTimelineDuration(__directSecs)}`) + '\\par ';
@@ -25582,7 +25582,7 @@ md += `#### MOMENT ${momentPrefix}${(typeof __ldIsIgnored==='function' && __ldIs
                             
                             // Exporter les activités directes du moment (hors sous-moments) si présentes
                             if (__directSteps && __directSteps.length) {
-                                md += `##### SOUS-MOMENT ${momentPrefix}.0 : ${(t && t.label_direct_steps) ? t.label_direct_steps : 'Activités directes'}\n\n`;
+                                md += `##### SOUS-MOMENT ${momentPrefix}.0 : ${(t && t.label_direct_steps) ? t.label_direct_steps : 'Direkte aktiviteter'}\n\n`;
                                 md += `- **Durée conçue :** ${formatTimelineDuration(__directSecs)}\n\n`;
                                 renderSteps(__directSteps, `${momentPrefix}.0`);
                             }
@@ -25776,7 +25776,7 @@ if (trainingDesc.trim()) {
                             __directCards = __directCards.filter((_, __aIdx) => __selSet.has(`${__momentId}-activity-${__aIdx}`));
                         }
 
-                        const __directLabel = (t && (t.label_direct_steps || t.label_direct || t.direct_steps)) ? (t.label_direct_steps || t.label_direct || t.direct_steps) : 'Activités directes';
+                        const __directLabel = (t && (t.label_direct_steps || t.label_direct || t.direct_steps)) ? (t.label_direct_steps || t.label_direct || t.direct_steps) : 'Direkte aktiviteter';
 
                         if (__directCards.length) {
                             if (__hasSubmoments) {
@@ -25885,7 +25885,7 @@ if (trainingDesc.trim()) {
             });
 
             if (!hasSlides) {
-                md += `> Aucune activité avec contenu de présentation trouvée.\n`;
+                md += `> Ingen aktiviteter med præsentationsindhold fundet.\n`;
             }
 
             const blob = new Blob([md], { type: 'text/markdown' });
@@ -26337,7 +26337,7 @@ window.onload = () => {
             // Taxonomie: interface agnostique. Aucune taxonomie n'est chargée automatiquement.
             resetTaxonomy();
             refreshAllTaxonomySelectors();
-            updateTaxonomyStatus('Aucune taxonomie chargée');
+            updateTaxonomyStatus('Ingen taksonomi indlæst');
 
             // Taxonomy UI bindings
             try {
@@ -26793,7 +26793,7 @@ function getHistogramBarMeta(kind, val) {
     if (!entries.length) {
       ctx.fillStyle = '#94a3b8';
       ctx.font = '12px system-ui, -apple-system, Segoe UI, Roboto, Arial';
-      ctx.fillText('Aucune donnée', 10, 20);
+      ctx.fillText('Ingen data', 10, 20);
       // Clear legend if present
       if (canvasId === 'chart-learning-types') {
         const lg = document.getElementById('chart-learning-types-legend');
@@ -26806,7 +26806,7 @@ function getHistogramBarMeta(kind, val) {
     if (total <= 0) {
       ctx.fillStyle = '#94a3b8';
       ctx.font = '12px system-ui, -apple-system, Segoe UI, Roboto, Arial';
-      ctx.fillText('Aucune donnée', 10, 20);
+      ctx.fillText('Ingen data', 10, 20);
       if (canvasId === 'chart-learning-types') {
         const lg = document.getElementById('chart-learning-types-legend');
         if (lg) __ldClearEl(lg);
@@ -26901,7 +26901,7 @@ function getHistogramBarMeta(kind, val) {
   if (!entries.length) {
     ctx.fillStyle = '#94a3b8';
     ctx.font = '11px system-ui, -apple-system, Segoe UI, Roboto, Arial';
-    ctx.fillText('Aucune donnée', 10, 20);
+    ctx.fillText('Ingen data', 10, 20);
     return;
   }
 
@@ -27059,7 +27059,7 @@ function drawCountBars(canvasId, rows, style) {
   if (!entries.length) {
     ctx.fillStyle = '#94a3b8';
     ctx.font = '11px system-ui, -apple-system, Segoe UI, Roboto, Arial';
-    ctx.fillText('Aucune sélection', 10, 20);
+    ctx.fillText('Intet valgt', 10, 20);
     return;
   }
 
@@ -27184,7 +27184,7 @@ function renderCountBarsText(containerId, rows, style) {
   if (!entries.length) {
     const empty = document.createElement('div');
     empty.className = 'text-[11px] text-slate-400 italic px-1';
-    empty.textContent = 'Aucune sélection';
+    empty.textContent = 'Intet valgt';
     host.appendChild(empty);
     return;
   }
@@ -27234,7 +27234,7 @@ function renderStackedModuleBarsText(containerId, rows) {
   if (!entries.length) {
     const empty = document.createElement('div');
     empty.className = 'text-[11px] text-slate-400 italic px-1';
-    empty.textContent = 'Aucun module';
+    empty.textContent = 'Ingen modul';
     host.appendChild(empty);
     return;
   }
@@ -27298,7 +27298,7 @@ function drawStackedModuleBars(canvasId, rows) {
   if (!entries.length) {
     ctx.fillStyle = '#94a3b8';
     ctx.font = '11px system-ui, -apple-system, Segoe UI, Roboto, Arial';
-    ctx.fillText('Aucun module', 10, 20);
+    ctx.fillText('Ingen modul', 10, 20);
     return;
   }
 
@@ -27488,7 +27488,7 @@ function drawCompetenceBipartite(svgId, payload) {
     t.setAttribute('y', '22');
     t.setAttribute('font-size', '12');
     t.setAttribute('fill', '#94a3b8');
-    t.textContent = 'Aucune sélection de compétences à visualiser.';
+    t.textContent = 'Ingen kompetencer valgt til visualisering.';
     svg.appendChild(t);
     return;
   }
@@ -27548,7 +27548,7 @@ function drawCompetenceBipartite(svgId, payload) {
     t.textContent = label;
     svg.appendChild(t);
   };
-  header('Activités', xA0);
+  header('Aktiviteter', xA0);
   header('Sujet', xS0);
   header('Transversales', xT0);
 
@@ -28401,7 +28401,7 @@ function updateToolsStats() {
       __ldClearEl(matrixBody);
       if (toolsByType.size === 0) {
         const tr = document.createElement('tr');
-        __ldSetSafeHtml(tr, `<td colspan="7" class="px-2 py-4 text-center text-slate-400 italic">Aucune donnée</td>`);
+        __ldSetSafeHtml(tr, `<td colspan="7" class="px-2 py-4 text-center text-slate-400 italic">Ingen data</td>`);
         matrixBody.appendChild(tr);
       } else {
         // Sort tools by total usage
@@ -29007,7 +29007,7 @@ function updateCharts() {
     setError('template-export-error', '');
     const type = $('template-export-type')?.value || 'module';
     const itemVal = $('template-export-item')?.value;
-    if (!itemVal) { setError('template-export-error', "Aucun élément sélectionné."); return; }
+    if (!itemVal) { setError('template-export-error', "Ingen elementer valgt."); return; }
 
     let path;
     try { path = JSON.parse(itemVal); } catch { setError('template-export-error', "Sélection invalide."); return; }
@@ -29640,7 +29640,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="bg-white w-full max-w-xl rounded-xl shadow-xl border border-slate-200 overflow-hidden">
 <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200">
 <div>
-<div class="text-sm font-semibold text-slate-800">Exporter un modèle</div>
+<div class="text-sm font-semibold text-slate-800">Eksportér en skabelon</div>
 <div class="text-xs text-slate-500">Choisissez précisément l’élément à exporter.</div>
 </div>
 <button class="text-slate-500 hover:text-slate-800 px-2 py-1 rounded" id="template-export-close" type="button">✕</button>
@@ -29673,7 +29673,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="bg-white w-full max-w-2xl rounded-xl shadow-xl border border-slate-200 overflow-hidden">
 <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200">
 <div>
-<div class="text-sm font-semibold text-slate-800">Importer un modèle</div>
+<div class="text-sm font-semibold text-slate-800">Importér en skabelon</div>
 <div class="text-xs text-slate-500">Choisissez précisément où insérer le modèle.</div>
 </div>
 <button class="text-slate-500 hover:text-slate-800 px-2 py-1 rounded" id="template-import-close" type="button">✕</button>
@@ -29915,7 +29915,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update the per-activity tools selected count label (next to the toggle)
             try {
                 const lbl = stepEl.querySelector('.tm-selected-count');
-                if (lbl) lbl.textContent = tmN ? `${tmN} sélectionné(s)` : '';
+                if (lbl) lbl.textContent = tmN ? `${tmN} valgt(e)` : '';
             } catch(err){ __ldSilentErr(err); }
 
             // Update subsection counters
@@ -30252,7 +30252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     while (sel.firstChild) sel.removeChild(sel.firstChild);
     const opt0 = document.createElement('option');
     opt0.value = '';
-    opt0.textContent = 'Aller à…';
+    opt0.textContent = 'Gå til…';
     sel.appendChild(opt0);
 
     const modules = Array.from(root.querySelectorAll(':scope > .activity-group'));
@@ -30423,7 +30423,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.className = 'fixed z-[120] hidden bg-white border border-slate-200 rounded-lg shadow-lg p-1 w-[240px]';
     __ldSetSafeHtml(menu, `
       <div class="text-[11px] font-bold text-slate-600 uppercase tracking-wider px-2 py-1">Dupliquer</div>
-      <button type="button" class="w-full text-left px-2 py-1.5 text-xs rounded hover:bg-slate-100" data-mode="all">Dupliquer tout</button>
+      <button type="button" class="w-full text-left px-2 py-1.5 text-xs rounded hover:bg-slate-100" data-mode="all">Dupliker alt</button>
       <button type="button" class="w-full text-left px-2 py-1.5 text-xs rounded hover:bg-slate-100" data-mode="no-align">Sans alignement</button>
       <button type="button" class="w-full text-left px-2 py-1.5 text-xs rounded hover:bg-slate-100" data-mode="no-tools">Sans outils & matériel</button>
       <button type="button" class="w-full text-left px-2 py-1.5 text-xs rounded hover:bg-slate-100" data-mode="skeleton">Squelette (contenu vidé)</button>
@@ -31181,7 +31181,7 @@ function init(){
       <button class="p-1.5 rounded hover:bg-slate-200 text-slate-600"
               id="context-panel-close"
               type="button"
-              title="Fermer">
+              title="Luk">
         <span class="material-icons-round text-[18px]">close</span>
       </button>
     </div>
@@ -31359,7 +31359,7 @@ function init(){
 
       <div class="flex items-center gap-1">
         <span class="text-[10px] font-bold text-slate-500 uppercase">Déplacement</span>
-        <select id="batch-move-target" class="w-80 px-2 py-1 text-xs border border-slate-200 rounded outline-none focus:ring-2 focus:ring-indigo-200" title="Déplacer les activités sélectionnées vers un module, un moment ou un sous-moment">
+        <select id="batch-move-target" class="w-80 px-2 py-1 text-xs border border-slate-200 rounded outline-none focus:ring-2 focus:ring-indigo-200" title="Flyt valgte aktiviteter til et modul, moment eller undermoment">
           <option value="">— vælg —</option>
         </select>
         <button id="batch-apply-move" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Déplacer</button>
@@ -31452,7 +31452,7 @@ function init(){
     const modules = QA('.activity-group');
     if (modules.length){
       const og = document.createElement('optgroup');
-      og.label = 'Modules';
+      og.label = 'Moduler';
       modules.forEach((modEl, i) => {
         const idx = _txt('.activity-index', modEl) || String(i+1);
         const title = _txtInput('.activity-title', modEl) || `Module ${idx}`;
@@ -31469,7 +31469,7 @@ function init(){
     const moments = QA('.moment-group');
     if (moments.length){
       const og = document.createElement('optgroup');
-      og.label = 'Moments';
+      og.label = 'Momenter';
       moments.forEach((momEl, j) => {
         const modEl = momEl.closest('.activity-group');
         const modIdx = modEl ? (_txt('.activity-index', modEl) || '') : '';
@@ -31492,7 +31492,7 @@ function init(){
     const submoments = QA('.submoment-card');
     if (submoments.length){
       const og = document.createElement('optgroup');
-      og.label = 'Sous-moments';
+      og.label = 'Undermomenter';
       submoments.forEach((smEl, k) => {
         const momEl = smEl.closest('.moment-group');
         const modEl = smEl.closest('.activity-group');
@@ -31755,7 +31755,7 @@ function init(){
     }catch(err){ __ldSilentErr(err); }
     items = Array.isArray(items) ? items : [];
     if (!items.length){
-      alert(isTransversal ? "Aucune compétence transversale n'est définie." : "Aucune compétence n'est définie.");
+      alert(isTransversal ? "Ingen tværgående kompetencer er defineret." : "Ingen kompetencer er defineret.");
       return null;
     }
 
@@ -32995,8 +32995,8 @@ mo.observe(menu, { attributes: true, attributeFilter: ['class','style'] });
         <h3 id="fullscreen-textarea-title" class="text-lg font-semibold text-slate-800 truncate max-w-3xl">Édition plein écran</h3>
       </div>
       <div class="flex items-center gap-2">
-        <span class="text-xs text-slate-500">Appuyez sur <kbd class="px-1.5 py-0.5 bg-slate-200 rounded text-[10px] font-mono">Échap</kbd> pour fermer</span>
-        <button id="fullscreen-textarea-close" class="p-2 hover:bg-slate-200 rounded-lg transition-colors" title="Fermer (Échap)">
+        <span class="text-xs text-slate-500">Tryk <kbd class="px-1.5 py-0.5 bg-slate-200 rounded text-[10px] font-mono">Esc</kbd> for at lukke</span>
+        <button id="fullscreen-textarea-close" class="p-2 hover:bg-slate-200 rounded-lg transition-colors" title="Luk (Esc)">
           <span class="material-icons-round text-slate-600">close</span>
         </button>
       </div>
@@ -33106,19 +33106,19 @@ mo.observe(menu, { attributes: true, attributeFilter: ['class','style'] });
           <button type="button" class="md-btn" data-md-action="table" title="Insérer un tableau">
             <span class="material-icons-round text-[18px]">table_chart</span>
           </button>
-          <button type="button" class="md-btn" data-md-action="table_add_row" title="Ajouter une ligne (tableau)">
+          <button type="button" class="md-btn" data-md-action="table_add_row" title="Tilføj en række (tabel)">
             <span class="font-mono text-[12px] font-bold">+R</span>
           </button>
-          <button type="button" class="md-btn" data-md-action="table_add_col" title="Ajouter une colonne (tableau)">
+          <button type="button" class="md-btn" data-md-action="table_add_col" title="Tilføj en kolonne (tabel)">
             <span class="font-mono text-[12px] font-bold">+C</span>
           </button>
-          <button type="button" class="md-btn" data-md-action="table_align_left" title="Aligner colonnes à gauche (tableau)">
+          <button type="button" class="md-btn" data-md-action="table_align_left" title="Venstrejuster kolonner (tabel)">
             <span class="font-mono text-[12px] font-bold">L</span>
           </button>
-          <button type="button" class="md-btn" data-md-action="table_align_center" title="Aligner colonnes au centre (tableau)">
+          <button type="button" class="md-btn" data-md-action="table_align_center" title="Centrer kolonner (tabel)">
             <span class="font-mono text-[12px] font-bold">C</span>
           </button>
-          <button type="button" class="md-btn" data-md-action="table_align_right" title="Aligner colonnes à droite (tableau)">
+          <button type="button" class="md-btn" data-md-action="table_align_right" title="Højrejuster kolonner (tabel)">
             <span class="font-mono text-[12px] font-bold">R</span>
           </button>
         </div>
