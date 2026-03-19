@@ -27788,7 +27788,7 @@ function updateCompetenceStats() {
       __ldClearEl(tb);
       if (!rows.length) {
         const tr = document.createElement('tr');
-        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Aucune sélection</td>`);
+        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Intet valgt</td>`);
         tb.appendChild(tr);
         return;
       }
@@ -27839,7 +27839,7 @@ function updateCompetenceStats() {
       __ldClearEl(tbody);
       if (!modules.length) {
         const tr = document.createElement('tr');
-        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="4">Aucun module</td>`);
+        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="4">Ingen modul</td>`);
         tbody.appendChild(tr);
         try {
           if (document.getElementById('chart-comp-by-module-html')) renderStackedModuleBarsText('chart-comp-by-module-html', []);
@@ -27982,7 +27982,7 @@ function updateAimsStats() {
       __ldClearEl(tb);
       if (!topRows.length) {
         const tr = document.createElement('tr');
-        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Aucune sélection</td>`);
+        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Intet valgt</td>`);
         tb.appendChild(tr);
       } else {
         topRows.forEach(r => {
@@ -28133,7 +28133,7 @@ function updateOutcomesStats() {
       __ldClearEl(tb);
       if (!topRows.length) {
         const tr = document.createElement('tr');
-        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Aucune sélection</td>`);
+        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Intet valgt</td>`);
         tb.appendChild(tr);
       } else {
         topRows.forEach(r => {
@@ -28281,7 +28281,7 @@ function updateToolsStats() {
       __ldClearEl(tb);
       if (!topRows.length) {
         const tr = document.createElement('tr');
-        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Aucune sélection</td>`);
+        __ldSetSafeHtml(tr, `<td class="px-2 py-1 text-slate-400 italic" colspan="2">Intet valgt</td>`);
         tb.appendChild(tr);
       } else {
         topRows.forEach(r => {
@@ -30726,7 +30726,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const tools = __ctxGetTools(stepEl);
       const notes = __ctxGetToolNotesMap(stepEl);
       if (!tools.length) {
-        __ldSetSafeHtml(toolsBox, '<div class="text-xs text-slate-500">Aucun outil/matériel sélectionné.</div>');
+        __ldSetSafeHtml(toolsBox, '<div class="text-xs text-slate-500">Ingen værktøjer/materialer valgt.</div>');
       } else {
         const html = tools.map(t => {
           const n = (notes && Object.prototype.hasOwnProperty.call(notes, t)) ? __ctxGetText(notes[t]).trim() : '';
@@ -31734,7 +31734,7 @@ function init(){
       alert("Aucun objectif n'est défini. Ajoutez/en chargez dans l’onglet Objectifs.");
       return null;
     }
-    return promptListChoice("Choisissez un objectif (copiez/collez une ligne exacte depuis la liste ci-dessous) :", options, options[0] || '');
+    return promptListChoice("Vælg et mål (kopier/indsæt en linje fra listen nedenfor):", options, options[0] || '');
   }
 
   function promptOutcomeChoice(){
@@ -31744,7 +31744,7 @@ function init(){
       alert("Aucun résultat d’apprentissage n'est défini. Ajoutez/en chargez dans l’onglet Résultats d’apprentissage.");
       return null;
     }
-    return promptListChoice("Choisissez un résultat d’apprentissage (copiez/collez une ligne exacte depuis la liste ci-dessous) :", options, options[0] || '');
+    return promptListChoice("Vælg et resultat d’apprentissage (copiez/collez une ligne exacte depuis la liste ci-dessous) :", options, options[0] || '');
   }
 
   function promptCompetenceChoice(isTransversal){
@@ -34528,7 +34528,7 @@ kbd {
     __ldClearEl(treeContainer);
     
     if (treeData.length === 0) {
-      __ldSetSafeHtml(treeContainer, '<div class="text-center text-slate-500 py-8">Aucun contenu à exporter</div>');
+      __ldSetSafeHtml(treeContainer, '<div class="text-center text-slate-500 py-8">Intet indhold at eksportere</div>');
       return;
     }
 
