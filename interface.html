@@ -263,6 +263,63 @@ textarea{resize:vertical;}
           --ld-control-group-bg: rgba(248, 250, 252, 0.5); /* slate-50/50 */
         }
 
+        /* Wiggum: Global design tokens */
+        :root {
+          --ld-primary: #4f46e5;
+          --ld-primary-dark: #3730a3;
+          --ld-success: #10b981;
+          --ld-error: #ef4444;
+          --ld-warning: #f59e0b;
+          --ld-surface: #ffffff;
+          --ld-surface-alt: #f8fafc;
+          --ld-text: #0f172a;
+          --ld-text-muted: #64748b;
+          --ld-border: #e2e8f0;
+          --ld-radius: 0.5rem;
+          --ld-shadow: 0 1px 3px rgba(0,0,0,0.12);
+          --ld-transition: 0.2s ease;
+        }
+
+        /* Wiggum: Save feedback animation */
+        @keyframes ld-save-flash {
+          0% { background-color: var(--ld-surface); }
+          30% { background-color: rgba(16, 185, 129, 0.15); }
+          100% { background-color: var(--ld-surface); }
+        }
+        .ld-save-success {
+          animation: ld-save-flash 1.2s ease;
+        }
+        @keyframes ld-error-flash {
+          0% { background-color: var(--ld-surface); }
+          30% { background-color: rgba(239, 68, 68, 0.15); }
+          100% { background-color: var(--ld-surface); }
+        }
+        .ld-save-error {
+          animation: ld-error-flash 1.2s ease;
+        }
+        /* Loading spinner */
+        .ld-btn-loading {
+          position: relative;
+          pointer-events: none;
+          opacity: 0.7;
+        }
+        .ld-btn-loading::after {
+          content: '';
+          position: absolute;
+          right: 6px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 12px;
+          height: 12px;
+          border: 2px solid currentColor;
+          border-top-color: transparent;
+          border-radius: 50%;
+          animation: ld-spin 0.6s linear infinite;
+        }
+        @keyframes ld-spin {
+          to { transform: translateY(-50%) rotate(360deg); }
+        }
+
         /* Mode contraste élevé */
         body.contrast-plus {
           --ld-control-text: #334155; /* slate-700 */
@@ -14764,6 +14821,18 @@ function saveProject() {
 
             a.click();
             URL.revokeObjectURL(url);
+
+            // Wiggum: save feedback animation
+            const btn = document.querySelector('[data-action="save-project"]');
+            if (btn) {
+              btn.classList.add('ld-btn-loading');
+              setTimeout(() => btn.classList.remove('ld-btn-loading'), 1500);
+              const container = btn.closest('div, header');
+              if (container) {
+                container.classList.add('ld-save-success');
+                setTimeout(() => container.classList.remove('ld-save-success'), 1200);
+              }
+            }
         }
 
         window.triggerFileLoad = function triggerFileLoad() {
