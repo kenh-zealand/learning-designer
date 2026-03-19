@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="da">
 <head>
@@ -3193,9 +3193,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="ld-sticky-header-wrapper">
 <header class="mb-3 ld-sticky-header">
 <h1 class="text-2xl font-bold text-slate-900 leading-tight">
-    Concepteur Pédagogique - Learning Designer
+    Læringsdesigner - Learning Designer
     <span id="mode-indicator" class="text-2xl font-bold transition-colors">
-      | <span id="mode-indicator-text">vue avancée</span>
+      | <span id="mode-indicator-text">avanceret visning</span>
     </span>
   </h1>
 <div class="mt-2 flex flex-wrap gap-x-2 gap-y-2 no-print items-stretch content-start">
@@ -3233,15 +3233,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <button id="open-global-search-btn"
         class="text-slate-600 hover:text-indigo-700 hover:bg-indigo-50 rounded px-2 py-1 flex items-center gap-1"
-        title="Recherche globale (Ctrl+K)"
+        title="Global søgning (Ctrl+K)"
         type="button">
   <span class="material-icons-round text-[16px]">search</span>
-  <span class="text-xs font-medium hidden md:inline">Recherche</span>
+  <span class="text-xs font-medium hidden md:inline">Søg</span>
 </button>
 <div class="relative">
 <button class="text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 px-1.5 py-0.5 rounded transition-colors flex items-center gap-1.5" id="btn-more" data-action="toggle-more-menu" title="Plus d'actions" aria-label="Plus d'actions" type="button">
 <span class="material-icons-round text-lg">more_horiz</span>
-<span class="text-xs font-medium hidden md:inline">Plus…</span>
+<span class="text-xs font-medium hidden md:inline">Mere…</span>
 </button>
 <div class="hidden absolute right-0 top-[34px] w-72 bg-white border border-slate-200 rounded-md shadow-lg z-50 p-1" id="more-menu">
 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 py-1" data-i18n="label_templates">Modèles</div>
@@ -3335,10 +3335,10 @@ document.addEventListener('DOMContentLoaded', function() {
         class="text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 px-2 py-0.5 rounded transition-colors flex items-center gap-1.5"
         data-action="toggle-beginner-mode"
         aria-pressed="false"
-        title="Passer en mode simple"
-        aria-label="Passer en mode simple">
+        title="Skift til simpel tilstand"
+        aria-label="Skift til simpel tilstand">
   <span class="material-icons-round text-lg" id="icon-toggle-beginner-mode">school</span>
-  <span class="text-xs font-medium" id="text-toggle-beginner-mode">Avancé</span>
+  <span class="text-xs font-medium" id="text-toggle-beginner-mode">Avanceret</span>
 </button>
 <div class="w-px h-5 bg-slate-200"></div>
 <button id="btn-toggle-todos"
@@ -3390,24 +3390,24 @@ document.addEventListener('DOMContentLoaded', function() {
 <details class="relative" id="view-level-menu">
   <summary class="ld-control-btn list-none cursor-pointer select-none">
     <span class="material-icons-round text-[16px] text-slate-400">view_agenda</span>
-    <span class="hidden md:inline text-xs font-medium" id="current-view-level-label">Activités</span>
+    <span class="hidden md:inline text-xs font-medium" id="current-view-level-label">Aktiviteter</span>
     <span class="material-icons-round text-[14px] ml-0.5">expand_more</span>
   </summary>
   <div class="absolute right-0 mt-1 w-64 bg-white border border-slate-200 rounded-md shadow-lg z-50">
     <!-- Niveaux d'affichage -->
     <div class="p-1 border-b border-slate-100">
-      <div class="px-2 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wide">Niveau d'affichage</div>
+      <div class="px-2 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wide">Visningsniveau</div>
       <button class="ld-view-level-option w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" data-level="activities" data-i18n="btn_view_activities">
-        <span>Activités</span>
+        <span>Aktiviteter</span>
       </button>
       <button class="ld-view-level-option w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" data-level="submoments" data-i18n="btn_view_submoments">
-        <span>Sous-moments</span>
+        <span>Undermomenter</span>
       </button>
       <button class="ld-view-level-option w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" data-level="moments" data-i18n="btn_view_moments">
-        <span>Moments</span>
+        <span>Momenter</span>
       </button>
       <button class="ld-view-level-option w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" data-level="modules" data-i18n="btn_view_modules">
-        <span>Modules</span>
+        <span>Moduler</span>
       </button>
       <button class="ld-view-level-option w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" data-level="panorama" data-i18n="btn_view_panorama">
         <span>Panorama</span>
@@ -3422,11 +3422,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </details>
-<select id="ld-view-level-select" class="hidden" aria-label="Sélection du affichage">
-  <option value="activities" data-i18n="btn_view_activities" selected>Activités</option>
-  <option value="submoments" data-i18n="btn_view_submoments">Sous-moments</option>
-  <option value="moments" data-i18n="btn_view_moments">Moments</option>
-  <option value="modules" data-i18n="btn_view_modules">Modules</option>
+<select id="ld-view-level-select" class="hidden" aria-label="Vælg visningsniveau">
+  <option value="activities" data-i18n="btn_view_activities" selected>Aktiviteter</option>
+  <option value="submoments" data-i18n="btn_view_submoments">Undermomenter</option>
+  <option value="moments" data-i18n="btn_view_moments">Momenter</option>
+  <option value="modules" data-i18n="btn_view_modules">Moduler</option>
   <option value="panorama" data-i18n="btn_view_panorama">Panorama</option>
 </select>
 <div class="w-px h-5 bg-slate-200"></div>
@@ -3444,8 +3444,8 @@ document.addEventListener('DOMContentLoaded', function() {
         class="ld-control-btn"
         data-action="toggle-target-durations"
         aria-pressed="false"
-        title="Afficher les durées cibles"
-        aria-label="Afficher les durées cibles">
+        title="Vis måltider"
+        aria-label="Vis måltider">
   <span class="material-icons-round text-[16px]" id="icon-toggle-target-durations">visibility_off</span>
   <span class="hidden xl:inline" id="text-toggle-target-durations">Durées ciblées</span>
 </button>
@@ -3457,15 +3457,15 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="absolute right-0 mt-1 w-56 bg-white border border-slate-200 rounded-md shadow-lg z-50 p-1">
     <button id="btn-toggle-status-summaries" type="button" aria-pressed="false"
       class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2"
-      title="Afficher ou masquer les synthèses d'état">
+      title="Vis eller skjul statusoversigter">
       <span class="material-icons-round text-[16px]" id="icon-toggle-status-summaries">visibility</span>
-      <span id="text-toggle-status-summaries">Afficher synthèses</span>
+      <span id="text-toggle-status-summaries">Vis oversigter</span>
     </button>
 
     <button id="btn-toggle-status-selectors" type="button" aria-pressed="false"
       class="w-full text-left px-2 py-1.5 rounded bg-white hover:bg-slate-50 text-slate-700 flex items-center gap-2"
       data-i18n-title="title_toggle_status_selectors"
-      title="Afficher ou masquer les sélecteurs d'état dans les activités">
+      title="Vis eller skjul statusvælgere i aktiviteter">
       <span class="material-icons-round text-[16px]" id="icon-toggle-status-selectors">visibility</span>
       <span id="text-toggle-status-selectors" data-i18n="btn_show_status_selectors">Afficher états</span>
     </button>
@@ -3624,9 +3624,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
       <div>
         <label for="param-authors" class="compact-label block" data-i18n="label_authors">
-          Concepteurs(s)
+          Designer(e)
         </label>
-        <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_authors" id="param-authors" placeholder="Entrez le nom du/des concepteurs..." type="text"/>
+        <input class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none" data-i18n-placeholder="ph_authors" id="param-authors" placeholder="Indtast navn på designer(e)..." type="text"/>
       </div>
       <div>
         <label for="param-trainers" class="compact-label block" data-i18n="label_trainers">
@@ -3933,7 +3933,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="md:col-span-2 lg:col-span-3">
 <details open class="group border border-slate-200 rounded-lg bg-white/0">
 <summary class="px-3 py-2 cursor-pointer select-none flex items-center justify-between">
-<span class="compact-label" data-i18n="label_tools_materials">Outils et matériel</span>
+<span class="compact-label" data-i18n="label_tools_materials">Værktøjer og materialer</span>
 <span class="material-icons-round text-slate-400 text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="px-3 pb-3">
@@ -3968,11 +3968,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="mt-2 p-2 bg-slate-50 border border-slate-200 rounded-lg">
   <div class="flex flex-col sm:flex-row gap-2 items-end">
     <div class="flex-1 min-w-0">
-      <label for="tools-materials-search" class="compact-label">Rechercher</label>
-      <input id="tools-materials-search" class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-sm" type="text" placeholder="Rechercher un outil, une catégorie ou une sous-catégorie..." />
+      <label for="tools-materials-search" class="compact-label">Søg</label>
+      <input id="tools-materials-search" class="w-full px-2 py-1 border border-slate-200 rounded focus:ring-2 focus:ring-indigo-500 outline-none text-sm" type="text" placeholder="Søg efter et værktøj, en kategori eller underkategori..." />
     </div>
     <div class="sm:w-48">
-      <label for="tools-materials-filter-cat" class="compact-label">Catégorie</label>
+      <label for="tools-materials-filter-cat" class="compact-label">Kategori</label>
       <select id="tools-materials-filter-cat" class="w-full px-2 py-1 border border-slate-200 rounded bg-white focus:ring-2 focus:ring-indigo-500 outline-none text-sm">
         <option value="" data-i18n="opt_all_categories">Toutes</option>
       </select>
@@ -4494,7 +4494,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Couverture + non utilisés -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Outils et matériel</div>
+<div class="text-xs font-bold text-slate-600">Værktøjer og materialer</div>
 <div class="text-[11px] text-slate-500">Couverture</div>
 </div>
 <div class="mt-2 space-y-1 text-[11px] text-slate-700">
@@ -4817,7 +4817,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 
 <div id="status-filter-empty" class="hidden text-center py-10 bg-white rounded-xl border-2 border-dashed border-slate-300 mt-3">
   <h3 class="mt-1 text-base font-medium text-slate-900" data-i18n="msg_no_filter_match">Aucun élément ne correspond au filtre.</h3>
-  <p class="mt-0.5 text-xs text-slate-500">Modifiez le filtre ou réinitialisez-le pour tout afficher.</p>
+  <p class="mt-0.5 text-xs text-slate-500">Justér filteret eller nulstil det for at vise alt.</p>
 </div>
 
 <div class="space-y-4" id="activities-root">
@@ -4948,7 +4948,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="text-xs text-slate-700" id="module-selection-modal-body"></div>
 <div class="flex justify-end gap-2 mt-4">
 <button class="px-3 py-1.5 bg-slate-100 text-slate-600 hover:bg-slate-200 rounded text-xs font-medium transition-colors" id="module-selection-modal-cancel" data-i18n="btn_cancel">Annuler</button>
-<button class="px-3 py-1.5 bg-slate-700 text-white hover:bg-slate-800 rounded text-xs font-medium transition-colors" id="module-selection-modal-apply" data-i18n="btn_apply">Appliquer</button>
+<button class="px-3 py-1.5 bg-slate-700 text-white hover:bg-slate-800 rounded text-xs font-medium transition-colors" id="module-selection-modal-apply" data-i18n="btn_apply">Anvend</button>
 </div>
 </div>
 </div>
@@ -5033,7 +5033,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <span id="export-selected-count">0</span> élément(s) sélectionné(s)
 </div>
 <div class="flex gap-2">
-<button class="px-4 py-2 bg-slate-100 text-slate-600 hover:bg-slate-200 rounded text-sm font-medium transition-colors" id="export-modal-cancel" type="button">Annuler</button>
+<button class="px-4 py-2 bg-slate-100 text-slate-600 hover:bg-slate-200 rounded text-sm font-medium transition-colors" id="export-modal-cancel" type="button">Annuller</button>
 <button class="px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700 rounded text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed" id="export-modal-confirm" type="button">Exporter</button>
 </div>
 </div>
@@ -5050,7 +5050,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
     <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200 bg-white">
       <div class="flex items-center gap-2">
         <span class="material-icons-round text-slate-500">search</span>
-        <div class="font-semibold text-sm" id="global-search-modal-title">Recherche globale</div>
+        <div class="font-semibold text-sm" id="global-search-modal-title">Global søgning</div>
         <div class="text-xs text-slate-500 hidden md:block">Ctrl+K</div>
       </div>
       <button class="p-1.5 rounded hover:bg-slate-200 text-slate-600"
@@ -5663,13 +5663,13 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <div class="space-y-0.5">
   <span class="step-left-label text-[10px] w-12 text-slate-400 font-bold uppercase flex items-center gap-0.5 relative z-10">
     <span class="material-icons-round text-[10px]">fact_check</span>
-    <span>Évaluation</span>
+    <span>Evaluering</span>
   </span>
   <select class="evaluation-select w-full px-1 py-0.5 text-[10px] rounded border border-slate-200 focus:ring-1 focus:ring-indigo-500 bg-white outline-none h-[22px]" data-action-change="update-stats">
-    <option value="Aucune" selected>Aucune</option>
-    <option value="Diagnostique">Diagnostique</option>
-    <option value="Formative">Formative</option>
-    <option value="Certificative/Sommative">Certificative/Sommative</option>
+    <option value="Aucune" selected>Ingen</option>
+    <option value="Diagnostique">Diagnostisk</option>
+    <option value="Formative">Formativ</option>
+    <option value="Certificative/Sommative">Summativ/Certificerende</option>
   </select>
 </div>
 
@@ -5677,12 +5677,12 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 </div>
 <div class="lg:flex-1 step-right-col">
   <!-- Onglets : Description / Présentation / Déroulé / Évaluation / Alignement / Ressources / Notes -->
-  <div class="step-tabs" role="tablist" aria-label="Panneaux de l'activité">
+  <div class="step-tabs" role="tablist" aria-label="Aktivitetens faner">
     <button class="step-tab" type="button" role="tab" aria-selected="true" tabindex="0" data-step-tab="description" data-i18n="tab_description">Description</button>
     <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="presentation" data-i18n="tab_presentation">Présentation</button>
     <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="flow" data-i18n="tab_flow">Déroulé</button>
     <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="evaluation" data-i18n="tab_evaluation">Évaluation / suivi</button>
-    <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="alignment" data-i18n="tab_alignment">Alignement</button>
+    <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="alignment" data-i18n="tab_alignment">Alignment</button>
     <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="resources" data-i18n="tab_resources">Ressources</button>
     <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="notes" data-i18n="label_notes">Notes</button>
     <button class="step-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-step-tab="todos">Todos <span class="step-todo-count hidden"></span></button>
@@ -5718,7 +5718,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span class="material-icons-round text-[10px] text-slate-400">assignment</span>
           <span data-i18n="label_tasks">Ce que les apprenants doivent faire</span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5732,7 +5732,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span class="material-icons-round text-[10px] text-slate-400">support_agent</span>
           <span data-i18n="label_trainer_tasks">Ce que le ou les formateurs doivent faire</span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5749,7 +5749,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span class="material-icons-round text-[10px] text-slate-400">assignment_turned_in</span>
           <span data-i18n="label_eval_followup">Évaluation et suivi</span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5767,7 +5767,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span>Compétences ciblées</span>
           <span class="step-competences-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5801,7 +5801,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span>Objectifs ciblés</span>
           <span class="step-aims-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5825,7 +5825,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span>Résultats d'apprentissage ciblés</span>
           <span class="step-outcomes-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5852,7 +5852,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span>Outils et matériel (activité)</span>
           <span class="step-tools-materials-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5860,7 +5860,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <div class="flex items-center justify-between gap-2 mb-1 text-[11px] text-slate-500">
             <label class="flex items-center gap-2 cursor-pointer select-none">
               <input type="checkbox" class="tm-show-selected-toggle accent-indigo-600" />
-              <span>Afficher uniquement les sélectionnés</span>
+              <span>Vis kun valgte</span>
             </label>
             <span class="tm-selected-count text-[10px] text-slate-400"></span>
           </div>
@@ -5876,7 +5876,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span data-i18n="label_step_links_refs">Liens et références</span>
           <span class="step-links-refs-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -5897,7 +5897,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span class="material-icons-round text-[10px] text-slate-400">comment</span>
           <span data-i18n="label_notes">Notes</span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
-            <span>Afficher</span>
+            <span>Vis</span>
             <span class="material-icons-round text-[14px] step-right-chevron">expand_more</span>
           </span>
         </summary>
@@ -11495,12 +11495,12 @@ function setBeginnerModeHidden(hideComplexFeatures) {
     if (icon) icon.innerText = isHidden ? 'school' : 'rocket';
 
     if (btn) {
-        btn.title = isHidden ? 'Passer en mode avancé' : 'Passer en mode simple';
+        btn.title = isHidden ? 'Skift til avanceret tilstand' : 'Skift til simpel tilstand';
         btn.setAttribute('aria-label', btn.title);
     }
 
     if (text) {
-        text.textContent = isHidden ? 'Avancé' : 'Simple';
+        text.textContent = isHidden ? 'Avanceret' : 'Simpel';
     }
 
     const modeIndicator = document.getElementById('mode-indicator');
@@ -11510,11 +11510,11 @@ function setBeginnerModeHidden(hideComplexFeatures) {
         if (isHidden) {
             // Simple mode: green text for beginner-friendly appearance
             modeIndicator.className = 'text-2xl font-bold text-green-600 transition-colors';
-            modeIndicatorText.textContent = 'vue simplifiée';
+            modeIndicatorText.textContent = 'simpel visning';
         } else {
             // Advanced mode: indigo text for professional appearance
             modeIndicator.className = 'text-2xl font-bold text-indigo-600 transition-colors';
-            modeIndicatorText.textContent = 'vue avancée';
+            modeIndicatorText.textContent = 'avanceret visning';
         }
     }
 
@@ -28557,7 +28557,7 @@ function updateToolsStats() {
     const goodEl = document.getElementById('tools-alignment-good');
     if (goodEl) {
       if (goodAlignment.length === 0) {
-        __ldSetSafeHtml(goodEl, '<span class="text-slate-400 italic">Aucun</span>');
+        __ldSetSafeHtml(goodEl, '<span class="text-slate-400 italic">Ingen</span>');
       } else {
         __ldSetSafeHtml(goodEl, goodAlignment
           .sort((a, b) => b.alignmentPct - a.alignmentPct)
@@ -29661,7 +29661,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 <div class="flex items-center justify-end gap-2 pt-2">
-<button class="px-3 py-1.5 rounded-md border border-slate-300 text-sm text-slate-700 hover:bg-slate-50" id="template-export-cancel" type="button">Annuler</button>
+<button class="px-3 py-1.5 rounded-md border border-slate-300 text-sm text-slate-700 hover:bg-slate-50" id="template-export-cancel" type="button">Annuller</button>
 <button class="px-3 py-1.5 rounded-md bg-indigo-600 text-white text-sm hover:bg-indigo-700" id="template-export-do" type="button">Exporter</button>
 </div>
 <div class="hidden text-sm text-red-600" id="template-export-error"></div>
@@ -29752,7 +29752,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 <div class="flex items-center justify-end gap-2 pt-2">
-<button class="px-3 py-1.5 rounded-md border border-slate-300 text-sm text-slate-700 hover:bg-slate-50" id="template-import-cancel" type="button">Annuler</button>
+<button class="px-3 py-1.5 rounded-md border border-slate-300 text-sm text-slate-700 hover:bg-slate-50" id="template-import-cancel" type="button">Annuller</button>
 <button class="px-3 py-1.5 rounded-md bg-indigo-600 text-white text-sm hover:bg-indigo-700" id="template-import-do" type="button">Importer</button>
 </div>
 </div>
@@ -30917,7 +30917,7 @@ if (nextBtn) nextBtn.disabled = !__ctxNeighbourStep(stepEl, 1);
     __ldClearEl(resBox);
     if (!qq) {
       if (empty) empty.classList.add('hidden');
-      if (countEl) countEl.textContent = 'Saisissez un terme de recherche.';
+      if (countEl) countEl.textContent = 'Indtast et søgeord.';
       return;
     }
 
@@ -31209,27 +31209,27 @@ function init(){
         <label class="text-[11px] text-slate-500 font-semibold uppercase">Unité</label>
         <select class="w-full px-2 py-1.5 text-sm border border-slate-200 rounded-lg bg-white focus:ring-1 focus:ring-indigo-500 outline-none"
                 id="ctx-duration-unit">
-          <option value="60">Minutes</option>
-          <option value="3600">Heures</option>
-          <option value="86400">Jours</option>
-          <option value="604800">Semaines</option>
+          <option value="60">Minutter</option>
+          <option value="3600">Timer</option>
+          <option value="86400">Dage</option>
+          <option value="604800">Uger</option>
         </select>
       </div>
     </div>
 
     <div>
-      <label class="text-[11px] text-slate-500 font-semibold uppercase">Évaluation</label>
+      <label class="text-[11px] text-slate-500 font-semibold uppercase">Evaluering</label>
       <select class="w-full px-2 py-1.5 text-sm border border-slate-200 rounded-lg bg-white focus:ring-1 focus:ring-indigo-500 outline-none"
               id="ctx-evaluation">
-        <option value="Aucune">Aucune</option>
-        <option value="Diagnostique">Diagnostique</option>
-        <option value="Formative">Formative</option>
-        <option value="Certificative/Sommative">Certificative/Sommative</option>
+        <option value="Aucune">Ingen</option>
+        <option value="Diagnostique">Diagnostisk</option>
+        <option value="Formative">Formativ</option>
+        <option value="Certificative/Sommative">Summativ/Certificerende</option>
       </select>
     </div>
 
     <div>
-      <label class="text-[11px] text-slate-500 font-semibold uppercase">Objectif</label>
+      <label class="text-[11px] text-slate-500 font-semibold uppercase">Mål</label>
       <textarea class="w-full px-2 py-1.5 text-sm border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none resize-y"
                 id="ctx-objective"
                 rows="2"></textarea>
@@ -31237,11 +31237,11 @@ function init(){
 
 
     <div>
-      <label class="text-[11px] text-slate-500 font-semibold uppercase">Présentation</label>
+      <label class="text-[11px] text-slate-500 font-semibold uppercase">Præsentation</label>
       <textarea class="w-full px-2 py-1.5 text-sm border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none resize-y"
                 id="ctx-presentation"
                 rows="3"
-                placeholder="Présentation"></textarea>
+                placeholder="Præsentation"></textarea>
     </div>
 
     <details id="ctx-details-align" class="border border-slate-200 rounded-lg bg-white">
@@ -31267,21 +31267,21 @@ function init(){
         <button class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1"
                 id="ctx-prev-step"
                 type="button"
-                title="Activité précédente">
+                title="Activité Forrige">
           <span class="material-icons-round text-[16px]">chevron_left</span>
-          Précédente
+          Forrige
         </button>
         <button class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-1"
                 id="ctx-next-step"
                 type="button"
-                title="Activité suivante">
-          Suivante
+                title="Activité Næste">
+          Næste
           <span class="material-icons-round text-[16px]">chevron_right</span>
         </button>
       </div>
 
       <div class="flex items-center justify-between gap-2">
-        <div class="text-xs text-slate-500" id="ctx-hint">Cliquez une activité pour afficher ses détails.</div>
+        <div class="text-xs text-slate-500" id="ctx-hint">Klik på en aktivitet for at se detaljer.</div>
         <button class="px-3 py-2 text-xs rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 id="ctx-scroll-to-step"
                 type="button">Aller à l’activité</button>
@@ -31293,9 +31293,9 @@ function init(){
 <button class="fixed right-3 bottom-3 z-[104] px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 shadow-sm flex items-center gap-2"
         id="context-panel-handle"
         type="button"
-        title="Ouvrir le panneau contextuel">
+        title="Åbn kontekstpanel">
   <span class="material-icons-round text-[18px] text-slate-600">view_sidebar</span>
-  <span class="text-xs font-medium text-slate-700 hidden md:inline">Panneau</span>
+  <span class="text-xs font-medium text-slate-700 hidden md:inline">Panel</span>
 </button>
 
 
@@ -31305,54 +31305,54 @@ function init(){
     <div class="batch-actions-inner bg-white border border-slate-200 rounded-xl shadow-lg p-2 flex flex-wrap items-center gap-2">
       <div class="flex items-center gap-2">
         <span class="material-icons-round text-slate-400 text-[18px]">done_all</span>
-        <span class="text-xs font-semibold text-slate-700">Actions groupées</span>
+        <span class="text-xs font-semibold text-slate-700">Gruppehandlinger</span>
         <span id="batch-selected-count" class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700">0</span>
       </div>
 
       <div class="h-6 w-px bg-slate-200 mx-1 hidden sm:block"></div>
 
       <div class="flex items-center gap-1">
-        <span class="text-[10px] font-bold text-slate-500 uppercase">Évaluation</span>
+        <span class="text-[10px] font-bold text-slate-500 uppercase">Evaluering</span>
         <select id="batch-evaluation" class="w-48 px-2 py-1 text-xs border border-slate-200 rounded outline-none focus:ring-2 focus:ring-indigo-200">
-          <option value="">— choisir —</option>
-          <option value="Aucune">Aucune</option>
-          <option value="Diagnostique">Diagnostique</option>
-          <option value="Formative">Formative</option>
-          <option value="Certificative/Sommative">Certificative/Sommative</option>
+          <option value="">— vælg —</option>
+          <option value="Aucune">Ingen</option>
+          <option value="Diagnostique">Diagnostisk</option>
+          <option value="Formative">Formativ</option>
+          <option value="Certificative/Sommative">Summativ/Certificerende</option>
         </select>
-        <button id="batch-apply-evaluation" type="button" class="px-2 py-1 rounded-md bg-slate-800 text-white text-xs hover:bg-slate-900">Appliquer</button>
+        <button id="batch-apply-evaluation" type="button" class="px-2 py-1 rounded-md bg-slate-800 text-white text-xs hover:bg-slate-900">Anvend</button>
       </div>
 
       <div class="flex items-center gap-1">
-        <span class="text-[10px] font-bold text-slate-500 uppercase">État</span>
+        <span class="text-[10px] font-bold text-slate-500 uppercase">Status</span>
         <select id="batch-status" class="w-40 px-2 py-1 text-xs border border-slate-200 rounded outline-none focus:ring-2 focus:ring-indigo-200">
-          <option value="">— choisir —</option>
+          <option value="">— vælg —</option>
           <option value="in_progress" data-i18n="opt_status_inprogress">En cours</option>
           <option value="done" data-i18n="opt_status_completed">Finalisé</option>
           <option value="review" data-i18n="opt_status_review">À revoir</option>
         </select>
-        <button id="batch-apply-status" type="button" class="px-2 py-1 rounded-md bg-slate-800 text-white text-xs hover:bg-slate-900">Appliquer</button>
+        <button id="batch-apply-status" type="button" class="px-2 py-1 rounded-md bg-slate-800 text-white text-xs hover:bg-slate-900">Anvend</button>
       </div>
 
 
       <div class="h-6 w-px bg-slate-200 mx-1 hidden md:block"></div>
 
       <div class="flex items-center gap-1">
-        <button id="batch-add-tool" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Ajouter outil</button>
-        <button id="batch-remove-tool" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Retirer outil</button>
+        <button id="batch-add-tool" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Tilføj værktøj</button>
+        <button id="batch-remove-tool" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Fjern værktøj</button>
       </div>
       <div class="h-6 w-px bg-slate-200 mx-1 hidden lg:block"></div>
 
       <div class="flex items-center gap-1">
-        <span class="text-[10px] font-bold text-slate-500 uppercase">Alignement</span>
+        <span class="text-[10px] font-bold text-slate-500 uppercase">Alignment</span>
         <select id="batch-alignment-kind" class="w-56 px-2 py-1 text-xs border border-slate-200 rounded outline-none focus:ring-2 focus:ring-indigo-200">
-          <option value="aim">Objectif</option>
-          <option value="outcome">Résultat</option>
-          <option value="comp">Compétence</option>
-          <option value="compT">Compétence transversale</option>
+          <option value="aim">Mål</option>
+          <option value="outcome">Resultat</option>
+          <option value="comp">Kompetence</option>
+          <option value="compT">Tværgående kompetence</option>
         </select>
-        <button id="batch-add-alignment" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Ajouter</button>
-        <button id="batch-remove-alignment" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Retirer</button>
+        <button id="batch-add-alignment" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Tilføj</button>
+        <button id="batch-remove-alignment" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Fjern</button>
       </div>
 
       <div class="h-6 w-px bg-slate-200 mx-1 hidden xl:block"></div>
@@ -31360,7 +31360,7 @@ function init(){
       <div class="flex items-center gap-1">
         <span class="text-[10px] font-bold text-slate-500 uppercase">Déplacement</span>
         <select id="batch-move-target" class="w-80 px-2 py-1 text-xs border border-slate-200 rounded outline-none focus:ring-2 focus:ring-indigo-200" title="Déplacer les activités sélectionnées vers un module, un moment ou un sous-moment">
-          <option value="">— choisir —</option>
+          <option value="">— vælg —</option>
         </select>
         <button id="batch-apply-move" type="button" class="px-2 py-1 rounded-md border border-slate-200 text-slate-700 text-xs hover:bg-slate-50">Déplacer</button>
       </div>
@@ -31445,7 +31445,7 @@ function init(){
 
     const baseOpt = document.createElement('option');
     baseOpt.value = '';
-    baseOpt.textContent = '— choisir —';
+    baseOpt.textContent = '— vælg —';
     moveSelect.appendChild(baseOpt);
 
     // Modules
@@ -33140,7 +33140,7 @@ mo.observe(menu, { attributes: true, attributeFilter: ['class','style'] });
 
   <div class="flex-1 overflow-hidden flex flex-col">
     <div class="text-xs text-slate-500 px-1 pb-1 flex items-center justify-between select-none">
-      <span>Aperçu</span>
+      <span>Oversigt</span>
       <span class="text-[10px] text-slate-400">Markdown (GFM)</span>
     </div>
     <div id="fullscreen-markdown-preview"
