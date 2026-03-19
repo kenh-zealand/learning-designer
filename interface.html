@@ -263,63 +263,6 @@ textarea{resize:vertical;}
           --ld-control-group-bg: rgba(248, 250, 252, 0.5); /* slate-50/50 */
         }
 
-        /* Wiggum: Global design tokens */
-        :root {
-          --ld-primary: #4f46e5;
-          --ld-primary-dark: #3730a3;
-          --ld-success: #10b981;
-          --ld-error: #ef4444;
-          --ld-warning: #f59e0b;
-          --ld-surface: #ffffff;
-          --ld-surface-alt: #f8fafc;
-          --ld-text: #0f172a;
-          --ld-text-muted: #64748b;
-          --ld-border: #e2e8f0;
-          --ld-radius: 0.5rem;
-          --ld-shadow: 0 1px 3px rgba(0,0,0,0.12);
-          --ld-transition: 0.2s ease;
-        }
-
-        /* Wiggum: Save feedback animation */
-        @keyframes ld-save-flash {
-          0% { background-color: var(--ld-surface); }
-          30% { background-color: rgba(16, 185, 129, 0.15); }
-          100% { background-color: var(--ld-surface); }
-        }
-        .ld-save-success {
-          animation: ld-save-flash 1.2s ease;
-        }
-        @keyframes ld-error-flash {
-          0% { background-color: var(--ld-surface); }
-          30% { background-color: rgba(239, 68, 68, 0.15); }
-          100% { background-color: var(--ld-surface); }
-        }
-        .ld-save-error {
-          animation: ld-error-flash 1.2s ease;
-        }
-        /* Loading spinner */
-        .ld-btn-loading {
-          position: relative;
-          pointer-events: none;
-          opacity: 0.7;
-        }
-        .ld-btn-loading::after {
-          content: '';
-          position: absolute;
-          right: 6px;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 12px;
-          height: 12px;
-          border: 2px solid currentColor;
-          border-top-color: transparent;
-          border-radius: 50%;
-          animation: ld-spin 0.6s linear infinite;
-        }
-        @keyframes ld-spin {
-          to { transform: translateY(-50%) rotate(360deg); }
-        }
-
         /* Mode contraste élevé */
         body.contrast-plus {
           --ld-control-text: #334155; /* slate-700 */
@@ -3166,12 +3109,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Build banner safely without innerHTML/inline handlers
         __ldClearEl(banner);
         const strong = document.createElement('strong');
-        strong.textContent = '⚠ CDN-indlæsningsfejl:';
+        strong.textContent = '⚠ Erreur de chargement CDN :';
         banner.appendChild(strong);
-        banner.appendChild(document.createTextNode(' ' + missing.join(', ') + ' — Eksport- og sorteringsfunktioner virker muligvis ikke. '));
+        banner.appendChild(document.createTextNode(' ' + missing.join(', ') + ' — Les fonctions d\'export et de tri pourraient ne pas fonctionner. '));
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.textContent = 'Luk';
+        btn.textContent = 'Fermer';
         btn.style.cssText = 'margin-left:8px;background:#fff;color:#111;border:1px solid #111;padding:2px 10px;border-radius:4px;cursor:pointer;';
         btn.addEventListener('click', () => { try { banner.remove(); } catch(err){} });
         banner.appendChild(btn);
@@ -3229,30 +3172,30 @@ document.addEventListener('DOMContentLoaded', function() {
 <body class="p-2 md:p-4 hide-types text-slate-900 hide-target-durations" data-view-level="activities">
 <!-- Skip to main content link for keyboard accessibility -->
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-  Gå til hovedindhold
+  Aller au contenu principal
 </a>
 
 <!-- Scroll to Top/Bottom Buttons -->
 <button id="scroll-to-top-btn"
         class="fixed left-6 bottom-20 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-full p-2.5 shadow-md transition-all duration-300 opacity-0 pointer-events-none z-40 no-print"
-        title="Gå til toppen af siden"
-        aria-label="Gå til toppen af siden">
+        title="Aller en haut de la page"
+        aria-label="Aller en haut de la page">
   <span class="material-icons-round text-xl">arrow_upward</span>
 </button>
 
 <button id="scroll-to-bottom-btn"
         class="fixed left-6 bottom-6 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-full p-2.5 shadow-md transition-all duration-300 opacity-0 pointer-events-none z-40 no-print"
-        title="Gå til bunden af siden"
-        aria-label="Gå til bunden af siden">
+        title="Aller en bas de la page"
+        aria-label="Aller en bas de la page">
   <span class="material-icons-round text-xl">arrow_downward</span>
 </button>
 <div class="ld-page">
 <div class="ld-sticky-header-wrapper">
 <header class="mb-3 ld-sticky-header">
 <h1 class="text-2xl font-bold text-slate-900 leading-tight">
-    Læringsdesigner - Learning Designer
+    Concepteur Pédagogique - Learning Designer
     <span id="mode-indicator" class="text-2xl font-bold transition-colors">
-      | <span id="mode-indicator-text">avanceret visning</span>
+      | <span id="mode-indicator-text">vue avancée</span>
     </span>
   </h1>
 <div class="mt-2 flex flex-wrap gap-x-2 gap-y-2 no-print items-stretch content-start">
@@ -3304,11 +3247,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 py-1" data-i18n="label_templates">Modèles</div>
 <button class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2" data-action="open-template-export-modal" type="button">
 <span class="material-icons-round text-base text-slate-500">upload_file</span>
-<span class="text-sm">Eksporter skabelon</span>
+<span class="text-sm">Exporter un modèle</span>
 </button>
 <button class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2" data-action="open-template-import-modal" type="button">
 <span class="material-icons-round text-base text-slate-500">download_for_offline</span>
-<span class="text-sm">Importer skabelon</span>
+<span class="text-sm">Importer un modèle</span>
 </button>
 <div class="my-1 border-t border-slate-200"></div>
 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 py-1" data-i18n="grp_interface">Interface</div>
@@ -3332,10 +3275,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </select>
 </div>
 <div class="my-1 border-t border-slate-200"></div>
-<div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 py-1">Diagnostik</div>
+<div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider px-2 py-1">Diagnostic</div>
 <button class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2" data-action="toggle-debug-ui" type="button">
 <span class="material-icons-round text-base text-slate-500">bug_report</span>
-<span class="text-sm">UI Diagnostik</span>
+<span class="text-sm">Diagnostic UI</span>
 </button>
 
 
@@ -3348,7 +3291,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 <div class="flex flex-col relative gap-0.5 bg-slate-50 border border-slate-200 rounded-lg p-0.5">
 <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider pl-1" data-i18n="label_designed_time">
-       Designet tid (Planlagt)
+       Temps Conçu (Planifié)
       </span>
 <div class="flex items-center bg-white border border-slate-200 rounded-md px-2 gap-1 shadow-sm h-[30px]">
 <span class="material-icons-round text-slate-600 text-lg">
@@ -3368,15 +3311,15 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="bg-white rounded-lg border border-slate-200 p-1.5 flex gap-1.5 shadow-md" role="tablist" aria-label="Sections">
     <button type="button" id="top-tab-btn-info" role="tab" aria-selected="false" aria-controls="key-params-wrapper" class="top-tab-btn">
       <span class="material-icons-round text-sm">tune</span>
-      <span class="top-tab-label" data-i18n="tab_info">KURSUSOPLYSNINGER OG PARAMETRE</span>
+      <span class="top-tab-label" data-i18n="tab_info">INFORMATIONS ET PARAMÈTRES DE LA FORMATION</span>
     </button>
     <button type="button" id="top-tab-btn-visual" role="tab" aria-selected="false" aria-controls="visualisations-wrapper" class="top-tab-btn">
       <span class="material-icons-round text-sm">insights</span>
-      <span class="top-tab-label" data-i18n="tab_visual">SEKVENSVISUALISERINGER</span>
+      <span class="top-tab-label" data-i18n="tab_visual">VISUALISATIONS DES SÉQUENCES</span>
     </button>
     <button type="button" id="top-tab-btn-analysis" role="tab" aria-selected="false" aria-controls="analysis-tabs-wrap" class="top-tab-btn">
       <span class="material-icons-round text-sm">bar_chart</span>
-      <span class="top-tab-label" data-i18n="tab_analysis">ANALYSEDIAGRAMMER</span>
+      <span class="top-tab-label" data-i18n="tab_analysis">GRAPHIQUES D'ANALYSE</span>
     </button>
   </div>
 </div>
@@ -3385,22 +3328,22 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="mb-3 no-print w-full ld-sticky-vue">
 <div class="flex flex-col relative gap-0.5 bg-slate-50 border border-slate-200 rounded-lg p-0.5 shadow-sm">
 <span class="text-[10px] font-bold text-slate-600 uppercase tracking-wider pl-1.5 py-0.5" data-i18n="grp_view">
-       Visning
+       Vue
       </span>
 <div class="flex flex-wrap items-center bg-white border border-slate-200 rounded-md p-1 gap-1.5 shadow-sm min-h-[32px]">
 <button id="btn-toggle-beginner-mode"
         class="text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 px-2 py-0.5 rounded transition-colors flex items-center gap-1.5"
         data-action="toggle-beginner-mode"
         aria-pressed="false"
-        title="Skift til simpel tilstand"
-        aria-label="Skift til simpel tilstand">
+        title="Passer en mode simple"
+        aria-label="Passer en mode simple">
   <span class="material-icons-round text-lg" id="icon-toggle-beginner-mode">school</span>
-  <span class="text-xs font-medium" id="text-toggle-beginner-mode">Avanceret</span>
+  <span class="text-xs font-medium" id="text-toggle-beginner-mode">Avancé</span>
 </button>
 <div class="w-px h-5 bg-slate-200"></div>
 <button id="btn-toggle-todos"
         class="text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 px-2 py-0.5 rounded transition-colors flex items-center gap-1.5"
-        title="Se alle todos" aria-label="Se alle todos" type="button">
+        title="Voir tous les todos" aria-label="Voir tous les todos" type="button">
   <span class="material-icons-round text-lg">checklist</span>
   <span class="text-xs font-medium">Todos</span>
   <span class="ld-todo-badge"></span>
@@ -3411,7 +3354,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <button class="text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 px-2 py-1 rounded transition-colors flex items-center justify-center gap-1"
           id="btn-view-style-menu"
           data-action="toggle-view-style-menu"
-          title="Visningsstil"
+          title="Style d'affichage"
           type="button">
     <span class="material-icons-round text-base" id="icon-view-style">visibility</span>
     <span class="material-icons-round text-sm">arrow_drop_down</span>
@@ -3421,13 +3364,13 @@ document.addEventListener('DOMContentLoaded', function() {
             data-view-style="std"
             type="button">
       <span class="material-icons-round text-base text-slate-500">visibility</span>
-      <span class="text-sm">Standard - Standardvisning</span>
+      <span class="text-sm">Standard - Vue par défaut</span>
     </button>
     <button class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2"
             data-view-style="hc"
             type="button">
       <span class="material-icons-round text-base text-slate-500">contrast</span>
-      <span class="text-sm">Høj Kontrast - Tilgængelighed</span>
+      <span class="text-sm">Contraste Élevé - Accessibilité</span>
     </button>
   </div>
 </div>
@@ -3440,7 +3383,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <select id="jump-to-select" class="ld-control-select min-w-[100px] max-w-[160px] sm:min-w-[120px] sm:max-w-[180px]" aria-label="Navigation rapide vers un élément">
   <option value="" data-i18n="opt_goto">Aller à…</option>
 </select>
-<button id="jump-to-refresh" class="ld-control-btn border-slate-300 hover:border-indigo-400" type="button" title="Opdater navigationslisten" aria-label="Opdater navigation">
+<button id="jump-to-refresh" class="ld-control-btn border-slate-300 hover:border-indigo-400" type="button" title="Actualiser la liste de navigation" aria-label="Actualiser la navigation">
   <span class="material-icons-round text-[16px]">refresh</span>
 </button>
 <div class="w-px h-5 bg-slate-200"></div>
@@ -3453,7 +3396,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="absolute right-0 mt-1 w-64 bg-white border border-slate-200 rounded-md shadow-lg z-50">
     <!-- Niveaux d'affichage -->
     <div class="p-1 border-b border-slate-100">
-      <div class="px-2 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wide">Visningstrin</div>
+      <div class="px-2 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wide">Niveau d'affichage</div>
       <button class="ld-view-level-option w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" data-level="activities" data-i18n="btn_view_activities">
         <span>Activités</span>
       </button>
@@ -3472,7 +3415,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <!-- Action replier/déplier -->
     <div class="p-1">
-      <button id="btn-toggle-all-main" data-action="toggle-all-activities" class="w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" aria-label="Fold alle moduler sammen eller ud" title="Fold alle moduler sammen eller ud">
+      <button id="btn-toggle-all-main" data-action="toggle-all-activities" class="w-full text-left px-3 py-2 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors" aria-label="Replier ou déplier tous les modules" title="Replier ou déplier tous les modules">
         <span class="material-icons-round text-[16px]" id="icon-toggle-all-main">unfold_less</span>
         <span data-i18n="btn_collapse_all" id="text-toggle-all-main">Tout replier</span>
       </button>
@@ -3488,35 +3431,35 @@ document.addEventListener('DOMContentLoaded', function() {
 </select>
 <div class="w-px h-5 bg-slate-200"></div>
 <div class="contents" id="filter-container">
-<select id="status-filter" class="ld-control-select" title="Filtrer visning efter status" aria-label="Filtrer efter gennemførelsesstatus">
+<select id="status-filter" class="ld-control-select" title="Filtrer l'affichage par état" aria-label="Filtrer par état de réalisation">
   <option value="all" selected data-i18n="opt_all_statuses">Tous</option>
   <option value="review" data-i18n="opt_status_review">À revoir</option>
   <option value="in_progress" data-i18n="opt_status_inprogress">En cours</option>
   <option value="done" data-i18n="opt_status_completed">Finalisé</option>
 </select>
-<button id="status-filter-clear" class="ld-control-btn px-1.5" title="Nulstil filter" aria-label="Nulstil filter">
+<button id="status-filter-clear" class="ld-control-btn px-1.5" title="Réinitialiser le filtre" aria-label="Réinitialiser le filtre">
   <span class="material-icons-round text-[16px]">restart_alt</span>
 </button>
 <button id="btn-toggle-target-durations"
         class="ld-control-btn"
         data-action="toggle-target-durations"
         aria-pressed="false"
-        title="Vis målvarighed"
-        aria-label="Vis målvarighed">
+        title="Afficher les durées cibles"
+        aria-label="Afficher les durées cibles">
   <span class="material-icons-round text-[16px]" id="icon-toggle-target-durations">visibility_off</span>
-  <span class="hidden xl:inline" id="text-toggle-target-durations">Målvarighed</span>
+  <span class="hidden xl:inline" id="text-toggle-target-durations">Durées ciblées</span>
 </button>
 <details class="relative" id="status-display-menu">
   <summary class="ld-control-btn list-none select-none bg-white">
     <span class="material-icons-round text-[16px]">tune</span>
-    <span class="hidden lg:inline">Visning af statusser</span>
+    <span class="hidden lg:inline">Affichage des états</span>
   </summary>
   <div class="absolute right-0 mt-1 w-56 bg-white border border-slate-200 rounded-md shadow-lg z-50 p-1">
     <button id="btn-toggle-status-summaries" type="button" aria-pressed="false"
       class="w-full text-left px-2 py-1.5 rounded hover:bg-slate-50 text-slate-700 flex items-center gap-2"
-      title="Vis eller skjul statusoversigter">
+      title="Afficher ou masquer les synthèses d'état">
       <span class="material-icons-round text-[16px]" id="icon-toggle-status-summaries">visibility</span>
-      <span id="text-toggle-status-summaries">Vis oversigter</span>
+      <span id="text-toggle-status-summaries">Afficher synthèses</span>
     </button>
 
     <button id="btn-toggle-status-selectors" type="button" aria-pressed="false"
@@ -3542,7 +3485,7 @@ document.addEventListener('DOMContentLoaded', function() {
        tune
       </span>
 <span class="font-bold text-slate-700 uppercase text-xs tracking-wide" data-i18n="panel_key_parameters">
-       Kursusoplysninger og -parametre
+       Informations et paramètres de la formation
       </span>
 </div>
 <span class="material-icons-round text-slate-400 rotate-icon text-sm" id="key-params-panel-icon">
@@ -3552,7 +3495,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Key parameters wizard (Option 6) -->
 <div class="px-3 py-2 border-t border-slate-100 bg-white flex items-center justify-between gap-2 flex-wrap" id="kpwiz-bar">
 <div class="flex items-center gap-2">
-<span class="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider" data-i18n="label_path">Forløb</span>
+<span class="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider" data-i18n="label_path">Parcours</span>
 <div class="flex items-center gap-1 flex-wrap" id="kpwiz-steps">
 <button class="kpwiz-step-btn px-2 h-[26px] rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 text-[10px] font-bold" data-kpwiz-step="1" type="button" data-i18n="btn_wizard_identity">1. Identité</button>
 <button class="kpwiz-step-btn px-2 h-[26px] rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 text-[10px] font-bold" data-kpwiz-step="2" type="button" data-i18n="btn_wizard_audience">2. Public</button>
@@ -3574,7 +3517,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="p-3 border-t border-slate-100">
     <h3 class="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
       <span class="material-icons-round text-[14px] text-slate-400">info</span>
-      Primære oplysninger
+      Informations principales
     </h3>
         <div class="flex flex-col md:flex-row md:items-end gap-3">
 <div class="flex-1 min-w-[240px]">
@@ -3880,7 +3823,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="md:col-span-2 lg:col-span-3">
 <details open class="group border border-slate-200 rounded-lg bg-white/0">
 <summary class="px-3 py-2 cursor-pointer select-none flex items-center justify-between">
-<span>Fagkompetencer</span>
+<span>Compétences du sujet</span>
 <span class="material-icons-round text-slate-400 text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="mt-1">
@@ -3932,7 +3875,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </details>
 <details open class="group border border-slate-200 rounded-lg bg-white/0 mt-3">
 <summary class="px-3 py-2 cursor-pointer select-none flex items-center justify-between">
-<span>Tværgående kompetencer</span>
+<span>Compétences transversales</span>
 <span class="material-icons-round text-slate-400 text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="mt-1">
@@ -4312,7 +4255,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Couverture + non couvertes -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Kompetencer</div>
+<div class="text-xs font-bold text-slate-600">Compétences</div>
 <div class="text-[11px] text-slate-500">Couverture</div>
 </div>
 <div class="mt-2 space-y-1 text-[11px] text-slate-700">
@@ -4322,7 +4265,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <details class="mt-2 border border-slate-200 rounded-lg bg-slate-50" id="comp-unused-details">
 <summary class="text-[11px] cursor-pointer select-none px-2 py-1.5 flex items-center gap-1">
 <span class="material-icons-round text-[14px] text-slate-400">rule</span>
-<span class="font-semibold text-slate-600">Ikke-mobiliserede kompetencer</span>
+<span class="font-semibold text-slate-600">Compétences non mobilisées</span>
 <span class="ml-auto text-slate-400" id="comp-unused-count">0</span>
 </summary>
 <div class="px-2 pb-2 pt-1">
@@ -4391,7 +4334,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <table class="w-full text-[11px]">
 <thead class="bg-slate-50">
 <tr>
-<th class="text-left px-2 py-1 text-[10px] text-slate-500 font-bold uppercase">Modul</th>
+<th class="text-left px-2 py-1 text-[10px] text-slate-500 font-bold uppercase">Module</th>
 <th class="text-right px-2 py-1 text-[10px] text-slate-500 font-bold uppercase">Sujet</th>
 <th class="text-right px-2 py-1 text-[10px] text-slate-500 font-bold uppercase">Transv.</th>
 <th class="text-right px-2 py-1 text-[10px] text-slate-500 font-bold uppercase">% Sujet</th>
@@ -4406,7 +4349,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <div class="mt-2 bg-white rounded-xl border border-slate-200 p-2" id="competences-bipartite-card">
 <div class="flex items-center justify-between">
 <div class="text-xs font-bold text-slate-600">Réseau activités ↔ compétences</div>
-<div class="text-[11px] text-slate-500">Kun mobiliserede kompetencer</div>
+<div class="text-[11px] text-slate-500">Compétences mobilisées uniquement</div>
 </div>
 <div class="mt-2 border border-slate-200 rounded-lg bg-slate-50 overflow-auto h-[340px]" id="competences-bipartite-wrap">
 <svg class="w-full" id="chart-comp-bipartite" preserveaspectratio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -4421,7 +4364,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <!-- Couverture + non mobilisés -->
 <div class="bg-white rounded-xl border border-slate-200 p-2">
 <div class="flex items-center justify-between">
-<div class="text-xs font-bold text-slate-600">Læringsmål</div>
+<div class="text-xs font-bold text-slate-600">Objectifs d'apprentissage</div>
 <div class="text-[11px] text-slate-500">Couverture</div>
 </div>
 <div class="mt-2 space-y-1 text-[11px] text-slate-700">
@@ -4430,7 +4373,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <details class="mt-2 border border-slate-200 rounded-lg bg-slate-50" id="aim-unused-details">
 <summary class="text-[11px] cursor-pointer select-none px-2 py-1.5 flex items-center gap-1">
 <span class="material-icons-round text-[14px] text-slate-400">rule</span>
-<span class="font-semibold text-slate-600">Ikke-mobiliserede læringsmål</span>
+<span class="font-semibold text-slate-600">Objectifs non mobilisés</span>
 <span class="ml-auto text-slate-400" id="aim-unused-count">0</span>
 </summary>
 <div class="px-2 pb-2 pt-1">
@@ -4624,7 +4567,7 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
 <span class="text-lg font-bold text-indigo-600" id="tools-diversity-avg">0</span>
 </div>
 <div class="flex flex-col gap-1">
-<span class="text-slate-500 font-semibold">Mest varierede modul</span>
+<span class="text-slate-500 font-semibold">Module le plus diversifié</span>
 <span class="text-sm font-bold text-slate-700" id="tools-diversity-top-module">—</span>
 </div>
 </div>
@@ -4858,10 +4801,10 @@ Vous pouvez importer une liste (CSV/TSV/TXT) ou ajouter des éléments manuellem
             <input id="panorama-select-all" type="checkbox" class="align-middle" title="Tout sélectionner (lignes visibles)"/>
           </th>
           <th class="text-left font-extrabold px-2 py-1 w-12 pano-sortable" data-sort-key="n"><span>#</span><span class="pano-sort-ind"></span></th>
-          <th class="text-left font-extrabold px-2 py-1 min-w-[180px] pano-sortable" data-sort-key="module"><span>Modul</span><span class="pano-sort-ind"></span></th>
+          <th class="text-left font-extrabold px-2 py-1 min-w-[180px] pano-sortable" data-sort-key="module"><span>Module</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 min-w-[160px] pano-sortable" data-sort-key="moment"><span>Moment</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 min-w-[160px] pano-sortable" data-sort-key="bloc"><span>Sous-moment</span><span class="pano-sort-ind"></span></th>
-          <th class="text-left font-extrabold px-2 py-1 min-w-[220px] pano-sortable" data-sort-key="activite"><span>Aktivitet</span><span class="pano-sort-ind"></span></th>
+          <th class="text-left font-extrabold px-2 py-1 min-w-[220px] pano-sortable" data-sort-key="activite"><span>Activité</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 pano-sortable pano-col-status" data-sort-key="status"><span>État</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 w-20 pano-sortable pano-col-duration" data-sort-key="duree"><span>Durée</span><span class="pano-sort-ind"></span></th>
           <th class="text-left font-extrabold px-2 py-1 w-16">Ouvrir</th>
@@ -5275,7 +5218,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
         <details class="module-competence-summary border border-slate-200 rounded-lg bg-white" data-readonly="true">
 <summary class="flex items-center gap-2 cursor-pointer select-none px-2 py-1.5 text-[11px] text-slate-600">
 <span class="material-icons-round text-[14px] text-slate-400">checklist</span>
-<span class="font-semibold">Modulets kompetencer (fra aktiviteterne)</span>
+<span class="font-semibold">Compétences du module (d'après les activités)</span>
 <span class="ml-auto flex items-center gap-2 text-[10px] text-slate-400 font-normal">
 <span><span class="module-competences-count-sujet">0</span> sujet</span>
 <span>•</span>
@@ -5286,12 +5229,12 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <div class="px-2 pb-2 pt-1">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 <div>
-<div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Fagkompetencer</div>
+<div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Compétences du sujet</div>
 <div class="module-target-competences-sujet-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[180px] overflow-auto text-[11px] space-y-1"></div>
 <select class="module-target-competences-sujet-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
 </div>
 <div>
-<div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Tværgående kompetencer</div>
+<div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Compétences transversales</div>
 <div class="module-target-competences-transv-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[180px] overflow-auto text-[11px] space-y-1"></div>
 <select class="module-target-competences-transv-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
 </div>
@@ -5310,7 +5253,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
         <details class="module-aims-summary border border-slate-200 rounded-lg bg-white" data-readonly="true">
 <summary class="flex items-center gap-2 cursor-pointer select-none px-2 py-1.5 text-[11px] text-slate-600">
 <span class="material-icons-round text-[14px] text-slate-400">flag</span>
-<span class="font-semibold">Modulets læringsmål (fra aktiviteterne)</span>
+<span class="font-semibold">Objectifs d'apprentissage du module (d'après les activités)</span>
 <span class="ml-auto flex items-center gap-2 text-[10px] text-slate-400 font-normal">
 <span><span class="module-aims-count">0</span> sélectionné(s)</span>
 <span class="material-icons-round text-[16px]">expand_more</span>
@@ -5375,7 +5318,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 </button>
 <button class="text-sm font-semibold text-slate-500 hover:text-indigo-700 px-3 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-moment" title="Ajouter un moment" type="button">
 <span class="material-icons-round text-sm">add</span>
-<span>Tilføj et moment</span>
+<span>Ajouter un moment</span>
 </button>
 </div>
 </div>
@@ -5390,7 +5333,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <span class="material-icons-round text-lg">drag_indicator</span>
 </div>
 <div class="h-6 w-6 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600 moment-index shrink-0 text-xs">1</div>
-<input class="moment-title flex-1 text-base font-semibold text-slate-800 bg-transparent focus:outline-none focus:ring-0 border-0 p-0 m-0 min-w-0" placeholder="Momentets navn (fx: Velkomst)" type="text"/>
+<input class="moment-title flex-1 text-base font-semibold text-slate-800 bg-transparent focus:outline-none focus:ring-0 border-0 p-0 m-0 min-w-0" placeholder="Nom du moment (ex : Accueil)" type="text"/>
 </div>
 <div class="flex items-center gap-3">
 <div class="flex items-center gap-2">
@@ -5452,7 +5395,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
   </button>
   <button class="no-print text-xs font-semibold text-slate-500 hover:text-indigo-700 px-2 py-1 rounded transition-colors flex items-center gap-1 hover:bg-slate-50" data-action="add-submoment" title="Ajouter un sous-moment" type="button">
     <span class="material-icons-round text-sm">add</span>
-    <span>Tilføj et undermoment</span>
+    <span>Ajouter un sous-moment</span>
   </button>
 </div>
 
@@ -5469,7 +5412,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
           <span class="material-icons-round text-lg">drag_indicator</span>
         </div>
         <div class="h-5 w-5 rounded-full bg-indigo-100 flex items-center justify-center font-bold text-indigo-700 submoment-index shrink-0 text-[10px]">1</div>
-        <input class="submoment-title flex-1 min-w-0 text-sm font-semibold bg-transparent border border-transparent focus:border-indigo-300 rounded px-2 py-1 outline-none" placeholder="Undermomenttitel" />
+        <input class="submoment-title flex-1 min-w-0 text-sm font-semibold bg-transparent border border-transparent focus:border-indigo-300 rounded px-2 py-1 outline-none" placeholder="Titre du sous-moment" />
       </div>
       <div class="flex items-center gap-2">
           <div class="flex items-center gap-1">
@@ -5516,7 +5459,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
     <div class="submoment-body px-3 py-2">
       <div class="submoment-notes-wrap hidden mb-2">
         <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Notes</label>
-        <textarea class="submoment-notes w-full mt-1 px-2 py-1 text-xs text-slate-700 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-white" placeholder="Undermomentnoter..."></textarea>
+        <textarea class="submoment-notes w-full mt-1 px-2 py-1 text-xs text-slate-700 border border-slate-200 rounded focus:ring-1 focus:ring-indigo-500 outline-none resize-y bg-white" placeholder="Notes du sous-moment..."></textarea>
       </div>
       <div class="submoment-steps steps-container space-y-2 min-h-[20px]"></div>
     </div>
@@ -5538,7 +5481,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
 <div class="h-5 w-5 rounded-full bg-slate-100 flex items-center justify-center font-semibold text-slate-600 step-index shrink-0 text-[10px]">1</div>
 <span class="material-icons-round text-amber-500 text-[18px] step-coherence-indicator hidden no-print" title="">warning_amber</span>
 <div class="flex-1">
-<input class="step-input-title w-full px-1 py-0.5 text-sm font-semibold text-slate-800 border-none bg-transparent focus:ring-0 outline-none" data-i18n-placeholder="ph_step_title" placeholder="Aktivitetstitel..." type="text"/>
+<input class="step-input-title w-full px-1 py-0.5 text-sm font-semibold text-slate-800 border-none bg-transparent focus:ring-0 outline-none" data-i18n-placeholder="ph_step_title" placeholder="Titre de l'activité..." type="text"/>
 
 </div>
 <div class="w-24 learning-type-container">
@@ -5821,7 +5764,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
       <details class="step-right-section border border-slate-200 rounded-lg bg-white">
         <summary class="compact-label flex items-center gap-1 cursor-pointer select-none px-2 py-1.5">
           <span class="material-icons-round text-[10px] text-slate-400">school</span>
-          <span>Målrettede kompetencer</span>
+          <span>Compétences ciblées</span>
           <span class="step-competences-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
             <span>Afficher</span>
@@ -5831,12 +5774,12 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
         <div class="px-2 pb-2 pt-1">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
             <div>
-              <div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Fagkompetencer</div>
+              <div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Compétences du sujet</div>
               <div class="step-competences-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[140px] overflow-auto text-[11px] space-y-1"></div>
               <select class="step-competences-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
             </div>
             <div>
-              <div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Tværgående kompetencer</div>
+              <div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Compétences transversales</div>
               <div class="step-competences-transversales-checkboxes w-full border border-slate-200 rounded-lg bg-slate-50 p-2 max-h-[140px] overflow-auto text-[11px] space-y-1"></div>
               <select class="step-competences-transversales-select w-full px-2 py-1.5 text-xs border border-slate-200 rounded-lg focus:ring-1 focus:ring-indigo-500 outline-none min-h-[74px] hidden" multiple=""></select>
             </div>
@@ -5855,7 +5798,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
       <details class="step-right-section border border-slate-200 rounded-lg bg-white">
         <summary class="compact-label flex items-center gap-1 cursor-pointer select-none px-2 py-1.5">
           <span class="material-icons-round text-[10px] text-slate-400">flag</span>
-          <span>Målrettede læringsmål</span>
+          <span>Objectifs ciblés</span>
           <span class="step-aims-count ml-1 px-1.5 py-0.5 text-[10px] font-semibold bg-indigo-50 text-indigo-600 rounded hidden"></span>
           <span class="ml-auto flex items-center gap-1 text-[10px] text-slate-400 font-normal">
             <span>Afficher</span>
@@ -5971,7 +5914,7 @@ Cochez les éléments que vous souhaitez inclure dans l'export. Les éléments p
       <button type="button"
               class="step-todo-add mt-1 text-[10px] text-slate-400 hover:text-indigo-600 flex items-center gap-1 transition-colors">
         <span class="material-icons-round text-xs">add</span>
-        <span>Tilføj en todo</span>
+        <span>Ajouter un todo</span>
       </button>
     </div>
   </div>
@@ -9485,11 +9428,532 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
         function downloadOutcomesTextTaxonomyTemplate()            { __outcomesTextTaxMgr.downloadTemplate(); }
 
         const translations = {
+            fr: {
+                app_title: "Concepteur Pédagogique",
+                app_subtitle: "Design Pédagogique & Analytique",
+                btn_new_activity: "Nouveau Module",
+                btn_export_md: "Exporter pour IA/RAG",
+                btn_print: "Imprimer / PDF",
+                btn_save: "Enregistrer",
+                btn_load: "Charger",
+                grp_project: "Projet",
+                grp_view: "Vue",
+                grp_learning_types: "Types",
+                grp_actions: "Actions",
+                grp_help: "Aide",
+                
+                
+                grp_interface: "Interface",
+                btn_load_language_pack: "Charger langue",
+                title_load_language_pack: "Charger un pack de langue (JSON)",
+                btn_export_language_template: "Exporter modèle",
+                title_export_language_template: "Exporter le modèle JSON du pack de langue",
+                btn_i18n_audit: "Vérifier traductions",
+                title_i18n_audit: "Vérifier la couverture des traductions",
+                i18n_audit_title: "Vérification des traductions",
+                i18n_audit_subtitle: "Détecte les clés manquantes dans le pack chargé et les textes statiques non couverts par data-i18n.",
+                i18n_audit_used_label: "Clés UI",
+                i18n_audit_missing_pack_label: "Manquantes (pack)",
+                i18n_audit_missing_fr_label: "Clés inconnues (FR)",
+                i18n_audit_uncovered_label: "Textes non couverts",
+                i18n_audit_section_missing_pack: "Clés utilisées mais absentes du pack chargé (fallback FR)",
+                i18n_audit_section_missing_fr: "Clés utilisées mais absentes du FR (à corriger dans le code)",
+                i18n_audit_section_uncovered: "Éléments visibles avec texte statique sans data-i18n (échantillon)",
+                btn_refresh: "Rafraîchir",
+
+btn_download_report: "Télécharger rapport",
+btn_recover_text: "Récupérer version texte",
+btn_close: "Fermer",
+import_recovery_unavailable: "Aucune donnée exploitable pour la récupération.",
+import_recovery_failed: "La récupération a échoué.",
+import_recovery_default_title: "Conception pédagogique (récupération)",
+import_recovery_disclaimer: "Récupération automatique depuis un fichier JSON (import échoué). À relire et ajuster si nécessaire.",
+import_recovery_generated_at: "Généré le",
+import_recovery_description: "Description",
+import_recovery_aims: "Objectifs",
+import_recovery_outcomes: "Résultats d’apprentissage",
+import_recovery_structure: "Structure",
+import_recovery_no_modules: "Aucun module détecté dans ce fichier.",
+import_recovery_module: "Module",
+import_recovery_no_steps: "Aucune activité détectée dans ce module.",
+import_recovery_activities: "Activités",
+import_recovery_activity: "Activité",
+import_recovery_type: "Type",
+import_recovery_grouping: "Regroupement",
+import_recovery_trainer: "Formateur",
+import_recovery_context: "Contexte",
+import_recovery_objective: "Objectif",
+import_recovery_tasks: "À faire",
+import_recovery_notes: "Notes",
+title_ui_language_select: "Choisir la langue de l’interface",
+                opt_lang_fr: "Français",
+                opt_lang_loaded: "Langue chargée",
+btn_export_dropdown: "Exporter...",
+                title_export_dropdown: "Choisir le format d'export",
+                opt_md: "Markdown (conseillé pour l'IA)",
+                opt_presentation_md: "Markdown Présentation (diaporama)",
+                opt_csv: "CSV (modules/moments/activités)",
+                opt_pdf: "PDF (pour imprimer)",
+                opt_rtf: "Page Web HTML (contient les graphiques)",
+                opt_real_rtf: "Texte (.rtf)",
+                csv_synthetic_moment: "Moment (auto)",
+                title_export_term: "Exporter le tableau de traduction",
+                info_export_genai: "Le format d'exportation est le design pédagogique au format Markdown pour un traitement facilité par un chatbot d'IA générative.",
+                label_total_time: "Chronologie",
+                status_calculating: "",
+                label_class_size: "Taille de la cohorte",
+                label_timeline_structure: "Modules conçus",
+                label_timeline_moments: "Moments",
+                label_timeline_submoments: "Sous-moments",
+                label_out_of_moments: "Hors moments",
+                label_out_of_submoments: "Hors sous-moments",
+                label_direct_steps: "Direct",
+                label_timeline_details: "Détails",
+                label_timeline_structure_planned: "Modules prévus",
+                label_timeline_pedagogy: "Types d'apprentissage",
+                empty_title: "Aucun module conçu",
+                empty_subtitle: "Commencez par créer votre premier module.",
+                btn_create_activity: "Créer un Module",
+                btn_add_step: "Ajouter Activité",
+                ph_activity_title: "Titre du module (ex: Module 1 : Introduction)",
+                ph_activity_desc: "Objectif(s) du module...",
+                label_step_title: "Titre de l'activité",
+                ph_step_title: "Titre pour cette activité...",
+                label_learning_type: "Type d'apprentissage",
+                label_duration: "Durée",
+                label_grouping: "Regroupement",
+                opt_whole_class: "Groupe entier",
+                opt_individual: "Individuel",
+                opt_groups: "Sous-groupe",
+                ph_nb_groups: "Nb groupes",
+                label_short_groups: "Grps",
+                ph_per_group: "Par groupe",
+                label_short_pers: "Pers",
+                label_trainer: "Formateur",
+                opt_present: "Présent",
+                opt_absent: "Absent",
+                label_place: "Lieu",
+                opt_insitu: "Présentiel (sur site)",
+                opt_online: "Distanciel (en ligne)",
+                opt_hybrid: "Hybride (sur site et en ligne)",
+                label_time: "Temps",
+                opt_sync: "Synchrone",
+                opt_async: "Asynchrone",
+                label_step_description: "Description de l'activité",
+                ph_step_description: "Décrivez l'activité...",
+                label_step_presentation: "Présentation (diaporama)",
+                ph_step_presentation: "Éléments à afficher dans le diaporama...",
+                label_tasks: "Ce que les apprenants doivent faire",
+                ph_tasks: "Décrivez les étapes, instructions et tâches...",
+                label_trainer_tasks: "Ce que le ou les formateurs doivent faire",
+                ph_trainer_tasks: "Décrivez les actions attendues du formateur...",
+                label_eval_followup: "Évaluation et suivi",
+                ph_eval_followup: "Critères d'évaluation, grilles, modalités de suivi...",
+                label_notes: "Notes",
+                ph_notes: "Notes formateur, ressources ou liens...",
+                type_none: "Aucun",
+
+                type_acquisition: "Acquisition",
+                type_collaboration: "Collaboration",
+                type_discussion: "Discussion",
+                type_investigation: "Enquête",
+                type_practice: "Entraînement",
+                type_production: "Production",
+                unit_mins: "min",
+                unit_hours: "Heures",
+                unit_days: "Jours",
+                unit_weeks: "Semaines",
+                unit_months: "Mois",
+                md_title: "# Profil de Design d'Expérience d'Apprentissage",
+                md_class_size: "Taille de la cohorte",
+                md_total_duration: "Durée totale estimée",
+                md_untitled_activity: "Module sans titre",
+                md_untitled_step: "Activité sans titre",
+                md_format_whole: "Classe entière",
+                md_format_individual: "Individuel",
+                md_format_groups: "Groupes de",
+                md_tasks: "Tâches et instructions des apprenants",
+                md_notes: "Notes pédagogiques",
+                rtf_title: "Profil de Design d'Expérience d'Apprentissage",
+                title_duplicate: "Dupliquer",
+                panel_key_parameters: "Informations et paramètres de la formation",
+                panel_timelines_title: "Visualisations des séquences",
+                panel_analysis_charts: "Graphiques d'analyse des modalités",
+                chart_learning_types: "Types d'apprentissage",
+                chart_percent_duration: "(% de durée)",
+                chart_trainer_presence: "Présence du formateur",
+                chart_place_modes: "Modes de lieu",
+                chart_time_modes: "Modes de temps",
+                chart_group_modes: "Modes de groupes",
+                label_course_name: "Nom de la formation",
+                ph_course_name: "Entrez le nom de la formation...",
+                label_file_title: "Titre de fichier (sauvegarde et export)",
+                ph_file_title: "Laissez vide pour utiliser le nom de la formation...",
+                label_version_number: "Version",
+                ph_version_number: "Entrez un numéro de version (ex. 1.0)...",
+label_learning_time: "Temps d'Apprentissage (Cible)",
+                label_designed_time: "Temps Conçu (Planifié)",
+                label_duration_tolerance: "Tolérance (écart acceptable)",
+                hint_duration_tolerance_pct: "%",
+                label_hours: "h",
+                label_minutes: "m",
+                label_description: "Description générale",
+                ph_description: "Description détaillée...",
+                label_mode: "Modalité",
+                label_level: "Niveau",
+                label_authors: "Concepteurs(s)",
+                ph_authors: "Entrez le nom du/des concepteurs...",
+                label_trainers: "Formateur(s)",
+                ph_trainers: "Entrez le nom du/des formateur(s)...",
+                label_license: "Licence",
+                opt_license_unspecified: "Non spécifiée",
+                opt_license_cc_by_40: "CC BY 4.0",
+                opt_license_cc_by_sa_40: "CC BY-SA 4.0",
+                opt_license_cc_by_nd_40: "CC BY-ND 4.0",
+                opt_license_cc_by_nc_40: "CC BY-NC 4.0",
+                opt_license_cc_by_nc_sa_40: "CC BY-NC-SA 4.0",
+                opt_license_cc_by_nc_nd_40: "CC BY-NC-ND 4.0",
+                opt_license_cc0_10: "CC0 1.0",
+                opt_license_pdm_10: "Public Domain Mark 1.0",
+                label_topic: "Thème",
+                ph_topic: "Entrez le thème...",
+                opt_level_unspecified: "Non spécifié",
+                opt_level_mixed: "Mixte",
+                opt_level_beginner: "Débutant",
+                opt_level_intermediate: "Intermédiaire",
+                opt_level_advanced: "Avancé",
+                opt_level_expert: "Expert",
+                label_target_audience: "Public cible",
+                label_prerequisites: "Prérequis",
+                label_tools_materials: "Outils et matériel",
+                ph_tools_materials: "Entrez les outils et matériels...",
+                opt_mode_placeholder: "Sélectionnez une modalité...",
+                opt_mode_online: "Distanciel (en ligne)",
+                opt_mode_blended: "Hybride (sur site et en ligne)",
+                opt_mode_classroom: "Présentiel (sur site)",
+                opt_mode_location: "Basé sur le lieu",
+                opt_mode_other: "Autre",
+                label_aims: "Objectifs d'apprentissage (ce qu'on va enseigner)",
+                ph_aims: "Entrez les objectifs...",
+                label_outcomes_text: "Résultats d'apprentissage (ce que les apprenants sauront faire)",
+                ph_outcomes_text: "Entrez les résultats d'apprentissage...",
+                label_outcomes: "Résultats d'apprentissage selon une taxonomie",
+                ph_add_outcome: "Ajouter un résultat...",
+                text_no_outcomes: "Aucun résultat défini",
+                title_fold_all: "Tout replier / Tout déplier",
+                btn_collapse_all: "Tout replier",
+                btn_expand_all: "Tout déplier",
+                title_duplicate_activity: "Dupliquer ce module",
+                title_delete_activity: "Supprimer ce module",
+                title_focus_module: "Mode focus",
+                title_exit_focus: "Quitter le mode focus",
+                title_duplicate_step: "Dupliquer cette activité",
+                title_delete_step: "Supprimer cette activité",
+                title_toggle_status_selectors: "Afficher ou masquer les sélecteurs d'état dans les activités",
+                btn_show_status_selectors: "Afficher états",
+                btn_hide_status_selectors: "Masquer états",
+                title_save_project: "Enregistrer le projet dans un fichier",
+                title_load_project: "Charger un projet depuis un fichier",
+title_new_activity: "Ajouter un nouveau module",
+                title_toggle_panel: "Afficher/Masquer les paramètres",
+                title_toggle_description: "Afficher/Masquer la description",
+                title_add_outcome: "Ajouter un résultat d'apprentissage",
+                title_remove_outcome: "Supprimer le résultat",
+                title_add_step: "Ajouter une nouvelle activité d'apprentissage",
+                title_create_activity: "Créer votre premier module",
+                title_help: "Aide & Information",
+                help_title: "Comment utiliser le Concepteur Pédagogique",
+                help_structure_title: "1. Structure du Design",
+                help_structure_text: "Construisez votre cours en ajoutant des <strong>Modules</strong> (sujets) et en les remplissant d'<strong>Activités</strong> (tâches spécifiques). Réorganisez les éléments à l'aide des poignées <span class=\"inline-block align-middle\"><span class=\"material-icons-round text-base text-slate-400\">drag_indicator</span></span>.",
+                help_types_title: "2. Types d'Apprentissage",
+                help_types_intro: "Sélectionnez un type pédagogique pour chaque étape :",
+                help_export_title: "3. Enregistrer & Exporter",
+                help_export_text: "<strong>Enregistrer/Charger :</strong> Conservez votre travail dans un fichier .json.<br><strong>Exporter :</strong> Générez des fichiers aux formats Markdown (IA), PDF ou Texte Riche.",
+                footer_disclaimer: "Ce site n'utilise pas de cookies de suivi ou de session. Aucune donnée personnelle n'est traitée en ligne.",
+                footer_ai_disclaimer: "Cette application a été créée principalement à l'aide d'une IA générative ; le code peut contenir des erreurs.",
+                footer_github: "Code disponible sur <a href=\"https://github.com/jourde/artefacts\" target=\"_blank\" class=\"underline hover:text-slate-500\">https://github.com/jourde/artefacts</a>",
+                bloom_placeholder: "Catégorie...",
+                bloom_sub_placeholder: "Sous-cat...",
+                bloom_remember: "Mémoriser",
+                bloom_understand: "Comprendre",
+                bloom_apply: "Appliquer",
+                bloom_analyze: "Analyser",
+                bloom_evaluate: "Évaluer",
+                bloom_create: "Créer",
+                bloom_sub_recognizing: "Reconnaître",
+                bloom_sub_recalling: "Se rappeler",
+                bloom_sub_interpreting: "Interpréter",
+                bloom_sub_exemplifying: "Illustrer",
+                bloom_sub_classifying: "Classer",
+                bloom_sub_summarizing: "Résumer",
+                bloom_sub_inferring: "Inférer",
+                bloom_sub_comparing: "Comparer",
+                bloom_sub_explaining: "Expliquer",
+                bloom_sub_executing: "Exécuter",
+                bloom_sub_implementing: "Implémenter",
+                bloom_sub_differentiating: "Différencier",
+                bloom_sub_organizing: "Organiser",
+                bloom_sub_attributing: "Attribuer",
+                bloom_sub_checking: "Vérifier",
+                bloom_sub_critiquing: "Critiquer",
+                bloom_sub_generating: "Générer",
+                bloom_sub_planning: "Planifier",
+                bloom_sub_producing: "Produire",
+                
+                modal_confirm_title: "Confirmer l'action",
+                confirm_delete_activity: "Supprimer tout le module ?",
+                confirm_delete_moment: "Supprimer ce moment ?",
+                btn_cancel: "Annuler",
+                btn_delete: "Supprimer",
+
+                btn_close: "Fermer",
+                btn_download_report: "Télécharger le rapport",
+                btn_copy_diagnostic: "Copier le diagnostic",
+                btn_copy_recovery_text: "Copier le texte récupéré",
+                btn_copied: "Copié",
+                import_error_copy_failed: "Impossible de copier le diagnostic dans le presse-papiers.",
+                import_error_title: "Erreur d’import",
+                import_error_probable_cause: "Cause probable",
+                import_error_detected: "Détecté",
+                import_error_hints: "Indices",
+                import_error_detail: "Détail",
+                import_error_actions: "Actions recommandées",
+                import_error_cause_parse: "JSON invalide ou fichier non conforme.",
+                import_error_cause_structure: "Structure de projet non reconnue.",
+                import_error_cause_version: "Fichier d’une version plus récente que cette interface.",
+                import_error_cause_generic: "Import impossible.",
+                import_error_action1: "Vérifiez que le fichier provient de « Sauver » dans cet outil.",
+                import_error_action2: "Si le fichier a été modifié (éditeur/IA), assurez-vous que le JSON est valide (guillemets, virgules, accolades).",
+                import_error_action3: "Si le fichier provient d’une ancienne version, réexportez-le depuis cette version puis réimportez-le ici.",
+                import_error_action4: "Si le problème persiste, téléchargez le rapport d’import et joignez-le à votre demande de support.",
+                
+                legend_grouping: "Plein : Classe • Rayé : Groupes",
+                legend_trainer: "Plein : Présent • Rayé : Absent",
+                legend_place: "Plein : Présentiel • Rayé : En ligne",
+                legend_time: "Plein : Synchrone • Rayé : Asynchrone",
+                title_toggle_types: "Afficher/Masquer le menu Type d'Apprentissage",
+                btn_toggle_types: "Types d'appr.",
+                label_learning_types: "Types d'appr.",
+                label_target: "Cible",
+                label_designed: "Conçu",
+                
+                bloom_sub_cite: "Citer",
+                bloom_sub_define: "Définir",
+                bloom_sub_describe: "Décrire",
+                bloom_sub_identify: "Identifier",
+                bloom_sub_label: "Étiqueter",
+                bloom_sub_list: "Lister",
+                bloom_sub_match: "Apparier",
+                bloom_sub_name: "Nommer",
+                bloom_sub_outline: "Esquisser",
+                bloom_sub_quote: "Citer",
+                bloom_sub_recall: "Se rappeler",
+                bloom_sub_report: "Rapporter",
+                bloom_sub_reproduce: "Reproduire",
+                bloom_sub_retrieve: "Récupérer",
+                bloom_sub_show: "Montrer",
+                bloom_sub_state: "Énoncer",
+                bloom_sub_tabulate: "Tabuler",
+                bloom_sub_tell: "Dire",
+                bloom_sub_abstract: "Abstraire",
+                bloom_sub_arrange: "Arranger",
+                bloom_sub_articulate: "Articuler",
+                bloom_sub_associate: "Associer",
+                bloom_sub_categorize: "Catégoriser",
+                bloom_sub_clarify: "Clarifier",
+                bloom_sub_classify: "Classer",
+                bloom_sub_compare: "Comparer",
+                bloom_sub_compute: "Calculer",
+                bloom_sub_conclude: "Conclure",
+                bloom_sub_contrast: "Contraster",
+                bloom_sub_defend: "Défendre",
+                bloom_sub_diagram: "Diagrammer",
+                bloom_sub_differentiate: "Différencier",
+                bloom_sub_discuss: "Discuter",
+                bloom_sub_distinguish: "Distinguer",
+                bloom_sub_estimate: "Estimer",
+                bloom_sub_exemplify: "Exemplifier",
+                bloom_sub_explain: "Expliquer",
+                bloom_sub_extend: "Étendre",
+                bloom_sub_extrapolate: "Extrapoler",
+                bloom_sub_generalize: "Généraliser",
+                "bloom_sub_give examples of": "Donner des exemples",
+                bloom_sub_illustrate: "Illustrer",
+                bloom_sub_infer: "Inférer",
+                bloom_sub_interpolate: "Interpoler",
+                bloom_sub_interpret: "Interpréter",
+                bloom_sub_paraphrase: "Paraphraser",
+                bloom_sub_predict: "Prédire",
+                bloom_sub_rearrange: "Réarranger",
+                bloom_sub_reorder: "Réordonner",
+                bloom_sub_rephrase: "Reformuler",
+                bloom_sub_represent: "Représenter",
+                bloom_sub_restate: "Réitérer",
+                bloom_sub_summarize: "Résumer",
+                bloom_sub_transform: "Transformer",
+                bloom_sub_translate: "Traduire",
+                bloom_sub_apply: "Appliquer",
+                bloom_sub_calculate: "Calculer",
+                "bloom_sub_carry out": "Effectuer",
+                bloom_sub_complete: "Compléter",
+                bloom_sub_demonstrate: "Démontrer",
+                bloom_sub_dramatize: "Théâtraliser",
+                bloom_sub_employ: "Employer",
+                bloom_sub_examine: "Examiner",
+                bloom_sub_execute: "Exécuter",
+                bloom_sub_experiment: "Expérimenter",
+                bloom_sub_implement: "Implémenter",
+                bloom_sub_manipulate: "Manipuler",
+                bloom_sub_modify: "Modifier",
+                bloom_sub_operate: "Opérer",
+                bloom_sub_organize: "Organiser",
+                bloom_sub_solve: "Résoudre",
+                bloom_sub_transfer: "Transférer",
+                bloom_sub_use: "Utiliser",
+                bloom_sub_analyze: "Analyser",
+                "bloom_sub_break down": "Décomposer",
+                bloom_sub_connect: "Connecter",
+                bloom_sub_deconstruct: "Déconstruire",
+                bloom_sub_detect: "Détecter",
+                bloom_sub_discriminate: "Discriminer",
+                bloom_sub_divide: "Diviser",
+                bloom_sub_integrate: "Intégrer",
+                bloom_sub_inventory: "Inventorier",
+                bloom_sub_order: "Ordonner",
+                bloom_sub_relate: "Relier",
+                bloom_sub_separate: "Séparer",
+                bloom_sub_structure: "Structurer",
+                bloom_sub_appraise: "Apprécier",
+                bloom_sub_apprise: "Informer",
+                bloom_sub_argue: "Argumenter",
+                bloom_sub_assess: "Évaluer",
+                bloom_sub_consider: "Considérer",
+                bloom_sub_convince: "Convaincre",
+                bloom_sub_criticize: "Critiquer",
+                bloom_sub_critique: "Critiquer",
+                bloom_sub_decide: "Décider",
+                bloom_sub_determine: "Déterminer",
+                bloom_sub_evaluate: "Évaluer",
+                bloom_sub_grade: "Noter",
+                bloom_sub_judge: "Juger",
+                bloom_sub_justify: "Justifier",
+                bloom_sub_measure: "Mesurer",
+                bloom_sub_rank: "Classer",
+                bloom_sub_rate: "Évaluer",
+                bloom_sub_recommend: "Recommander",
+                bloom_sub_review: "Revoir",
+                bloom_sub_score: "Scorer",
+                bloom_sub_select: "Sélectionner",
+                bloom_sub_standardize: "Standardiser",
+                bloom_sub_support: "Soutenir",
+                bloom_sub_test: "Tester",
+                bloom_sub_validate: "Valider",
+                bloom_sub_assemble: "Assembler",
+                bloom_sub_build: "Bâtir",
+                bloom_sub_collect: "Collecter",
+                bloom_sub_combine: "Combiner",
+                bloom_sub_compile: "Compiler",
+                bloom_sub_compose: "Composer",
+                bloom_sub_constitute: "Constituer",
+                bloom_sub_construct: "Construire",
+                bloom_sub_create: "Créer",
+                bloom_sub_design: "Concevoir",
+                bloom_sub_develop: "Développer",
+                bloom_sub_devise: "Imaginer",
+                bloom_sub_formulate: "Formuler",
+                bloom_sub_generate: "Générer",
+                bloom_sub_hypothesize: "Hypothétiser",
+                bloom_sub_invent: "Inventer",
+                bloom_sub_make: "Faire",
+                bloom_sub_manage: "Gérer",
+                bloom_sub_perform: "Performer",
+                bloom_sub_plan: "Planifier",
+                bloom_sub_prepare: "Préparer",
+                bloom_sub_produce: "Produire",
+                bloom_sub_propose: "Proposer",
+                bloom_sub_reconstruct: "Reconstruire",
+                bloom_sub_reorganize: "Réorganiser",
+                bloom_sub_revise: "Réviser",
+                bloom_sub_rewrite: "Réécrire",
+                bloom_sub_specify: "Spécifier",
+                bloom_sub_synthesize: "Synthétiser",
+                bloom_sub_write: "Écrire",
+                btn_apply: "Appliquer",
+                btn_back_to_activity: "Retour à l'activité",
+                btn_cancel: "Annuler",
+                btn_clear: "Effacer",
+                btn_copy_report: "Copier rapport",
+                btn_download: "Télécharger",
+                btn_go: "Aller",
+                btn_refresh_view: "Actualiser",
+                btn_reset: "Réinitialiser",
+                btn_view_activities: "Activités",
+                btn_view_modules: "Modules",
+                btn_view_moments: "Moments",
+                btn_view_panorama: "Panorama",
+                btn_view_submoments: "Sous-moments",
+                btn_wizard_audience: "2. Public",
+                btn_wizard_competences: "4. Compétences",
+                btn_wizard_identity: "1. Identité",
+                btn_wizard_next: "Suivant",
+                btn_wizard_objectives: "3. Objectifs et résultats",
+                btn_wizard_prev: "Précédent",
+                btn_wizard_showall: "Tout afficher",
+                btn_wizard_tools: "5. Outils et matériel",
+                chart_group_modes: "Modes de groupes",
+                chart_learning_types: "Types d'apprentissage",
+                chart_place_modes: "Modes de lieu",
+                chart_time_modes: "Modes de temps",
+                chart_trainer_presence: "Présence du formateur",
+                heading_analysis_charts: "Graphiques d'analyse",
+heading_metadata: "Métadonnées",
+                heading_selection: "Sélection",
+                label_description_compact: "Description",
+                label_more: "Plus",
+                label_path: "Parcours",
+label_search: "Rechercher",
+                label_templates: "Modèles",
+                label_theme_colon: "Thème:",
+                label_tools_materials: "Outils et matériel",
+                msg_no_filter_match: "Aucun élément ne correspond au filtre.",
+                opt_all_categories: "Toutes",
+                opt_all_statuses: "Tous",
+                opt_chart_style_contrast: "Contraste+",
+                opt_chart_style_dark: "Sombre",
+                opt_chart_style_hc: "HC",
+                opt_chart_style_light: "Clair",
+                opt_chart_style_std: "STD",
+                opt_chart_style_transparent: "Transparent",
+                opt_goto: "Aller à…",
+                opt_status_completed: "Finalisé",
+                opt_status_inprogress: "En cours",
+                opt_status_review: "À revoir",
+                ph_global_search: "Rechercher dans les modules, activités, contenus…",
+                ph_grouping_details: "Détails du regroupement (composition, critères, etc.)",
+                ph_links_references: "Liens, références, bibliographie, DOI, normes, etc.",
+                ph_moment_description: "Description du moment...",
+                ph_panorama_filter: "Filtrer (module, moment, activité…)",
+                ph_timeline_filter: "Filtrer… (titre module/moment/activité)",
+                tab_aims: "Objectifs",
+                tab_alignment: "Alignement",
+                tab_analysis: "GRAPHIQUES D'ANALYSE",
+                tab_competences: "Compétences",
+                tab_description: "Description",
+                tab_presentation: "Présentation",
+                 tab_flow: "Déroulé",
+                tab_evaluation: "Évaluation / suivi",
+                tab_info: "INFORMATIONS ET PARAMÈTRES DE LA FORMATION",
+                tab_modalities: "Modalités",
+                tab_outcomes: "Résultats",
+                tab_resources: "Ressources",
+                tab_tools: "Outils",
+                tab_visual: "VISUALISATIONS DES SÉQUENCES"
+            },
             da: {
                 app_title: "Læringsdesigner",
                 app_subtitle: "Pædagogisk Design & Analyse",
                 btn_new_activity: "Nyt Modul",
-                btn_export_md: "Eksporter til AI/RAG",
+                btn_export_md: "Eksportér til AI/RAG",
                 btn_print: "Udskriv / PDF",
                 btn_save: "Gem",
                 btn_load: "Indlæs",
@@ -9501,29 +9965,30 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 grp_interface: "Brugerflade",
                 btn_load_language_pack: "Indlæs sprog",
                 title_load_language_pack: "Indlæs en sprogpakke (JSON)",
-                btn_export_language_template: "Eksporter skabelon",
-                title_export_language_template: "Eksporter JSON-skabelon til sprogpakke",
+                btn_export_language_template: "Eksportér skabelon",
+                title_export_language_template: "Eksportér JSON-skabelon til sprogpakke",
                 btn_i18n_audit: "Tjek oversættelser",
                 title_i18n_audit: "Tjek oversættelsesdækning",
-                i18n_audit_title: "Oversættelsestjek",
-                i18n_audit_subtitle: "Registrerer manglende nøgler i den indlæste pakke og statiske tekster uden data-i18n.",
+                i18n_audit_title: "Kontrol af oversættelser",
+                i18n_audit_subtitle: "Finder manglende nøgler i den indlæste pakke og statiske tekster der ikke er dækket af data-i18n.",
                 i18n_audit_used_label: "UI-nøgler",
                 i18n_audit_missing_pack_label: "Manglende (pakke)",
                 i18n_audit_missing_fr_label: "Ukendte nøgler (DA)",
-                i18n_audit_section_missing_pack: "Nøgler brugt men ikke i indlæst pakke (DA fallback)",
-                i18n_audit_section_missing_fr: "Nøgler brugt men ikke i DA (ret i koden)",
-                i18n_audit_section_uncovered: "Synlige elementer med statisk tekst uden data-i18n (eksempler)",
-                btn_refresh: "Opdater",
-                btn_download_report: "Download rapport",
+                i18n_audit_uncovered_label: "Ikke dækkede tekster",
+                i18n_audit_section_missing_pack: "Nøgler brugt men ikke i indlæst pakke (falder tilbage til DA)",
+                i18n_audit_section_missing_fr: "Nøgler brugt men ikke i DA (skal rettes i koden)",
+                i18n_audit_section_uncovered: "Synlige elementer med statisk tekst uden data-i18n (udvalg)",
+                btn_refresh: "Opdatér",
+                btn_download_report: "Hent rapport",
                 btn_recover_text: "Gendan tekstversion",
                 btn_close: "Luk",
                 import_recovery_unavailable: "Ingen brugbare data til gendannelse.",
-                import_recovery_failed: "Gendannelsen mislykkedes.",
+                import_recovery_failed: "Gendannelse mislykkedes.",
                 import_recovery_default_title: "Pædagogisk design (gendannelse)",
-                import_recovery_disclaimer: "Automatisk gendannelse fra JSON-fil (import mislykkedes). Gennemse og juster efter behov.",
-                import_recovery_generated_at: "Genereret",
+                import_recovery_disclaimer: "Automatisk gendannelse fra JSON-fil (import mislykkedes). Læs igennem og justér om nødvendigt.",
+                import_recovery_generated_at: "Genereret den",
                 import_recovery_description: "Beskrivelse",
-                import_recovery_aims: "Læringsmål",
+                import_recovery_aims: "Mål",
                 import_recovery_outcomes: "Læringsresultater",
                 import_recovery_structure: "Struktur",
                 import_recovery_no_modules: "Ingen moduler fundet i denne fil.",
@@ -9535,23 +10000,23 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 import_recovery_grouping: "Gruppering",
                 import_recovery_trainer: "Underviser",
                 import_recovery_context: "Kontekst",
-                import_recovery_objective: "Formål",
+                import_recovery_objective: "Mål",
                 import_recovery_tasks: "At gøre",
                 import_recovery_notes: "Noter",
                 title_ui_language_select: "Vælg brugerfladesprog",
-                opt_lang_fr: "Dansk",
+                opt_lang_fr: "Français",
                 opt_lang_loaded: "Indlæst sprog",
-                btn_export_dropdown: "Eksporter...",
+                btn_export_dropdown: "Eksportér...",
                 title_export_dropdown: "Vælg eksportformat",
-                opt_md: "Markdown (anbefalet til AI)",
+                opt_md: "Markdown (anbefales til AI)",
                 opt_presentation_md: "Markdown Præsentation (diasshow)",
                 opt_csv: "CSV (moduler/momenter/aktiviteter)",
                 opt_pdf: "PDF (til udskrivning)",
-                opt_rtf: "HTML-webside (indeholder grafer)",
+                opt_rtf: "Webside HTML (indeholder grafer)",
                 opt_real_rtf: "Tekst (.rtf)",
                 csv_synthetic_moment: "Moment (auto)",
-                title_export_term: "Eksporter oversættelsestabel",
-                info_export_genai: "Eksportformatet er pædagogisk design i Markdown-format til behandling med en generativ AI-chatbot.",
+                title_export_term: "Eksportér oversættelsestabel",
+                info_export_genai: "Eksportformatet er det pædagogiske design i Markdown-format til nemmere behandling af et generativt AI-chatbot.",
                 label_total_time: "Tidslinje",
                 status_calculating: "",
                 label_class_size: "Holdstørrelse",
@@ -9568,10 +10033,10 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 empty_subtitle: "Start med at oprette dit første modul.",
                 btn_create_activity: "Opret et Modul",
                 btn_add_step: "Tilføj Aktivitet",
-                ph_activity_title: "Modultitel (fx: Modul 1: Introduktion)",
+                ph_activity_title: "Modulets titel (fx Modul 1: Introduktion)",
                 ph_activity_desc: "Modulets mål...",
-                label_step_title: "Aktivitetstitel",
-                ph_step_title: "Titel til denne aktivitet...",
+                label_step_title: "Aktivitetens titel",
+                ph_step_title: "Titel for denne aktivitet...",
                 label_learning_type: "Læringstype",
                 label_duration: "Varighed",
                 label_grouping: "Gruppering",
@@ -9579,31 +10044,31 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 opt_individual: "Individuel",
                 opt_groups: "Undergruppe",
                 ph_nb_groups: "Antal grupper",
-                label_short_groups: "Grp.",
+                label_short_groups: "Grp",
                 ph_per_group: "Per gruppe",
-                label_short_pers: "Pers.",
+                label_short_pers: "Pers",
                 label_trainer: "Underviser",
                 opt_present: "Til stede",
                 opt_absent: "Fraværende",
                 label_place: "Sted",
-                opt_insitu: "Tilstedeværelse (fysisk)",
-                opt_online: "Online (fjernundervisning)",
-                opt_hybrid: "Hybrid (fysisk og online)",
+                opt_insitu: "Tilstedeværelse (på stedet)",
+                opt_online: "Fjernundervisning (online)",
+                opt_hybrid: "Hybrid (på stedet og online)",
                 label_time: "Tid",
                 opt_sync: "Synkron",
                 opt_async: "Asynkron",
                 label_step_description: "Aktivitetsbeskrivelse",
                 ph_step_description: "Beskriv aktiviteten...",
                 label_step_presentation: "Præsentation (diasshow)",
-                ph_step_presentation: "Elementer til diasshowet...",
-                label_tasks: "Hvad deltagerne skal gøre",
+                ph_step_presentation: "Elementer der skal vises i diasshowet...",
+                label_tasks: "Hvad de lærende skal gøre",
                 ph_tasks: "Beskriv trin, instruktioner og opgaver...",
-                label_trainer_tasks: "Hvad underviseren skal gøre",
-                ph_trainer_tasks: "Beskriv underviserens forventede handlinger...",
+                label_trainer_tasks: "Hvad underviseren/underviserne skal gøre",
+                ph_trainer_tasks: "Beskriv de forventede handlinger fra underviseren...",
                 label_eval_followup: "Evaluering og opfølgning",
-                ph_eval_followup: "Evalueringskriterier, skemaer, opfølgningsformer...",
+                ph_eval_followup: "Evalueringskriterier, skemaer, opfølgningsmodaliteter...",
                 label_notes: "Noter",
-                ph_notes: "Undervisernoteringer, ressourcer eller links...",
+                ph_notes: "Undervisernoter, ressourcer eller links...",
                 type_none: "Ingen",
                 type_acquisition: "Tilegnelse",
                 type_collaboration: "Samarbejde",
@@ -9616,33 +10081,33 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 unit_days: "Dage",
                 unit_weeks: "Uger",
                 unit_months: "Måneder",
-                md_title: "# Profil for Læringsoplevelsesdesign",
+                md_title: "# Profil for Læringsoplevelsedesign",
                 md_class_size: "Holdstørrelse",
-                md_total_duration: "Estimeret samlet varighed",
+                md_total_duration: "Samlet estimeret varighed",
                 md_untitled_activity: "Modul uden titel",
                 md_untitled_step: "Aktivitet uden titel",
                 md_format_whole: "Hel klasse",
                 md_format_individual: "Individuel",
                 md_format_groups: "Grupper af",
-                md_tasks: "Deltagernes opgaver og instruktioner",
+                md_tasks: "Læreopgaver og instruktioner",
                 md_notes: "Pædagogiske noter",
-                rtf_title: "Profil for Læringsoplevelsesdesign",
+                rtf_title: "Profil for Læringsoplevelsedesign",
                 title_duplicate: "Dupliker",
-                panel_key_parameters: "Kursusoplysninger og -parametre",
+                panel_key_parameters: "Kursusinformation og parametre",
                 panel_timelines_title: "Sekvensvisualiseringer",
-                panel_analysis_charts: "Modalitetsanalysediagrammer",
+                panel_analysis_charts: "Analysediagrammer for modaliteter",
                 chart_learning_types: "Læringstyper",
                 chart_percent_duration: "(% af varighed)",
                 chart_trainer_presence: "Underviserens tilstedeværelse",
-                chart_place_modes: "Stedsformer",
-                chart_time_modes: "Tidsformer",
-                chart_group_modes: "Grupperingsformer",
+                chart_place_modes: "Stedsmodaliteter",
+                chart_time_modes: "Tidsmodaliteter",
+                chart_group_modes: "Grupperingsmodaliteter",
                 label_course_name: "Kursusnavn",
-                ph_course_name: "Angiv kursusnavn...",
-                label_file_title: "Filtitel (gem og eksporter)",
+                ph_course_name: "Indtast kursusnavn...",
+                label_file_title: "Filtitel (gem og eksport)",
                 ph_file_title: "Lad stå tom for at bruge kursusnavnet...",
                 label_version_number: "Version",
-                ph_version_number: "Angiv versionsnummer (fx 1.0)...",
+                ph_version_number: "Indtast et versionsnummer (fx 1.0)...",
                 label_learning_time: "Læringstid (Mål)",
                 label_designed_time: "Designet tid (Planlagt)",
                 label_duration_tolerance: "Tolerance (acceptabelt afvigelse)",
@@ -9654,11 +10119,11 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 label_mode: "Modalitet",
                 label_level: "Niveau",
                 label_authors: "Designer(e)",
-                ph_authors: "Angiv designer(nes) navn...",
+                ph_authors: "Indtast navn på designer(e)...",
                 label_trainers: "Underviser(e)",
-                ph_trainers: "Angiv underviser(nes) navn...",
+                ph_trainers: "Indtast navn på underviser(e)...",
                 label_license: "Licens",
-                opt_license_unspecified: "Ikke angivet",
+                opt_license_unspecified: "Ikke specificeret",
                 opt_license_cc_by_40: "CC BY 4.0",
                 opt_license_cc_by_sa_40: "CC BY-SA 4.0",
                 opt_license_cc_by_nd_40: "CC BY-ND 4.0",
@@ -9667,41 +10132,41 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 opt_license_cc_by_nc_nd_40: "CC BY-NC-ND 4.0",
                 opt_license_cc0_10: "CC0 1.0",
                 opt_license_pdm_10: "Public Domain Mark 1.0",
-                label_topic: "Emne",
-                ph_topic: "Angiv emnet...",
-                opt_level_unspecified: "Ikke angivet",
+                label_topic: "Tema",
+                ph_topic: "Indtast tema...",
+                opt_level_unspecified: "Ikke specificeret",
                 opt_level_mixed: "Blandet",
                 opt_level_beginner: "Begynder",
-                opt_level_intermediate: "Mellemniveau",
-                opt_level_advanced: "Øvet",
+                opt_level_intermediate: "Øvet",
+                opt_level_advanced: "Avanceret",
                 opt_level_expert: "Ekspert",
                 label_target_audience: "Målgruppe",
                 label_prerequisites: "Forudsætninger",
                 label_tools_materials: "Værktøjer og materialer",
-                ph_tools_materials: "Angiv værktøjer og materialer...",
+                ph_tools_materials: "Indtast værktøjer og materialer...",
                 opt_mode_placeholder: "Vælg en modalitet...",
-                opt_mode_online: "Online (fjernundervisning)",
-                opt_mode_blended: "Hybrid (fysisk og online)",
-                opt_mode_classroom: "Tilstedeværelse (fysisk)",
+                opt_mode_online: "Fjernundervisning (online)",
+                opt_mode_blended: "Hybrid (på stedet og online)",
+                opt_mode_classroom: "Tilstedeværelse (på stedet)",
                 opt_mode_location: "Stedbaseret",
                 opt_mode_other: "Andet",
-                label_aims: "Læringsmål (hvad der undervises i)",
-                ph_aims: "Angiv læringsmål...",
-                label_outcomes_text: "Læringsresultater (hvad deltagerne vil kunne)",
-                ph_outcomes_text: "Angiv læringsresultater...",
+                label_aims: "Læringsmål (hvad vi vil undervise i)",
+                ph_aims: "Indtast mål...",
+                label_outcomes_text: "Læringsresultater (hvad de lærende vil kunne gøre)",
+                ph_outcomes_text: "Indtast læringsresultater...",
                 label_outcomes: "Læringsresultater efter taksonomi",
                 ph_add_outcome: "Tilføj et resultat...",
                 text_no_outcomes: "Ingen resultater defineret",
-                title_fold_all: "Fold alle sammen / Fold alle ud",
-                btn_collapse_all: "Fold alle sammen",
-                btn_expand_all: "Fold alle ud",
+                title_fold_all: "Fold alle / Udfolд alle",
+                btn_collapse_all: "Fold alle",
+                btn_expand_all: "Udfolд alle",
                 title_duplicate_activity: "Dupliker dette modul",
                 title_delete_activity: "Slet dette modul",
                 title_focus_module: "Fokusmodus",
-                title_exit_focus: "Forlad fokusmodus",
+                title_exit_focus: "Afslut fokusmodus",
                 title_duplicate_step: "Dupliker denne aktivitet",
                 title_delete_step: "Slet denne aktivitet",
-                title_toggle_status_selectors: "Vis eller skjul statusvælgere i aktiviteterne",
+                title_toggle_status_selectors: "Vis eller skjul statusvælgere i aktiviteter",
                 btn_show_status_selectors: "Vis statusser",
                 btn_hide_status_selectors: "Skjul statusser",
                 title_save_project: "Gem projektet i en fil",
@@ -9710,19 +10175,19 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 title_toggle_panel: "Vis/Skjul parametre",
                 title_toggle_description: "Vis/Skjul beskrivelse",
                 title_add_outcome: "Tilføj et læringsresultat",
-                title_remove_outcome: "Slet resultatet",
+                title_remove_outcome: "Fjern resultat",
                 title_add_step: "Tilføj en ny læringsaktivitet",
                 title_create_activity: "Opret dit første modul",
                 title_help: "Hjælp & Information",
                 help_title: "Sådan bruger du Læringsdesigneren",
                 help_structure_title: "1. Designstruktur",
-                help_structure_text: "Byg dit kursus ved at tilføje <strong>Moduler</strong> (emner) og fylde dem med <strong>Aktiviteter</strong> (specifikke opgaver). Omorganiser elementer med træk-håndtagene <span class=\"inline-block align-middle\"><span class=\"material-icons-round text-base text-slate-400\">drag_indicator</span></span>.",
+                help_structure_text: "Byg dit kursus ved at tilføje <strong>Moduler</strong> (emner) og udfylde dem med <strong>Aktiviteter</strong> (specifikke opgaver). Omarranger elementer med håndtagene <span class=\"inline-block align-middle\"><span class=\"material-icons-round text-base text-slate-400\">drag_indicator</span></span>.",
                 help_types_title: "2. Læringstyper",
                 help_types_intro: "Vælg en pædagogisk type for hvert trin:",
-                help_export_title: "3. Gem & Eksporter",
-                help_export_text: "<strong>Gem/Indlæs:</strong> Bevar dit arbejde i en .json-fil.<br><strong>Eksporter:</strong> Generer filer i Markdown (AI), PDF eller RTF-format.",
-                footer_disclaimer: "Dette websted bruger ikke sporings- eller sessionscookies. Ingen personlige data behandles online.",
-                footer_ai_disclaimer: "Denne applikation er primært skabt med hjælp fra generativ AI; koden kan indeholde fejl.",
+                help_export_title: "3. Gem & Eksportér",
+                help_export_text: "<strong>Gem/Indlæs:</strong> Bevar dit arbejde i en .json-fil.<br><strong>Eksportér:</strong> Generer filer i Markdown (AI), PDF eller RTF-format.",
+                footer_disclaimer: "Dette websted bruger ingen sporings- eller sessionscookies. Ingen personoplysninger behandles online.",
+                footer_ai_disclaimer: "Denne applikation er primært skabt ved hjælp af generativ AI; koden kan indeholde fejl.",
                 footer_github: "Kode tilgængelig på <a href=\"https://github.com/jourde/artefacts\" target=\"_blank\" class=\"underline hover:text-slate-500\">https://github.com/jourde/artefacts</a>",
                 bloom_placeholder: "Kategori...",
                 bloom_sub_placeholder: "Underkategori...",
@@ -9735,10 +10200,10 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_recognizing: "Genkende",
                 bloom_sub_recalling: "Huske",
                 bloom_sub_interpreting: "Fortolke",
-                bloom_sub_exemplifying: "Eksemplificere",
+                bloom_sub_exemplifying: "Illustrere",
                 bloom_sub_classifying: "Klassificere",
-                bloom_sub_summarizing: "Opsummere",
-                bloom_sub_inferring: "Slutte",
+                bloom_sub_summarizing: "Resumere",
+                bloom_sub_inferring: "Udlede",
                 bloom_sub_comparing: "Sammenligne",
                 bloom_sub_explaining: "Forklare",
                 bloom_sub_executing: "Udføre",
@@ -9746,41 +10211,41 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_differentiating: "Differentiere",
                 bloom_sub_organizing: "Organisere",
                 bloom_sub_attributing: "Tilskrive",
-                bloom_sub_checking: "Tjekke",
+                bloom_sub_checking: "Kontrollere",
                 bloom_sub_critiquing: "Kritisere",
                 bloom_sub_generating: "Generere",
                 bloom_sub_planning: "Planlægge",
                 bloom_sub_producing: "Producere",
-                modal_confirm_title: "Bekræft handlingen",
+                modal_confirm_title: "Bekræft handling",
                 confirm_delete_activity: "Slet hele modulet?",
                 confirm_delete_moment: "Slet dette moment?",
                 btn_cancel: "Annuller",
                 btn_delete: "Slet",
                 btn_close: "Luk",
-                btn_download_report: "Download rapport",
+                btn_download_report: "Hent rapport",
                 btn_copy_diagnostic: "Kopiér diagnostik",
                 btn_copy_recovery_text: "Kopiér gendannet tekst",
                 btn_copied: "Kopieret",
                 import_error_copy_failed: "Kunne ikke kopiere diagnostik til udklipsholderen.",
                 import_error_title: "Importfejl",
                 import_error_probable_cause: "Sandsynlig årsag",
-                import_error_detected: "Registreret",
-                import_error_hints: "Spor",
+                import_error_detected: "Opdaget",
+                import_error_hints: "Hint",
                 import_error_detail: "Detalje",
                 import_error_actions: "Anbefalede handlinger",
-                import_error_cause_parse: "Ugyldig JSON eller ikke-konforme fil.",
-                import_error_cause_structure: "Ukendt projektstruktur.",
+                import_error_cause_parse: "Ugyldig JSON eller ikke-konform fil.",
+                import_error_cause_structure: "Projektstruktur ikke genkendt.",
                 import_error_cause_version: "Fil fra en nyere version end denne brugerflade.",
-                import_error_cause_generic: "Import ikke mulig.",
-                import_error_action1: "Kontroller at filen stammer fra 'Gem' i dette værktøj.",
-                import_error_action2: "Hvis filen er redigeret (editor/AI), sikr at JSON er gyldigt (anførselstegn, kommaer, parenteser).",
-                import_error_action3: "Hvis filen er fra en ældre version, re-eksporter den fra den version og re-importer her.",
-                import_error_action4: "Hvis problemet fortsætter, download importrapporten og vedhæft den til din supportanmodning.",
-                legend_grouping: "Solid: Klasse • Stribet: Grupper",
-                legend_trainer: "Solid: Til stede • Stribet: Fraværende",
-                legend_place: "Solid: Fysisk • Stribet: Online",
-                legend_time: "Solid: Synkron • Stribet: Asynkron",
-                title_toggle_types: "Vis/Skjul læringstypemenu",
+                import_error_cause_generic: "Import mislykkedes.",
+                import_error_action1: "Kontrollér at filen stammer fra 'Gem' i dette værktøj.",
+                import_error_action2: "Hvis filen er redigeret (editor/AI), sørg for at JSON er gyldigt (citationstegn, kommaer, parenteser).",
+                import_error_action3: "Hvis filen stammer fra en ældre version, geneksportér fra den version og genimportér her.",
+                import_error_action4: "Hvis problemet fortsætter, hent importrapporten og vedhæft den til din supportanmodning.",
+                legend_grouping: "Udfyldt: Klasse • Stribet: Grupper",
+                legend_trainer: "Udfyldt: Til stede • Stribet: Fraværende",
+                legend_place: "Udfyldt: Tilstedeværelse • Stribet: Online",
+                legend_time: "Udfyldt: Synkron • Stribet: Asynkron",
+                title_toggle_types: "Vis/Skjul menuen for læringstype",
                 btn_toggle_types: "Læringstyper",
                 label_learning_types: "Læringstyper",
                 label_target: "Mål",
@@ -9805,10 +10270,10 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_tell: "Fortælle",
                 bloom_sub_abstract: "Abstrahere",
                 bloom_sub_arrange: "Arrangere",
-                bloom_sub_articulate: "Formulere",
+                bloom_sub_articulate: "Artikulere",
                 bloom_sub_associate: "Associere",
                 bloom_sub_categorize: "Kategorisere",
-                bloom_sub_clarify: "Præcisere",
+                bloom_sub_clarify: "Tydeliggøre",
                 bloom_sub_classify: "Klassificere",
                 bloom_sub_compare: "Sammenligne",
                 bloom_sub_compute: "Beregne",
@@ -9827,17 +10292,17 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_generalize: "Generalisere",
                 "bloom_sub_give examples of": "Give eksempler på",
                 bloom_sub_illustrate: "Illustrere",
-                bloom_sub_infer: "Slutte",
+                bloom_sub_infer: "Udlede",
                 bloom_sub_interpolate: "Interpolere",
                 bloom_sub_interpret: "Fortolke",
                 bloom_sub_paraphrase: "Parafrasere",
                 bloom_sub_predict: "Forudsige",
-                bloom_sub_rearrange: "Omordne",
-                bloom_sub_reorder: "Omarrangere",
+                bloom_sub_rearrange: "Omarrangere",
+                bloom_sub_reorder: "Omordne",
                 bloom_sub_rephrase: "Omformulere",
                 bloom_sub_represent: "Repræsentere",
-                bloom_sub_restate: "Genformulere",
-                bloom_sub_summarize: "Opsummere",
+                bloom_sub_restate: "Gentage",
+                bloom_sub_summarize: "Resumere",
                 bloom_sub_transform: "Transformere",
                 bloom_sub_translate: "Oversætte",
                 bloom_sub_apply: "Anvende",
@@ -9846,14 +10311,14 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_complete: "Fuldføre",
                 bloom_sub_demonstrate: "Demonstrere",
                 bloom_sub_dramatize: "Dramatisere",
-                bloom_sub_employ: "Benytte",
+                bloom_sub_employ: "Anvende",
                 bloom_sub_examine: "Undersøge",
-                bloom_sub_execute: "Eksekvere",
+                bloom_sub_execute: "Udføre",
                 bloom_sub_experiment: "Eksperimentere",
                 bloom_sub_implement: "Implementere",
                 bloom_sub_manipulate: "Manipulere",
                 bloom_sub_modify: "Modificere",
-                bloom_sub_operate: "Operere",
+                bloom_sub_operate: "Betjene",
                 bloom_sub_organize: "Organisere",
                 bloom_sub_solve: "Løse",
                 bloom_sub_transfer: "Overføre",
@@ -9862,8 +10327,8 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 "bloom_sub_break down": "Nedbryde",
                 bloom_sub_connect: "Forbinde",
                 bloom_sub_deconstruct: "Dekonstruere",
-                bloom_sub_detect: "Registrere",
-                bloom_sub_discriminate: "Skelne",
+                bloom_sub_detect: "Detektere",
+                bloom_sub_discriminate: "Diskriminere",
                 bloom_sub_divide: "Opdele",
                 bloom_sub_integrate: "Integrere",
                 bloom_sub_inventory: "Inventarisere",
@@ -9874,13 +10339,13 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_appraise: "Vurdere",
                 bloom_sub_apprise: "Informere",
                 bloom_sub_argue: "Argumentere",
-                bloom_sub_assess: "Vurdere",
+                bloom_sub_assess: "Bedømme",
                 bloom_sub_consider: "Overveje",
                 bloom_sub_convince: "Overbevise",
                 bloom_sub_criticize: "Kritisere",
                 bloom_sub_critique: "Kritisere",
                 bloom_sub_decide: "Beslutte",
-                bloom_sub_determine: "Fastslå",
+                bloom_sub_determine: "Bestemme",
                 bloom_sub_evaluate: "Evaluere",
                 bloom_sub_grade: "Bedømme",
                 bloom_sub_judge: "Dømme",
@@ -9889,16 +10354,16 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_rank: "Rangordne",
                 bloom_sub_rate: "Vurdere",
                 bloom_sub_recommend: "Anbefale",
-                bloom_sub_review: "Gennemgå",
-                bloom_sub_score: "Score",
+                bloom_sub_review: "Gennemse",
+                bloom_sub_score: "Scorere",
                 bloom_sub_select: "Vælge",
                 bloom_sub_standardize: "Standardisere",
                 bloom_sub_support: "Støtte",
                 bloom_sub_test: "Teste",
                 bloom_sub_validate: "Validere",
-                bloom_sub_assemble: "Sammenstille",
+                bloom_sub_assemble: "Samle",
                 bloom_sub_build: "Bygge",
-                bloom_sub_collect: "Indsamle",
+                bloom_sub_collect: "Samle",
                 bloom_sub_combine: "Kombinere",
                 bloom_sub_compile: "Kompilere",
                 bloom_sub_compose: "Komponere",
@@ -9913,8 +10378,8 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 bloom_sub_hypothesize: "Opstille hypoteser",
                 bloom_sub_invent: "Opfinde",
                 bloom_sub_make: "Lave",
-                bloom_sub_manage: "Administrere",
-                bloom_sub_perform: "Præstere",
+                bloom_sub_manage: "Håndtere",
+                bloom_sub_perform: "Udføre",
                 bloom_sub_plan: "Planlægge",
                 bloom_sub_prepare: "Forberede",
                 bloom_sub_produce: "Producere",
@@ -9931,9 +10396,9 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 btn_cancel: "Annuller",
                 btn_clear: "Ryd",
                 btn_copy_report: "Kopiér rapport",
-                btn_download: "Download",
+                btn_download: "Hent",
                 btn_go: "Gå",
-                btn_refresh_view: "Opdater",
+                btn_refresh_view: "Opdatér",
                 btn_reset: "Nulstil",
                 btn_view_activities: "Aktiviteter",
                 btn_view_modules: "Moduler",
@@ -9945,9 +10410,14 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 btn_wizard_identity: "1. Identitet",
                 btn_wizard_next: "Næste",
                 btn_wizard_objectives: "3. Mål og resultater",
-                btn_wizard_prev: "Forrige",
+                btn_wizard_prev: "Tilbage",
                 btn_wizard_showall: "Vis alt",
                 btn_wizard_tools: "5. Værktøjer og materialer",
+                chart_group_modes: "Grupperingsmodaliteter",
+                chart_learning_types: "Læringstyper",
+                chart_place_modes: "Stedsmodaliteter",
+                chart_time_modes: "Tidsmodaliteter",
+                chart_trainer_presence: "Underviserens tilstedeværelse",
                 heading_analysis_charts: "Analysediagrammer",
                 heading_metadata: "Metadata",
                 heading_selection: "Valg",
@@ -9956,7 +10426,8 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 label_path: "Forløb",
                 label_search: "Søg",
                 label_templates: "Skabeloner",
-                label_theme_colon: "Emne:",
+                label_theme_colon: "Tema:",
+                label_tools_materials: "Værktøjer og materialer",
                 msg_no_filter_match: "Ingen elementer matcher filteret.",
                 opt_all_categories: "Alle",
                 opt_all_statuses: "Alle",
@@ -9965,18 +10436,18 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 opt_chart_style_hc: "HC",
                 opt_chart_style_light: "Lys",
                 opt_chart_style_std: "STD",
-                opt_chart_style_transparent: "Gennemsigtig",
-                opt_goto: "Gå til\u2026",
-                opt_status_completed: "Færdiggjort",
+                opt_chart_style_transparent: "Transparent",
+                opt_goto: "Gå til…",
+                opt_status_completed: "Afsluttet",
                 opt_status_inprogress: "I gang",
-                opt_status_review: "Til gennemsyn",
-                ph_global_search: "Søg i moduler, aktiviteter, indhold\u2026",
-                ph_grouping_details: "Detaljer om gruppering (sammensætning, kriterier osv.)",
+                opt_status_review: "Til gennemgang",
+                ph_global_search: "Søg i moduler, aktiviteter, indhold…",
+                ph_grouping_details: "Grupperingsdetaljer (sammensætning, kriterier osv.)",
                 ph_links_references: "Links, referencer, bibliografi, DOI, standarder osv.",
                 ph_moment_description: "Beskrivelse af momentet...",
-                ph_panorama_filter: "Filtrer (modul, moment, aktivitet\u2026)",
-                ph_timeline_filter: "Filtrer\u2026 (modul/moment/aktivitets titel)",
-                tab_aims: "Læringsmål",
+                ph_panorama_filter: "Filtrer (modul, moment, aktivitet…)",
+                ph_timeline_filter: "Filtrer… (titel modul/moment/aktivitet)",
+                tab_aims: "Mål",
                 tab_alignment: "Alignment",
                 tab_analysis: "ANALYSEDIAGRAMMER",
                 tab_competences: "Kompetencer",
@@ -9984,16 +10455,12 @@ if (!taxonomy[categorie]) taxonomy[categorie] = [];
                 tab_presentation: "Præsentation",
                 tab_flow: "Forløb",
                 tab_evaluation: "Evaluering / opfølgning",
-                tab_info: "KURSUSOPLYSNINGER OG PARAMETRE",
+                tab_info: "KURSUSINFORMATION OG PARAMETRE",
                 tab_modalities: "Modaliteter",
                 tab_outcomes: "Resultater",
                 tab_resources: "Ressourcer",
                 tab_tools: "Værktøjer",
-                tab_visual: "SEKVENSVISUALISERINGER",
-                ph_module_notes: "Noter...",
-                confirm_delete_moment: "Slet dette moment?",
-                tooltip_expand_all: "Fold alle moduler ud",
-                tooltip_collapse_all: "Fold alle moduler sammen",
+                tab_visual: "SEKVENSVISUALISERINGER"
             }
         };
 
@@ -14821,18 +15288,6 @@ function saveProject() {
 
             a.click();
             URL.revokeObjectURL(url);
-
-            // Wiggum: save feedback animation
-            const btn = document.querySelector('[data-action="save-project"]');
-            if (btn) {
-              btn.classList.add('ld-btn-loading');
-              setTimeout(() => btn.classList.remove('ld-btn-loading'), 1500);
-              const container = btn.closest('div, header');
-              if (container) {
-                container.classList.add('ld-save-success');
-                setTimeout(() => container.classList.remove('ld-save-success'), 1200);
-              }
-            }
         }
 
         window.triggerFileLoad = function triggerFileLoad() {
